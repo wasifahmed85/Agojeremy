@@ -1,9 +1,5 @@
 {
   "rewrites": [
-     {
-      "source": "/",
-      "destination": "/index.html"
-    },
     {
       "source": "/business",
       "destination": "/business.html"
@@ -19,6 +15,10 @@
     {
       "source": "/real",
       "destination": "/real.html"
+    },
+    {
+      "source": "/",
+      "destination": "/index.html"
     }
   ]
 }
