@@ -44,13 +44,13 @@
             }
         }
     </style>
-  <link rel="stylesheet" crossorigin href="/assets/index-ChsdO6eJ.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-4sUQRHZm.css">
 </head>
 
 <body x-data="{ open: false }" :class="{ 'overflow-hidden': open }">
     <!-- modal form -->
     <section>
-        <!-- Overlay -->
+        <!-- Overlayy -->
         <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
             x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
@@ -132,6 +132,7 @@
                     </svg>
                 </button>
             </div>
+            <div class="container mx-auto rounded-lg shadow-sm ">
 
             <div id="main-menu"
                 class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 sm:space-x-4 space-x-2 items-center w-full md:w-auto">
@@ -287,8 +288,18 @@
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                                 <polyline points="9 12 12 15 15 9"></polyline>
                             </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform -translate-y-2"
+                            x-transition:enter-end="opacity-100 transform translate-y-0"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 transform translate-y-0"
+                            x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                You can cancel your subscription at any time. Your access will continue until the end of
+                                your current billing period.
+                            </p>
                         </div>
-                        <span class="text-white font-medium text-base font-helvetica">Safety Inspected</span>
                     </div>
 
                     <div class="flex items-center space-x-2">
@@ -300,8 +311,18 @@
                                     d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33H15.8a1.65 1.65 0 0 0-1.51 1v.09a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09a1.65 1.65 0 0 0-1.51-1H4.2a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V9a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09a1.65 1.65 0 0 0 1.51-1V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1H12.2a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V15a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
                                 </path>
                             </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform -translate-y-2"
+                            x-transition:enter-end="opacity-100 transform translate-y-0"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 transform translate-y-0"
+                            x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                All features and premium content are included in your subscription with no additional
+                                fees or hidden costs.
+                            </p>
                         </div>
-                        <span class="text-white font-medium text-base font-helvetica">Regularly Maintained</span>
                     </div>
 
                     <div class="flex items-center space-x-2">
@@ -313,6 +334,17 @@
                                     d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" />
                                 <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
                             </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform -translate-y-2"
+                            x-transition:enter-end="opacity-100 transform translate-y-0"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 transform translate-y-0"
+                            x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Insurance coverage depends on your specific plan. Please check with your provider for
+                                details about coverage.
+                            </p>
                         </div>
                         <span class="text-white font-medium text-base font-helvetica">24/7 Roadside Assistance</span>
                     </div>
@@ -791,6 +823,8 @@
                     Fore is the clear winner.
                 </p>
             </div>
+            <hr class="w-full h-[0.5px]! z-50 hidden md:block text-[#B6DAFE]">
+            </hr>
 
             <div class="font-inter py-10">
                 <div class="flex justify-center items-center p-4">
