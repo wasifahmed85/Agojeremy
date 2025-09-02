@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- custom css -->
+    <style>
+        .testimonial-swiper .swiper-button-next,
+        .testimonial-swiper .swiper-button-prev {
+            display: none !important;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+
+        .active_button {
+            background-color: #1487FC !important;
+            color: #fff !important;
+            border-radius: 8px !important;
+        }
+
+        .modal-content {
+            animation: slide-in 0.5s ease-out;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+  <link rel="stylesheet" crossorigin href="/assets/index-ChsdO6eJ.css">
+</head>
+
+<body x-data="{ open: false }" :class="{ 'overflow-hidden': open }">
+    <!-- modal form -->
+    <section>
+        <!-- Overlay -->
+        <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+
+            <!-- Modal Box -->
+            <div @click.away="open = false"
+                class="modal-content max-w-5xl mx-auto bg-white rounded-xl shadow-lg border border-gray-200 p-6 md:p-8 relative">
+
+                <!-- Close Button -->
+                <button @click="open = false"
+                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Heading -->
+                <h1 class="max-w-[600px] text-lg sm:text-4xl font-semibold text-gray-800 mb-6 font-inter">
+                    Leave your info and we'll contact you.
+                </h1>
+
+                <!-- Form -->
+                <form>
+                    <div class="mb-5">
+                        <label for="name" class="block text-sm font-medium text-gray-500 mb-2 font-inter">Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name"
+                            class="w-full px-4 py-3 bg-blue-50 text-gray-800 border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-200">
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="email" class="block text-sm font-medium text-gray-500 mb-2 font-inter">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email"
+                            class="w-full px-4 py-3 bg-blue-50 text-gray-800 border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-200">
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="phone" class="block text-sm font-medium text-gray-500 mb-2 font-inter">Phone
+                            Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number"
+                            class="w-full px-4 py-3 bg-blue-50 text-gray-800 border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-200">
+                    </div>
+
+                    <div class="mb-6">
+                        <textarea rows="6" placeholder="Looking to get started? We'll contact you."
+                            class="w-full px-4 py-3 bg-gray-100 text-gray-700 border-none rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-gray-300 transition duration-200"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit"
+                        class="w-full md:w-[60%] flex items-center justify-center space-x-2 px-6 py-3 bg-[#1487FC] hover:bg-[#0d6cd6] text-white font-medium rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#1487FC] focus:ring-offset-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
+                            <path fill="currentColor"
+                                d="M476 3L36 228c-49 24-32 60-4 70l93 29 36 115c5 16 9 22 18 24 9 1 14-3 26-13l52-49 108 79c20 11 35 6 40-18l74-402c6-33-12-49-39-37z" />
+                        </svg>
+                        <span class="font-inter">Get My Fleet Quote</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <header
+        class="relative py-5 z-10 bg-[url('../images/landing-page-hero.png')] bg-cover bg-center min-h-[80vh] md:min-h-[90vh] lg:min-h-screen">
+        <nav
+            class="container mx-auto px-4 lg:px-0 py-6 sm:py-0 flex flex-col md:flex-row justify-between items-center ">
+            <div class="flex justify-between items-center w-full md:w-auto">
+                <div class="text-center mb-4 md:mb-0">
+                    <a href="/"> <img src="/assets/logo-BdrInYLs.png" alt="FORE MOBILITY Logo"
+                            class="sm:w-40 sm:h-14 w-28 h-10 mx-auto"></a>
+                    <span class="sm:text-font-22px text-font-16px font-bebas text-white">FORE MOBILITY</span>
+                </div>
+                <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                    <svg class="h-10 w-10 mb-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="main-menu"
+                class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 sm:space-x-4 space-x-2 items-center w-full md:w-auto">
+                <div class="relative group w-full text-center" x-data="{ open: false }" @click.away="open = false">
+                    <button @click="open = !open"
+                        class="flex items-center space-x-1 text-base sm:text-lg font-medium text-white focus:outline-none w-full justify-center">
+                        <span>Public</span>
+                        <svg class="h-4 w-4 transform transition-transform" :class="{'rotate-180': open}" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform scale-95"
+                        x-transition:enter-end="opacity-100 transform scale-100"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform scale-100"
+                        x-transition:leave-end="opacity-0 transform scale-95"
+                        class="absolute left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 mt-2 w-48 rounded-lg shadow-lg bg-white z-20">
+                        <div class="" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                            <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active_button"
+                                role="menuitem">Home</a>
+                            <a href="/gig_drivers.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                role="menuitem">Gig
+                                Drivers</a>
+                            <a href="/business_fleet.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Business
+                                Fleet</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group w-full text-center" x-data="{ open: false }" @click.away="open = false">
+                    <button @click="open = !open"
+                        class="flex items-center space-x-1 text-base sm:text-lg font-medium text-white focus:outline-none w-full justify-center">
+                        <span>Private</span>
+                        <svg class="h-4 w-4 transform transition-transform" :class="{'rotate-180': open}" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform scale-95"
+                        x-transition:enter-end="opacity-100 transform scale-100"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform scale-100"
+                        x-transition:leave-end="opacity-0 transform scale-95"
+                        class="absolute left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 mt-2 w-48 rounded-md shadow-lg bg-white   z-20">
+                        <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                            <a href="/personal_car.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                role="menuitem">Personal
+                                car</a>
+                            <a href="/real_estate.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                role="menuitem">Real
+                                estate</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 md:mt-0 hidden md:block">
+                <button @click="open = true"
+                    class="inline-flex items-center sm:px-6 px-3 sm:py-3 py-1 bg-primary sm:text-base text-xs text-white rounded-md font-medium font-inter hover:bg-blue-700 transition duration-300">
+                    <span>Find out more</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 7l-10 10M7 7h10v10" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- inner banner -->
+        <section class="container  px-4 md:px-0 md:pt-18">
+            <div class="justify-start items-center max-w-full lg:max-w-[900px] ">
+                <div class="text-start pr-0 md:px-4 lg:px-0 lg:pr-48">
+                    <h1 class="sm:text-4xl text-xl md:text-6xl font-inter! font-medium text-white mb-4 leading-tight">
+                        Drive Your Way — No <br> Loans, No Hassle
+                    </h1>
+                    <p class="sm:text-lg text-base md:text-2xl text-white font-light leading-relaxed font-inter">Cars
+                        for personal
+                        use,
+                        gig work,
+                        small business, and multifamily communities — with insurance & maintenance included.</p>
+                </div>
+                <div
+                    class="flex flex-row items-center md:mx-4 lg:mx-0 p-0.5 mt-8 rounded-full shadow-lg bg-white/15 bg-opacity-70 backdrop-blur-lg border border-white border-opacity-20 max-w-full sm:max-w-[500px] min-h-[40]">
+                    <input type="text" placeholder="Check cars near you"
+                        class="flex-grow bg-transparent text-white placeholder-white px-4 py-2 rounded-full focus:outline-none text-font-12px sm:text-font-14px w-full sm:w-auto mb-2 sm:mb-0">
+                    <button
+                        class="bg-primary text-white  text-font-12px sm:text-font-14px rounded-full px-6 py-2 font-normal font-inter hover:bg-blue-700 transition duration-300 w-auto">
+                        Check
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full md:px-4 lg:px-0 mt-14">
+                    <div
+                        class="bg-primary bg-opacity-80 text-white p-3 px-6 rounded-xl flex flex-col justify-between items-start text-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mb-3">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <h3 class="font-medium text-base mb-2">Personal</h3>
+                        <p class="text-sm">Everyday errands & weekend trips</p>
+                    </div>
+
+                    <div
+                        class="bg-primary bg-opacity-80 text-white p-3 px-6 rounded-xl flex flex-col justify-between items-start text-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mb-3">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        <h3 class="font-medium text-base mb-2">Gig Drivers</h3>
+                        <p class="text-sm">Affordable cars for Uber, Lyft, DoorDash</p>
+                    </div>
+
+                    <div
+                        class="bg-primary bg-opacity-80 text-white p-3 px-6 rounded-xl flex flex-col justify-between items-start text-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mb-3">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                        <h3 class="font-medium text-base mb-2">Small business</h3>
+                        <p class="text-sm">Flexible fleet for your team</p>
+                    </div>
+
+                    <div
+                        class="bg-primary bg-opacity-80 text-white p-3 px-6 rounded-xl flex flex-col justify-between items-start text-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mb-3">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+
+                        <h3 class="font-medium text-base mb-2">Multifamily</h3>
+                        <p class="text-sm">Shared cars for apartment residents</p>
+                    </div>
+                </div>
+
+                <div
+                    class="flex flex-col md:flex-row md:px-4 lg:px-0 items-center sm:items-start mt-12 gap-6 md:gap-12">
+
+                    <div class="flex items-center space-x-2">
+                        <div class="w-6 h-6 flex items-center justify-center text-white flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <polyline points="9 12 12 15 15 9"></polyline>
+                            </svg>
+                        </div>
+                        <span class="text-white font-medium text-base font-helvetica">Safety Inspected</span>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <div class="w-6 h-6 flex items-center justify-center text-white flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33H15.8a1.65 1.65 0 0 0-1.51 1v.09a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09a1.65 1.65 0 0 0-1.51-1H4.2a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V9a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09a1.65 1.65 0 0 0 1.51-1V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1H12.2a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V15a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-white font-medium text-base font-helvetica">Regularly Maintained</span>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <div class="w-6 h-6 flex items-center justify-center text-white flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-headset-icon lucide-headset">
+                                <path
+                                    d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" />
+                                <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
+                            </svg>
+                        </div>
+                        <span class="text-white font-medium text-base font-helvetica">24/7 Roadside Assistance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <!-- get the app -->
+        <section class="bg-white pt-16 sm:pt-18 lg:pt-20 pb-8 relative z-10 container  px-4 lg:px-0">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-7 w-full">
+                <div class="left_side w-full lg:w-1/2 ">
+                    <h2 class="font-poppins font-medium text-3xl md:text-5xl">Get the Fore Mobility App</h2>
+                    <p class="font-inter font-normal text-sm md:text-base mt-5">
+                        Experience the easiest way to rent a car with Fore
+                        Mobility. Search, compare, <br class="hidden md:block"> and book vehicles right from your phone.
+                        Download the app today and enjoy <br class="hidden md:block"> faster booking, flexible rentals,
+                        and
+                        24/7 support — wherever you are.
+                    </p>
+
+                    <div class="mt-6 ">
+                        <h3 class="font-inter font-normal text-sm md:text-base">Download App From</h3>
+                        <div class="flex items-center gap-4 mt-2">
+                            <a href="#">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAAoCAYAAAA16j4lAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAfYSURBVHgB7Zw7UxRLFMd78ZZWmYiZmRhCAmRGApmZr8gyEEMjMDIUP4GQmYllqZGlfgJAE43ExEfEmkkEJBSQ7O1fX/9bh7Z357Gz3Nqt+Vc1M9N9+nVOn9OnzwzbcH/w7Nmz0dOnTy80Go1Z/zjragwcWq3Wpr+s3LlzZ1V5Df544Y6dOXNm7fv372Nv3rxxzWbT7e/vuxqDhYmJCXflyhVS8/DwcO7evXvNIOBXr15tecEG4dYYfNy6dYuEkKdPvXz5cv7jx4/zL168cDWGA94Su/Hx8dELFy4cjvg9d+HDhw+uxnABa+xlOzPi76e+ffvmagwXfv36xWV2xNUYSshJrgU85KhcwLOzs25tbc19+fLFlcHY2JhbWloKaXFxMTxXiXfv3rmpqSlXBoyFufUK+h8dHQ33zJHUL1QqYAYKAxDy3t6eKwOYeO3atXAWhwm0J2ZwhTkSOs8qswtB91wpZzzCuXPnOraXlRf3Y8ttHxoXtDE9+U+ePHHXr1/PpI3HUQr+DNzyl56TH0zLYn5+vlQ7nlGt9fX19vPq6mrLL5yWn2hra2srPHP1DAp9+CBNoNvZ2QnPqg89eaL3FiHQ+QUTaOL2yKOc++Xl5b/yvOaHutzb8dKnt1ahnCt59JVqm8S4GRf08Axa6kFLfrdxFE3ItjINZlUKaJ8fsKsC0mRW89evX51nqHvw4EG4Ym7RHMo2NzfDlUS+AN3c3Jy7e/fusXah8wshlD9+/LhdfuPGjVCfMtom4ZGicfQbY2FhwfmIUVsjpelq+/nz58e0m7YZqxdeuAKu0K6srLT7ZN7Qwsd47EVQmYA1iY2NjcDQqoCJkpD9Cg95u7u74ZkrCeYiJJjLOGCu6DqB+tpGaP/SpUuhL28Rju2RFqn2zp8/387XuMCfY0oupGj9GTaMhzIWSVmUEnBqv4DBCFaC5lp2/7h48WJY0Y8ePXIzMzNBYAhBqxutkZayoHhGC0iTk5NtzegG2mOvt+1JOFogQG1Cx5hiUI/6LDLq024WWFjd+EOf8IC2uJZ1CsEpH7NcyhODZvAPHz4MJkMeLhOmc1bZp0+fAsMow/xQJhrw+fNnlxesXmnY/fv33e/fv8NkMdEwkit9AMp4pn/uf/782Rawj8WGfHtP21oMYjSL5OnTp6E+dFevXg150Pz48SO0efny5fDMvdoE3KPFlLPIoQeMV8K296oD38jT3Cwtbbx//z7wbnt7O/D84ODAFQUx6VxOFg4JjkAvoL4XWiUOXZ0qdrJwoHoxE0JqX6vRX/yTRYBJlIdYFpgd9uduTk+N/iBTwCnHoig4RpQVLv3jjLD/2ePPSQCLQ/84evLa2RurOgKeCLL24F733jgwUCSxZwsEAcq2UyYpEKK+vRU6NifrTxCkAGUDEv1KufbgXvfeIufBGNoadA62AYN+g9MAlgOroTMyV86k3PczflwpsjS4Vyh8VyYRGgSEAwGhO1uOxkBDOeFM+kK7yEMDRUe5pYOGRJjT0rmE5SKc6CLNJhSqsdAuGq652r7Rcn+Wb1sCyuMQLmOgDv3EoVCNm/ap653dQieRINssAVvTVAYMrszxCCYBxaVpJzbTEjxMUXzXmlUxmnivpaNN0cXmNl5cMLXbOGlLAvZ+QnhWe+qDPDs2hB7zlzLuNV9oNA+2APIB46pUwJpoL1Cgv0iS8LTiU/ucaIDVRLQLSMusgC2d5pYan21b2s6LgpTGq53U2PQyRItWi0GLQAK2Y5DvEY/37du3f/WTJeDMPZiITq8g5Fh0z1KAXWFDea6pIxuerY0UydvG+7VQyFMguA9Sfgb94f1Dz56LN+0Z7DzTQ1wg60yv8ds4Mm3pOZ6HPSFoPBqrQsPMM1W3GzIFbOOyvQCmEMjPAyajNyqKAWvSqTcregkhiDGxEGKHTyHNTsJCyDhWJIQt4RR5SR/HpnVcjOPQ9hipMubOglIS/3innReZ52AErFdnJwX1pbc7FvKmq1h4eV+G6PWnEh8h8IIBT7ufwHqm+sjzQkPIFaokiF4F8rYD8wDRL2kQSfVjLY4FpedYY2OTLbo4CEM+GpP6PCf1pir19Yr6jhVDlqjbGy+V+e22rWAk8hFuoaBR3i86enW2rLPhcnjPqQCJnA955tYRkmdqAxRy0ORkAY5Jnehssh6vHCKueNXxfOQAWo8bRyh2lGxe7GTFzpv613ihl5OV92uZXF60S3iARRF7g90SEwLxmdclPFYJmDNiPDZ7/paAU4u00zmdc6ltUwxPzccuNCssefPAtoU3rrqdBGz71xERsJjy8FECztyDBUwDn7MU/aoQc0K9vPsG9JjiTvFeytibrGOE6aIPHB/yeU7Vpx7OkqXTe+UYlE1PTwePFTMLvd4R07Y1k3qW+VUZ/ch/USyb/iwveFZZqn/F4gGeduF4fNGP7lhZHOgBh299EKcyVrMtjyNBVabUWTOVpMFlzuODnAppsKCP2zqVddKeGv8PBvo/GxQ4yArGsOigy/Ot1tABNT579uxAmZ465TfRaPA6X+7VGC6Mj49z2RzxvsdG+PquxlCBn3Lwsl0ZOTo6Wp6YmGjevHnT1RgOIEsftWvyYyzhNzpev35N+GjNOytj/Lc/PwFQY7Dg/ajwkTzWGIVtNBpzt2/f/u9HWAR+r8NfFn3hpKsxiNgg/IBV9gGdEDn5F8+AUB+ZffCZAAAAAElFTkSuQmCC" alt="Download on the App Store"
+                                    class="h-8 md:h-10 w-auto">
+                            </a>
+                            <a href="#">
+                                <img src="data:image/png;base64,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" alt="Get it on Google Play"
+                                    class="h-8 md:h-10 w-auto">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right_side w-full lg:w-1/2 relative  z-20 mt-8 lg:mt-0">
+                    <img src="/assets/Group_3-QChAoARe.png" alt="App Preview" class="w-full">
+                </div>
+            </div>
+        </section>
+        <!-- Why You'll Love Fore -->
+        <section class="py-12 md:py-18 -mt-16 md:-mt-22 relative z-50 bg-secondary px-4 md:px-0">
+            <div class="max-w-full md:w-[1150px] mx-auto">
+                <h2 class="font-inter font-medium text-3xl md:text-4xl text-center">Why You’ll Love Fore</h2>
+                <p class="font-inter font-normal text-base md:text-font-20px mt-4 text-center">
+                    All essentials, one price — no surprise fees, no import duties.
+                </p>
+
+                <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-7 w-full mt-12">
+                    <div class="flex-1 text-center px-4">
+                        <div class="w-10 h-10 mx-auto bg-blue-500 rounded-lg flex items-center justify-center">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHASURBVHgB7VbtbcIwEL2g/i/dIJ2g6QTABnQCYAM2KJ2gbBA6AXQC0glKJyAbkA3cu/IsHAuMg0wqJD/pKXH89Xx3vgtRRETEjUIplTK/wdR3XkIBgY0z5hNzyuyiq2R+MlfyniRJSdcWxGJk853n8AcWVR3r6FA4dEOMDSkoCKIgoKI2wIG9U+exda0R2kIfHmMKagty9cUCLus0SZKhRKUnRLUvxhK1QEwJZ0icZ9E4U2NhKQ8pKDemZG5cJSE4cOq5Otyk0rDAznDL/Oqu4Q1G2FQq91ibH27JDcHSV0Bcfomw5ISAPh1c0mNKu2BOrKFS0e/ZVRNr/pAf72i+cP+GLhWExZZ0OSqwS/XfD/39h1mwyJXXargRbWB7zKWdEyc08cZ8BCc4bRMsmAPMl6d2X8rMlSsdSOyoelKTIM2Ya7UP6Fe1D16fmiWYYfwa83O1z+ZrY8zQJWhqmfRYKRgrf7fq/2pbZN9oT00NtssKOrhMgk8nQBM9w+wu6H/nzPo+orrbayFyZzbkerLiZ4goqX5jNL4gfEBu6I1Kqh+qQJ/Mr5qkhD/ARVuYd6k8a5IxPzPmS9JMKSIi4h/xC+evp2wIJcf7AAAAAElFTkSuQmCC" alt="All-Inclusive">
+                        </div>
+                        <h3 class="font-inter font-medium text-2xl md:text-4xl mt-4">All-Inclusive</h3>
+                        <p class="font-inter text-sm md:text-font-18px mt-2">
+                            One Price, Zero Surprises — Insurance, maintenance & roadside included.
+                            No extra bills, ever.
+                        </p>
+                    </div>
+
+                    <div class="flex-1 text-center px-4">
+                        <div class="w-10 h-10 mx-auto bg-blue-500 rounded-lg flex items-center justify-center">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFlSURBVHgB1ZbhTYRAEIUfxv/SgViBZweUYAdeB2oFd1ZwdCB2oBXc2cFZAViBWMH6JgyBEFlul4XkvmQyZBf2sbPDDMC5YYzJaK9YEgqmpmUFDy4wnRgehBCeB4Yypm1ohTkduTe1rXs5IprQ7WkJ3Egw8oxVuCf6STvSKh170PGc9t17Tu55hw/c7boTum1vrpvVKTywJde9+iqKoi0CYxO+Uv+FGbAJ/6q/xsLCB/UJz/EJgbFldU57RJ3BO4rf0r/pXLdMrjjXXB+ZDxWmInWY9mPc2Ov3P1lcQn0wbsjLWptHhBPhQtIMmsXE7/T6GXVhEdZoC0tJuwsS+s5LDBYQScTO3GBSBu9O3GGGtoSmWEpYKdTHSws3uVAtJsxz3aDd6WCHiiwLJKiz9D9krt8WRUyKTKrjJc/7Bq5oIfClMCNFxBbqD7gjO39B/f2WCI2Z+UdgVnyFw5VBVxjinJbh3PgDIoKOVEkbF40AAAAASUVORK5CYII=" alt="Pay-As-You-Drive" class="w-5 h-5">
+                        </div>
+                        <h3 class="font-inter font-medium text-2xl md:text-4xl mt-4">Pay-As-You-Drive</h3>
+                        <p class="font-inter text-sm md:text-font-18px mt-2">
+                            Only Pay for the Miles You Use — Why pay for a car sitting in your driveway?
+                            Drive more, pay more. Drive less, save more. Avoid high tariffs on buying.
+                        </p>
+                    </div>
+
+                    <div class="flex-1 text-center px-4">
+                        <div class="w-10 h-10 mx-auto bg-blue-500 rounded-lg flex items-center justify-center">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFqSURBVHgB1ZXtbcIwEIbfVP1fNqhHcCdo2aDdICOwQdMROgF0gnaDZAPYgHQC2MDcKRflCLb5UGyJR7Kc2Icf7uI4wD3inLPUfqktqRnkQKQ7N7BEajg7alt3TIOUBKRMiVR4pLrUBinwSCt13yAFAalNWmafVMarZGUOSWVuLWNrTMkZqVHjC9xAEZDOqONMjAx9FUVRqXkr88yG2h5xeP6b1miCESxVZWRWgRhdjUux/RqPnkxran3AD/3LciymsT3FzumywlCVGK/Sv6Or0Ekm0UxvwXUfkJ7SF1Amlh7tfl1qo66fKbBGnBbdpmtDUupKueXyzhEItO56trIvopn6YorRD96o4/dyhjhPGDbgC2W9UWt8ott0TCvz5163y6DFFyojo6WjahhMifMclzmk+risskhFol87m0Uq4lpJskl1mXdZpCLWZc4jFXE9lfQB1/GvrvlQ+AgdmZMiz3hF7c+pb+tdcQBlXxBgCaIfrwAAAABJRU5ErkJggg==" alt="Total Flexibility" class="w-5 h-5">
+                        </div>
+                        <h3 class="font-inter font-medium text-2xl md:text-4xl mt-4">Total Flexibility</h3>
+                        <p class="font-inter text-sm md:text-font-18px mt-2">
+                            Change Your Car Anytime — Swap rides, pause your plan, or adjust terms
+                            without penalties or long contracts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Plans section -->
+        <section class="container  md:py-18 xl:24 py-12  px-4 lg:px-0 rounded-2xl bg-white">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <h2 class="font-inter font-medium text-3xl sm:text-4xl lg:text-5xl text-gray-800 mb-3">
+                    Find the Plan That Fits You
+                </h2>
+                <p class="text-black text-base sm:text-lg lg:text-xl leading-relaxed">
+                    Solutions for every driver — from personal trips to <br class="hidden sm:block">
+                    business fleets
+                </p>
+            </div>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Card -->
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANDSURBVHgB7ZpLSFRRGMf/5+qiwDvopmYaF7ooqY0pia0sWkRopGUhlJCPFkVQtmqTqNlKF1kQrnwEQlRIGtnCQCoIikJcRdBCBXWsjTITCGGevu+qMU2T471+05079INh7uNb3P8553uch0IcJhd09nYDdTBwCBr7oZAHN9GYom+Y0BrDAZ/qj2eiYh/MhnVVJtCnFbKRipAoDbTFCjKib75G9O0MhScpK4Kh0aEU+r5EdMvvj9fgF6S0FR6CeqFrh6mu8bUlJBTWdawSHuSHxsmgTw1ZQubDetJ1h3bO4tIy8jPWeqMO3mVbBnmGQX5RBa+jcNhQnCc8Djl9oZqPUJpJAwykCWkjJBNJIBIJ49FAH16NvcA3umYCwVyUn6hGcUkpArtyIY24jzwc6EVP911LTDx2F+xD0/VmFB8ohSSiQro62knI5gqEC5euopF+UogJCc3N4NSxsk3bm6YPo28mIIWYs4dmZ2zZ89Bj8VKICWFndhM5IQ4ikWT0Es0jdj5sT8FeSOJaQgzNzUISUSF2nPdvecYpokKKbCS54pKDkERUSHN7J/lJMKEd29y42QFJZJ2dQnDZkaMJ7dhGOlyLO3sFFYamaW5oU3OuHtKIC/FTSxdtMP7ZN7J8PkgjWjRy1LrccDZh9OJ8c//xM6vekkKsRziccuW7mRDMNr3ddyDJlntk/MM7vB4bxfPhQdu5gXuGJ1o1tQ00T9lapncshAX0UKuOv38LCXjCVVNbj4rKajjBtpDPnz6iq/OWmIBYuJd4wmVXkC0hPLbPnzkuXl7E417vA1vTYVvOPuLAD5zCPW+HlF0OsttgtoQkythuYktIeeXppJQX0XBjNV68Yq2y2MFR+OWFhpGng9Y4Xh8C8w4nSn6qhLmA5Bkjh2Cn5f3/RexUI32E6BVMw+PQRuiEQXvqcuuWLkE7u9MGbSK+hMehHhlSCws6+3smJil0pe5ph41QmPJnqXwjJ0ctQiO5WS6JkI+38b8VtXb61BD9yU7Z/gHRh2t+hV+/qZr4BTzCCjV8wFSt6/d/HHOyTkIYaCG5eUhB6IMXl8kVgqujKPp5fCxBq6ci8siqEC7CuU5xmqAIu+RDf74iv47hJ+TELyk2a9+JAAAAAElFTkSuQmCC" alt="Personal Use">
+                    </div>
+                    <h3 class="font-inter font-medium text-xl sm:text-2xl text-black mb-2">Personal Use</h3>
+                    <p class="text-black text-sm sm:text-base flex-1">
+                        Affordable, all-inclusive cars for your personal travel needs — insurance and maintenance
+                        included.
+                    </p>
+                    <ul class="text-black text-sm sm:text-base mt-4 font-inter space-y-1">
+                        <li>No long-term contracts</li>
+                    </ul>
+                    <a href="#"
+                        class="text-primary flex items-center hover:underline duration-300 mt-6 text-sm sm:text-base font-medium">
+                        See Cars Near You
+                        <span class="ml-2 sm:ml-4 font-bold text-lg mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+                                fill="none">
+                                <path
+                                    d="M0.833496 6.99996H12.5002M12.5002 6.99996L6.66683 1.16663M12.5002 6.99996L6.66683 12.8333"
+                                    stroke="#1487FC" stroke-width="1.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Repeat the same structure for Gig Driver, Real Estate, Business Fleet -->
+                <!-- Gig Driver -->
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAyCAYAAADx/eOPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAATYSURBVHgB3ZpNbBtFFMffrM1naWzfiMCNc4FDQuocekmoSFQOLapE2kuAHBofgko5pEi9wKUpSC2ISFUOfAgOTg+l6oW4UgU9gOqqNBw4YEF6jhNLzTG2L/2KvZ3/WLNZb3aT2Vm78fYnVd1s9us/773/vNksIw+W1834y1GaNolGmElpk1GcdpcCf45CvUaXuhMs73YAc+6AiD1ROlsnOk2dS97coAwXVbTvbBKztm6mWIRu8r0p6nzKNZMyr3WxnNxhiQmZEAteBqPdextpZ1h7DZoJmxDAo7GA0sC2EMOjMsIMOkHhJP6i0ahvkWb3qmbOYPQ+hZfy/Q3qZes8RA+jtE4hx+RmYDwgStMzABeTNozIrk+GLSESoZjBJ8e2iSmtFun4e6P06l5GB/p76efv56idsLWqOckYZakNQEBppdi079ffbtLQwRFqNVzDvEFtYvH2rS1CwI3r16hdaImZvXCO3h0epMyHx2j2/DmRTk5isZjStW5cz4lr3f2vQEHRErN4O09L/Oa/8weZvTBDx4+MbjmmbyC9JZ26YnGaOjXdtA/Rw7UOcUFXL1+iIGiJmfsxS8melPVzcl/K9bjslQU6fHRMbMe4ENSL/Tww9elpOvP5WbE9fXJSDJQuvsVUK2XhUBhRKcL5gGDp/4JIQ6QRqPDzMh8dcx39M1/MbAr6JCPuoYNvMd/yeoGQ/rfS/CEaD4BtO9KSnaOM8zD6qDknEIQo4pifvtOzcF/WjIc80NcrIiJTBnUz/PYIdcU3pys3S3biZtE4B7WDhvGfu8uixpSF+LVmOBf4mBexTK0jfDTtQrws2YmbReOaw1wgUvIOv45ffIlZ/Csv/pdF7UZpdZlUWPKw4sNHG8373xpGEFU9EPMARnyIp5RbwUvGJyY93c2Os86c+93mrp1QFrO6utK42cDOTbZuuzJ9MmNFplL272jKaVatNJY82xUlCh9Npeq/N19PWI6HyF+9PC/sHCAybyQTvppTrXnGDdXCt4NCl0aAjmHq1ObbLYipIjp8oaKKshhZBxUPMRhVHXCeHKCvvrkoRMn7wb7RIaiiXDOog7kfstbNnEin8wsGB84m62z+lwU+d12jDyZONFm+Cm1dzzxNMGkqR8YLpEhpZcUz/VTpH9jva8Z3I5AYNJPowarlYEIk9oZTB+2VJtwGNtoqIWD2/EygNY12ZJASchQr5YpYpElXQjGPT3i/IEVa4ngJuoahg++I7eS+HtKlZQZwyLb0zV7J8QbU+wWp7L4lf97519MlVYEBaItB6wE7RuG7pdp2/ZvbOfJ4rEj/4OL8EsjNMLrbzfh+uwF5fIkaaZjs8Z9u2gYQC2ij7UA7Ml9+fdHqcFsJ2hidqABtMcjx8Z5J6iQCvdHEMtrZ1sul9U6gy3ae6/b+zQ+BxLjNCSqrTNDn0r5s54AqPFONplGrUfCXvB0A11Ex9hAV+Xuq1jVYu0SEUd5IJFiZL0xDH536c1QQBsDFqFlQh4J66X6JFYUYfOHAUy1HYYRRsR5pBMOy5uc3KINfUMio1ekzRAXblhhROxEaDYsgmJbJmj8Eapo0ofCFxzTIN9v7Z+GA8Fdpt+pRGux+hc3b9zOvE9bumyn2iMa4+jGD0X6Tdu97AUShXqeKaVAOtS2/YnLyBE+1+UMCCvI3AAAAAElFTkSuQmCC" alt="Gig Driver">
+                    </div>
+                    <h3 class="font-inter font-medium text-xl sm:text-2xl text-black mb-2">Gig Driver</h3>
+                    <p class="text-black text-sm sm:text-base flex-1">
+                        Flexible car plans for rideshare and delivery drivers — pay based on usage, keep more of your
+                        earnings.
+                    </p>
+                    <ul class="text-black text-sm sm:text-base mt-4 font-inter space-y-1">
+                        <li>No long-term contracts</li>
+                    </ul>
+                    <a href="#"
+                        class="text-primary flex items-center hover:underline duration-300 mt-6 text-sm sm:text-base font-medium">
+                        Start Driving Today
+                        <span class="ml-2 sm:ml-4 font-bold text-lg mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+                                fill="none">
+                                <path
+                                    d="M0.833496 6.99996H12.5002M12.5002 6.99996L6.66683 1.16663M12.5002 6.99996L6.66683 12.8333"
+                                    stroke="#1487FC" stroke-width="1.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Real Estate -->
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAyCAYAAADx/eOPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAPDSURBVHgB7ZpNSFRRFMf/941BUY66SsFSaWf5tRMs0Y2LoFSQsoVZitnCwEBroUiGtUihEV0kYgku+kDIDzJ0ZWLgKjRN2vk1IbRxnApd6Lvd8/S93ugMqXPHmTf4g3lz3n1nmPfnnHvuuY/H4IPlFZ7DFRQoDPkMiOYM0QgSjMMl/n8SKvq5ir64GDbv1W/ngBCRyCLwSpg5CFEUwPFnA41JMcxlHvcQ8/M3LxXKHcGMwp7hmOebyDVHyRDzw80LbAzvYSWEoLVNZOgRUuhAqWUDnsNqMCSe2JoSGsr28RFdgDUpWP7Fc8hg2xN+DtZmNDaS5SqKDemwPulzKzxa4Tx0S/A+iD52DImKJcrwHrCpSFcQRoSVmAhI4M7Na5id+eoxNv7lOw4bKWLcqy44lxYQbAKSZnZ7cGqKlMhkZmUjOSUVyefTkHkxG/FnErRxt9t1qMKkRKb6QT3KKu+Jvg/o6mjD9fw8pJyLRdeLdhwmfkWGJn1jXY32TfMm2PgVGRIw8XnMQwhFqaWtE8FAypwxM/JxwGOe0Pnw0KBP/3KRnskXUiED6WJmpz3Xm2/ivPd1j09/rXhIEiOlANDN0E3ttM3QmD6ed/mqNAFmpIihm7sv5opuFxWX7PIpulFiiCmrrNL8ZCMlzRzPmuAw2d6oqaow7GJRugPBUde8E0qrhqZmw66urd/lQ6mljzc0tXhNRX+R02i6V7WPbjudC159nEuLmu1cmjf8ZSJFzMjQgPbRbW+Yy/PLjsC0OVLSjBZJfaE02758qBENRAMqRUzZ3Sp09rwz7IYnzbt8Gp42o/rh1pxpae/U/GQjJc163/QY6UW2Nyi19B7O0dwUkMZUihjn4oJX28zs9JRhT4yPIRBIEUOtiXlFpy3BzkKgX6dxKsu0zaaOWyZyxKSkoVzMAffqKuxRURj+MLhLTGbWJeM5Ae1GZ2emQlMMQd0y7TBpP6Nvm808rqs1bHNrI5OwamfYspt3M4bS/fyI0qNCPCvTK5I9itaQKC2NyCbM1/5Xucjnbf+IX9sC8cz89oHSLP5sgpjQVyATDv85UGRCEYrM0RYgFBFCXAq9MIAwQGVCjPbmQxiwvoFJ5fgm+hisHR2Vo5/eBVBixEFV0QoLI6qx9jxFKwDHVTisGh0hpDsuko2SrYnRogMUwmowzKs2NOqnRmkmdaKyFVomQkIItyE37sS/F4E81pnTdtanRiBDrKafEMKILGpdO4kMsxCC+fqB9j4Kxy3hkC680hBEKFtExZoSxuj6KTiSGPOaPX8BlghluAUlHTYAAAAASUVORK5CYII=" alt="Real Estate">
+                    </div>
+                    <h3 class="font-inter font-medium text-xl sm:text-2xl text-black mb-2">Real Estate</h3>
+                    <p class="text-black text-sm sm:text-base flex-1">
+                        Offer residents or tenants convenient mobility solutions as part of your property’s amenities.
+                    </p>
+                    <ul class="text-black text-sm sm:text-base mt-4 font-inter space-y-1">
+                        <li>Earn more per mile</li>
+                    </ul>
+                    <a href="#"
+                        class="text-primary flex items-center hover:underline duration-300 mt-6 text-sm sm:text-base font-medium">
+                        Explore Property Plans
+                        <span class="ml-2 sm:ml-4 font-bold text-lg mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+                                fill="none">
+                                <path
+                                    d="M0.833496 6.99996H12.5002M12.5002 6.99996L6.66683 1.16663M12.5002 6.99996L6.66683 12.8333"
+                                    stroke="#1487FC" stroke-width="1.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Business Fleet -->
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition duration-300 flex flex-col">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASuSURBVHgB7VpLTBtXFD1vYNFKxXY2baIUsNfQQBbZkEaAsglNq9pZlCapFLNoVbULEjVSP1ICNFI/aiWgUj9qFjhSk4oNGCWp2VRQtWJbk+A1Bqtq2g22WUSKkkzueZ4xY+xEYuwIT+QjIT+/eQ/d8879zXgUKmB1www8byAKA70w0Q2FIHYTJtJiQ9I0MbfPp2KVlqjtE//kzXAzMGUqBFCPEFImMLadkOH88v+mOd6kMFu3JAjxDqUw9d+mOVI6bYEXhOkoPARRYeLFFnWOY03k37wZJUt4EA9MRPb7VFwTuZM3V3c9oN0je/c+Qk2WGlF4F881SWQYEhdheB0KfYZinfA4JOi71J1NKTPPAAw8I2gQqTc0iNQbGkSIfC6L6MkIjh4+iPkb8ceumb56BZn1dNn8t1+O4cRr/Vj6cxHVwjWRyz9MIDLQj7dPncF3P06JMX+UrVm5ndSG5rJZDAlhJyIyn5f5S1+N4+In58qI7hSuidDw2cQCWttD+mSPvf5m2ZrL30/i2PEw2tqD8Pm33eJIGX7r9Bn4AgF89Okopn+5gmrgurKv3Eri4sf6VgD5fBZT12aFVLBkTWYtrd2KINHOA1vdUEJccf76HDKZtFZj5uZC2f6doCYtCv09cWOu4jW/KFFJrVqjGTXAN1+M6VMlIaLn1V7kZJxZX9PzHa90y2m342miqqzFYKbrpOSTaG0LCok+USCMniN9mgQVWfprUbLaXJHo00BVrqUzkhhHA0lgUIKXBGwMvz+kyTCeGPCfS4bi9dStZb2v50gvaoWqXIunTUOpBD9Tt5fhfMJkp1QGua3G9NWYznLEpKRtJ/Fq4EoRGpXL5qy42NDuRYNYL5z1wCb67gfD+jtT8FlRia5HJG7GdQ3qOFD9vZ0rRS4w7Tro+3wBJK7H9ckz5RbnLQNb20I62H+WujL4TlTXFhsromItiLhShLEx89tCyRwJsHozQ5XMiyJU6/xnI3of3ZDwWwWSCSP262x5wdwhapJ+bRRSbrpkTINpPDsBnYZlzL4sJ/MDUl+4hm5aLRHXitAdMumt2tHR1Q2/uBhPngHNloPG6esS/+elDYmeLLhUpxCiEp0O9QbeCBdjyQ1cK5JaTmImseVehzpDGDwV1WPWjEtfjxd9v9AwmlqNwdNRvPfhME5Iw+ncf7Tn4O4QoevQmCIsXekq6/J3werDbDA1/770tx5TMa5z7lfWXjuGdgr3riVu4ZfOlfcSuhaU/BdTm8aKTvd52YoLWwF7f5tkMvZozv10TTdwrci81AD79BLWTdVhqe6Mi+lrWy15sa6YT97PWLJd0w1cEdGFTj7ttJmSFiRyvF/G/kKAS2Gc+CmmsxJxqCNUkpXs/XYK537eZVaTuRpPGusNDSL1hgaReoNhPsQaPA7pCpKG/KaehMchv+yuGfIj4iI8DlEkrjY2zMC9ZqxKVazftx2eBIX03hdUyNizR2WlDxqCRyExrp9k6Kz1kk+x65uEx+B8uaaYfve2qLO8AI/goRz8vhY1an8ve81JvwlhYEToBlGHEIOz9yUU9he8yDlfGZpQ4a2IoKzqwi6CtU6xTEiGvetDLKRU2bPXR7wLF9cpRZv7AAAAAElFTkSuQmCC" alt="Business Fleet">
+                    </div>
+                    <h3 class="font-inter font-medium text-xl sm:text-2xl text-black mb-2">Business Fleet</h3>
+                    <p class="text-black text-sm sm:text-base flex-1">
+                        Hassle-free fleet management with all-inclusive pricing, perfect for growing businesses.
+                    </p>
+                    <ul class="text-black text-sm sm:text-base mt-4 font-inter space-y-1">
+                        <li>Earn more per mile</li>
+                    </ul>
+                    <a href="#"
+                        class="text-primary flex items-center hover:underline duration-300 mt-6 text-sm sm:text-base font-medium">
+                        Get Fleet Pricing
+                        <span class="ml-2 sm:ml-4 font-bold text-lg mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14"
+                                fill="none">
+                                <path
+                                    d="M0.833496 6.99996H12.5002M12.5002 6.99996L6.66683 1.16663M12.5002 6.99996L6.66683 12.8333"
+                                    stroke="#1487FC" stroke-width="1.66667" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- how it works -->
+        <section class="pb-10 md:pb-10 pt-6 md:pt-10 px-4 lg:px-0">
+            <div class="max-w-5xl mx-auto ">
+                <!-- Header Section -->
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-normal text-black mb-3">How It Works</h2>
+                    <p class="text-black text-lg sm:text-xl font-inter">Get started with Fore Mobility in four simple
+                        steps</p>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="relative">
+                    <!-- Vertical Timeline Line - Hidden on mobile, shown on medium screens and up -->
+                    <div class="hidden md:block absolute left-5 md:left-14 z-50 top-0 mb-3 bottom-0 w-0.5 bg-[#106CCA]">
+                        <!-- Arrowhead -->
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 
+                w-0 h-0 border-l-6 border-r-6 border-t-8 border-transparent 
+                border-t-[#106CCA]"></div>
+                    </div>
+
+
+                    <!-- Step 01 -->
+                    <div
+                        class="relative flex items-center mb-6 bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
+                        <!-- Timeline Dot - Hidden on mobile, shown on medium screens and up -->
+                        <div
+                            class="hidden md:block absolute left-4 md:left-11 w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded-full border-4 border-[#B0BBF2] shadow-sm shadow-primary">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="md:ml-12 lg:ml-16 w-full">
+                            <div class="flex flex-col sm:flex-row items-start gap-4">
+                                <!-- Icon -->
+                                <div class="bg-[#106CCA] p-3 md:p-4 flex-shrink-0 self-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" viewBox="0 0 48 49"
+                                        fill="none">
+                                        <path fill="white"
+                                            d="M33.449 5.00137C39.7385 10.5809 42.2699 19.8126 38.9687 27.7085L46.2893 35.0767C52.0102 42.7196 42.1719 52.2397 34.7956 46.0263C32.3404 43.9588 30.1872 41.0765 27.7076 38.9777C13.9832 44.3832 -0.855182 33.6403 0.0384675 18.8808C1.03685 2.40612 20.9787 -6.06111 33.449 5.00137ZM18.5154 2.94476C6.25729 4.03019 -0.886467 17.6866 5.00591 28.4797C12.9522 43.0338 35.2961 39.1151 37.2956 22.4065C38.6381 11.1957 29.7955 1.94637 18.5154 2.94612V2.94476ZM37.8302 30.5554L37.4616 30.5282C36.3163 32.7752 34.4243 34.6428 32.4792 36.2233L30.53 37.6393C30.6334 37.7821 30.7123 37.959 30.8333 38.0854C32.2887 39.617 35.492 43.0692 37.0508 44.1778C41.7231 47.5035 47.7583 41.6152 43.8355 36.6096L37.8302 30.5554Z M29.0396 14.4436C31.0744 14.1457 32.81 15.0204 31.3383 17.1015C32.153 17.9094 32.7257 19.0969 32.8318 20.2422C32.9814 21.8744 33.0168 25.7305 32.8291 27.3247C32.7379 28.0932 32.1544 28.4917 31.3968 28.489C29.8475 28.4822 30.0257 26.5902 29.8924 26.5684L10.3817 26.5725C10.7313 28.6468 7.71438 29.3174 7.51987 27.1914C7.34576 25.2966 7.31312 19.9266 8.08707 18.361C8.23125 18.0686 8.9984 17.0933 8.98888 16.9818C8.96848 16.7301 8.24077 16.5275 8.54274 15.4162C8.89503 14.1226 10.3001 14.5388 11.3121 14.445C12.3159 11.998 12.7553 9.5646 15.8864 9.29392C18.0886 9.10349 22.263 9.10486 24.4652 9.29392C27.6059 9.5646 28.0058 12.0102 29.0396 14.445V14.4436ZM26.16 15.1455C25.6649 13.8955 25.6173 12.2932 24.0571 12.1476C22.1012 11.9653 18.4082 11.9939 16.4292 12.1476C14.6187 12.2877 14.8228 13.7581 14.1903 15.1455H26.16ZM10.3817 23.7147H29.9686V22.3532C27.2618 22.783 26.5817 19.4043 29.4245 19.3607C29.1484 18.4657 27.8861 18.0686 27.0496 17.9965C22.6167 18.2563 17.8261 17.6673 13.4367 17.9965C12.4424 18.0713 11.5678 18.3773 10.9272 19.1608L12.3608 19.9007C13.4082 21.4541 11.9609 22.5626 10.3817 22.3545V23.7161V23.7147Z M16.4663 19.3949C17.6265 19.2004 22.7232 19.2004 23.8821 19.3949C25.7115 19.7037 25.7075 22.0949 23.6277 22.3397C22.1533 22.5138 18.0509 22.5274 16.605 22.3193C14.6219 22.0337 14.7184 19.6873 16.4663 19.3949Z" />
+                                    </svg>
+                                </div>
+
+                                <!-- Text Content -->
+                                <div class="flex-1 flex flex-col sm:flex-row items-start gap-3 mb-2">
+                                    <span class="text-4xl sm:text-5xl md:text-6xl font-bold text-black">01</span>
+                                    <div class="sm:ml-2">
+                                        <h3
+                                            class="text-2xl sm:text-3xl md:text-4xl font-medium text-black mb-2 md:mb-4">
+                                            Download and sign up</h3>
+                                        <p
+                                            class="text-[#474747] font-inter text-base sm:text-lg md:text-xl lg:text-2xl">
+                                            Get the Fore Mobility app from the App Store or Google Play, create your
+                                            account in minutes, and you're ready to start booking.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 02 -->
+                    <div
+                        class="relative flex items-center mb-6 bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
+                        <!-- Timeline Dot - Hidden on mobile, shown on medium screens and up -->
+                        <div
+                            class="hidden md:block absolute left-4 md:left-11 w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded-full border-4 border-[#B0BBF2] shadow-sm shadow-primary">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="md:ml-12 lg:ml-16 w-full">
+                            <div class="flex flex-col sm:flex-row items-start gap-4">
+                                <!-- Icon -->
+                                <div class="bg-[#106CCA] p-3 md:p-4 flex-shrink-0 self-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" viewBox="0 0 48 69"
+                                        fill="none">
+                                        <path fill="white"
+                                            d="M11.0436 3.26466L38.4512 3.23535C41.8662 3.66589 44.4237 6.30039 44.8011 9.70986L44.792 61.3795C44.2772 64.8531 41.6426 67.4308 38.1141 67.7092C29.5199 68.3853 20.0481 67.1926 11.3623 67.7001C7.88876 67.3355 5.23227 64.69 4.84937 61.2054L4.85853 9.53581C5.33486 6.26192 7.74402 3.73367 11.0454 3.26466H11.0436ZM8.51898 10.45V54.7859L8.79379 55.0607H40.8549L41.1297 54.7859V10.45C41.1297 10.3566 40.8695 9.29031 40.8072 9.1236C40.4372 8.11596 39.4955 7.35382 38.4622 7.07169L10.7669 7.19993C9.4057 7.75505 8.67654 9.02283 8.51898 10.4482V10.45ZM41.1297 58.908H8.51898C8.41272 61.0222 8.87807 63.2354 11.1865 63.8436L38.8817 63.7154C40.8823 62.9129 41.2066 60.8518 41.1297 58.9099V58.908Z M24.2383 22.6863C39.7998 22.0762 41.6685 44.0847 27.7943 47.126C9.8969 51.0502 6.60102 23.377 24.2383 22.6863ZM30.9894 28.9263C26.6932 24.6301 19.048 26.0738 16.8074 31.7458C14.0722 38.6673 20.314 45.3269 27.4279 43.2823C33.58 41.5144 35.4816 33.4203 30.9894 28.9263Z M35.8168 14.3889H13.832V18.053H35.8168V14.3889Z M28.2137 30.8794L30.8665 33.534L23.8167 40.5838L18.7822 35.5493L21.4351 32.8947L23.8167 35.2708L28.2137 30.8794Z" />
+                                    </svg>
+                                </div>
+
+                                <!-- Text Content -->
+                                <div class="flex-1 flex flex-col sm:flex-row items-start gap-3 mb-2">
+                                    <span class="text-4xl sm:text-5xl md:text-6xl font-bold text-black">02</span>
+                                    <div class="sm:ml-2">
+                                        <h3
+                                            class="text-2xl sm:text-3xl md:text-4xl font-medium text-black mb-2 md:mb-4">
+                                            Browse & Select</h3>
+                                        <p
+                                            class="text-[#474747] font-inter text-base sm:text-lg md:text-xl lg:text-2xl">
+                                            Pick from a wide range of cars that fit your budget and lifestyle.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 03 -->
+                    <div
+                        class="relative flex items-center mb-6 bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
+                        <!-- Timeline Dot - Hidden on mobile, shown on medium screens and up -->
+                        <div
+                            class="hidden md:block absolute left-4 md:left-11 w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded-full border-4 border-[#B0BBF2] shadow-sm shadow-primary">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="md:ml-12 lg:ml-16 w-full">
+                            <div class="flex flex-col sm:flex-row items-start gap-4">
+                                <!-- Icon -->
+                                <div class="bg-[#106CCA] p-3 md:p-4 flex-shrink-0 self-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" viewBox="0 0 48 34"
+                                        fill="white">
+                                        <path
+                                            d="M32.3182 0V23.5227C31.14 24.6464 30.3873 25.9132 30.0341 27.5114C29.9577 27.8591 30.1309 28.5 29.7764 28.6173L18.3409 28.6364C17.8895 28.5518 17.9155 27.3245 17.7968 26.8623C17.3332 25.0609 15.7718 23.2909 14.0945 22.5191C9.42 20.3686 4.35818 23.5909 4.09091 28.6364H0V19.3636H8.25C9.02454 19.3636 9.74318 18.1323 9.69 17.3877C9.64227 16.7223 8.75591 15.6818 8.11364 15.6818H5.59091V12.9545H17.6591C18.7323 12.9545 19.5423 11.6277 19.3323 10.5995C19.2245 10.0718 18.4595 9.27273 17.9318 9.27273H0V6.40909H11.6591C11.7327 6.40909 12.4295 5.90318 12.5264 5.77636C13.0091 5.14091 13.0541 4.35682 12.6068 3.68864C12.5073 3.54 11.7218 2.86364 11.6591 2.86364H8.93182L8.72727 2.65909V0H32.3182Z M48.0001 15.6819V28.6364H43.9092C43.7551 24.2373 39.4814 20.8801 35.1819 22.091V15.6819H48.0001Z M47.3182 12.9545H35.1819V3.27271H40.841L47.3182 12.9545Z M10.331 24.7174C16.1906 23.8596 16.931 32.3756 11.6442 32.9837C6.05875 33.626 5.32784 25.4483 10.331 24.7174ZM9.68193 30.2728H12.341L12.5456 30.0683V27.6137L12.341 27.4092H9.68193V30.2728Z M36.24 24.7173C41.9837 23.9387 42.7827 32.396 37.4182 32.9851C31.935 33.5864 31.0623 25.4196 36.24 24.7173ZM38.3182 27.4092H35.6591L35.4546 27.6137V30.0683L35.6591 30.2728H38.3182V27.4092Z M5.99998 0H3.27271V2.86364H5.99998V0Z M2.86364 12.9546H0V15.6819H2.86364V12.9546Z M36.9109 31.0911C38.1535 31.0911 39.1609 30.0837 39.1609 28.8411C39.1609 27.5984 38.1535 26.5911 36.9109 26.5911C35.6682 26.5911 34.6609 27.5984 34.6609 28.8411C34.6609 30.0837 35.6682 31.0911 36.9109 31.0911Z M36.5208 29.1056C36.5457 29.1056 36.5658 29.0855 36.5658 29.0606C36.5658 29.0358 36.5457 29.0156 36.5208 29.0156C36.496 29.0156 36.4758 29.0358 36.4758 29.0606C36.4758 29.0855 36.496 29.1056 36.5208 29.1056Z M11.2104 31.3951C12.4862 31.3951 13.5204 30.3609 13.5204 29.0851C13.5204 27.8094 12.4862 26.7751 11.2104 26.7751C9.93461 26.7751 8.90039 27.8094 8.90039 29.0851C8.90039 30.3609 9.93461 31.3951 11.2104 31.3951Z" />
+                                    </svg>
+                                </div>
+
+                                <!-- Text Content -->
+                                <div class="flex-1 flex flex-col sm:flex-row items-start gap-3 mb-2">
+                                    <span class="text-4xl sm:text-5xl md:text-6xl font-bold text-black">03</span>
+                                    <div class="sm:ml-2">
+                                        <h3
+                                            class="text-2xl sm:text-3xl md:text-4xl font-medium text-black mb-2 md:mb-4">
+                                            Get Your Car</h3>
+                                        <p
+                                            class="text-[#474747] font-inter text-base sm:text-lg md:text-xl lg:text-2xl">
+                                            We'll bring it right to your door, fully insured and ready to go.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 04 -->
+                    <div
+                        class="relative flex items-center mb-6 bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
+                        <!-- Timeline Dot - Hidden on mobile, shown on medium screens and up -->
+                        <div
+                            class="hidden md:block absolute left-4 md:left-11 w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded-full border-4 border-[#B0BBF2] shadow-sm shadow-primary">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="md:ml-12 lg:ml-16 w-full">
+                            <div class="flex flex-col sm:flex-row items-start gap-4">
+                                <!-- Icon -->
+                                <div class="bg-[#106CCA] p-3 md:p-4 flex-shrink-0 self-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" viewBox="0 0 48 64"
+                                        fill="white">
+                                        <path
+                                            d="M6.38735 6.83674C2.96806 7.40512 5.10444 12.4628 3.87566 13.3451C1.68695 14.9149 2.32029 9.07958 2.68297 8.00237C4.0994 3.79817 8.53456 5.34272 11.9448 4.99448C18.4009 -1.66006 29.5664 -1.67089 36.017 4.99448C40.0498 5.15687 45.1291 3.91726 45.6307 9.45489C45.9248 12.71 45.9212 19.0073 45.6397 22.2696C45.4611 24.3428 44.1493 26.4359 41.9354 26.6849C41.0675 26.7823 39.642 26.499 38.904 26.721C38.6081 26.8094 36.9499 28.2493 36.2588 28.5867C35.4685 28.9746 34.6204 29.2254 33.7706 29.4365L32.6428 31.7371H40.131C40.4449 31.7371 41.7008 32.4517 41.9642 32.7025C44.0429 34.6909 42.6986 39.6349 43.119 42.2837C43.2129 42.8737 43.774 43.9347 43.9581 44.6925C45.3853 50.5495 46.5925 56.4643 47.9836 62.3303C48.1857 63.6818 46.6141 63.9272 46.163 62.6966C44.7357 57.1139 43.8029 51.3705 42.2998 45.8095C41.7026 43.6027 41.2353 42.0744 39.0267 40.9629C38.4944 40.6959 37.161 40.4992 36.9986 39.9091C37.0473 37.457 40.0101 39.4147 41.1234 40.0373V34.7143C41.1234 34.2542 40.0317 33.6227 39.5788 33.5523C37.1321 33.1752 33.8373 33.8049 31.295 33.5451C31.1524 33.5722 29.2722 35.1275 29.2037 35.243C28.8717 35.7934 28.9529 37.2008 29.5375 37.5057C30.3855 37.9496 33.9889 37.7836 34.3606 38.4097C35.2465 40.9322 31.3581 39.3606 31.0279 39.6818L30.6742 41.4627C33.2509 42.5868 35.4739 44.5951 37.0509 46.9083C37.3252 47.3107 38.175 49.1223 38.2815 49.1963C38.4601 49.3226 39.3713 49.3713 39.8928 49.66C41.109 50.3312 41.7387 51.578 41.856 52.9295C42.0057 54.6707 42.0057 57.8789 41.856 59.6183C41.7279 61.1015 41.0566 62.545 39.6276 63.1639C38.6406 63.5916 33.7128 63.6764 32.5977 63.449C31.7136 63.2686 30.7031 62.1409 30.649 61.2315C30.6255 60.8507 30.8421 60.3906 30.8024 60.1723C30.7428 59.8601 29.2813 58.6241 29.5627 57.7346C28.8915 57.8013 27.2423 57.5036 26.766 57.8807C25.862 58.5935 27.5437 63.8713 25.3838 63.4635C24.9959 63.3895 24.5267 62.8554 24.5267 62.4981V59.16H23.2637V63.0394C20.1529 65.073 22.154 58.6277 21.2067 57.8789C20.7195 57.4946 19.0793 57.8158 18.3991 57.7237C18.7545 58.6295 17.2353 59.824 17.1703 60.1723C17.1306 60.387 17.3363 60.7551 17.3273 61.0546C17.3002 61.8991 16.5839 63.0088 15.79 63.3227C14.996 63.6367 10.6619 63.5916 9.64425 63.4869C7.62696 63.283 6.32781 61.7854 6.12571 59.788C5.97054 58.2524 5.94528 52.87 6.39637 51.5816C6.63094 50.9104 7.37073 50.0966 7.98061 49.7376C8.49486 49.4344 9.51433 49.3172 9.69116 49.1945C9.83371 49.0934 10.9542 46.708 11.4558 46.1775C12.4681 45.1094 13.5688 45.7788 13.0184 47.1988C12.8795 47.5579 11.6146 48.9599 11.8979 49.2324H13.9693C14.4529 49.1349 15.3389 47.6571 15.8657 47.1555C21.0678 42.1917 29.8118 43.1263 33.7291 49.1439L36.0747 49.2324C36.5511 48.7686 33.3519 45.4287 32.8305 44.9903C28.6894 41.5078 22.8721 40.8456 17.9949 43.1498C17.1541 43.5468 15.0808 45.3764 14.637 43.8698C14.258 42.5814 16.5694 42.0167 17.3219 41.3689L16.8654 39.8478L16.4955 39.6601C12.284 40.501 7.65402 39.5194 5.994 44.5031C4.13008 50.1021 3.522 56.8234 1.85115 62.5541C1.7483 63.3895 0.510498 63.8568 0.0774473 63.1297C-0.243732 62.5919 0.616956 59.4469 0.797393 58.6151C1.80063 53.9743 2.87603 49.2991 4.00918 44.6853C4.19503 43.9311 4.75439 42.8647 4.84822 42.2765C5.23074 39.8749 4.18782 35.3585 5.50321 33.3683C5.85867 32.8306 7.19391 31.7317 7.83626 31.7317H15.3244C15.1259 31.2337 14.5052 29.8407 14.1588 29.5592C13.7528 29.2309 11.9899 28.7563 11.2339 28.3341C10.5933 27.9768 9.53598 26.9303 9.18774 26.7715C8.52373 26.4683 6.74822 26.7823 5.86769 26.6632C4.3033 26.4503 2.96084 24.9491 2.56749 23.4677C2.2445 22.2497 2.13985 18.2855 2.34374 17.0369C2.49531 16.113 3.41554 15.5844 4.04527 16.3981C5.38773 18.1321 2.22105 25.5138 7.38517 24.8751C6.97377 23.6914 6.31157 22.7333 5.9958 21.4847C4.62628 16.0571 7.728 12.0532 9.92393 7.4773C10.0286 7.25716 10.1531 7.11281 10.0917 6.83313C8.96219 6.96485 7.46997 6.6545 6.39276 6.83313L6.38735 6.83674ZM41.5727 6.83674C40.4955 6.65811 39.0032 6.96846 37.8737 6.83674C37.9278 7.88869 40.1869 9.79231 38.8751 10.6386C37.6969 11.3982 37.069 9.27265 36.4988 8.48053C31.1506 1.04289 21.0443 -0.546762 13.9711 5.57909C11.4378 7.77141 9.03076 12.5043 8.01851 15.6854C6.51366 20.4111 8.63199 25.4904 13.3324 27.2244C13.0978 25.1945 11.8113 19.5179 13.9874 18.4064C14.922 17.93 17.7531 18.2927 19.0144 18.2007C21.923 17.9878 23.971 16.8727 25.4199 14.3213C24.1352 13.9749 22.7585 13.5093 21.8057 12.5259C21.1453 11.8439 19.3897 8.89734 21.3673 8.98936C22.2767 9.03086 22.3777 10.1875 22.8162 10.7937C25.6635 14.7273 34.458 9.60826 35.1455 15.606C35.3764 17.6305 35.2916 21.2591 35.1726 23.3522C35.1004 24.6351 34.763 25.9469 34.716 27.2262C39.3082 25.254 41.3471 20.6366 39.9866 15.8171C39.7448 14.9637 38.4186 12.8724 40.2916 12.9752C41.1414 13.0203 41.7405 15.0809 41.9336 15.855C42.4261 17.8254 42.4334 19.6604 41.9336 21.6308C41.6376 22.7982 40.9429 23.7492 40.5803 24.8769C41.9155 25.0537 43.0847 24.5647 43.5629 23.2602L43.6369 8.9208C43.4979 8.02222 42.4568 6.98109 41.5727 6.83494V6.83674ZM14.7777 20.0087V25.1512C14.7777 28.7455 19.6603 34.9255 23.2077 35.6653C25.4993 36.1434 28.8013 33.408 30.2069 31.7389C33.6352 27.6683 33.6605 20.8748 33.1895 15.7594C33.1444 15.2596 33.1138 14.7832 32.5959 14.5486C32.2098 14.3718 27.9334 14.3032 27.5256 14.444C26.351 16.4108 25.1709 18.1394 23.0183 19.139C22.5094 19.3753 20.7376 20.0087 20.2792 20.0087H14.7759H14.7777ZM6.83844 34.7143C6.53892 36.1218 7.06038 38.5144 6.83844 40.0373C10.1729 37.8251 14.5251 38.4169 18.3161 37.5436C20.106 35.8529 18.0166 34.5303 16.6687 33.5451C14.1263 33.8049 10.8315 33.1752 8.38479 33.5523C7.86513 33.6317 6.95212 34.1857 6.84025 34.7143H6.83844ZM27.2261 36.6089C24.866 37.8973 23.0941 37.8973 20.7321 36.6089C20.743 37.7854 19.9057 39.016 18.7672 39.3372L19.193 40.7337C22.2857 39.6403 25.7627 39.6511 28.8482 40.759L29.2001 39.3317C28.02 39.0015 27.2026 37.8359 27.2261 36.6089ZM18.206 52.6679H21.0028C21.1832 52.6679 22.3092 51.3074 24.2579 51.3976C25.7357 51.4662 26.8039 52.6679 26.9572 52.6679H29.754C29.3282 51.4012 29.8893 49.5734 31.378 49.4182C31.5728 49.1981 30.3404 48.0956 30.1005 47.9007C26.5928 45.0859 21.3637 45.1166 17.8614 47.9007C17.6485 48.0703 16.6398 49.0104 16.5839 49.1512C16.4413 49.5192 17.5113 49.5571 17.6503 49.8855C18.3143 50.7264 18.5218 51.6358 18.206 52.6679ZM12.1614 52.307C13.1682 52.141 15.0087 52.307 16.131 52.307C16.5712 52.307 16.5712 51.0439 16.131 51.0439H9.45479C9.34653 51.0439 8.49847 51.5979 8.37397 51.7675C8.15203 52.0706 7.98603 52.7581 7.94092 53.1388C7.76589 54.6202 7.78033 57.7526 7.91385 59.2611C8.01851 60.452 8.55441 61.4931 9.8319 61.6735C10.5518 61.7746 14.5864 61.789 15.0971 61.5707C15.5373 61.383 15.6041 60.7352 15.1368 60.5187C14.2562 60.1073 11.7842 61.0276 11.5605 59.575C11.4793 59.0464 12.0513 58.4437 12.5222 58.4437H16.131C16.1779 58.4437 16.6236 58.0215 16.5676 57.8374C16.5514 57.7418 16.1635 57.3611 16.131 57.3611H12.5222C12.3472 57.3611 11.611 56.9587 11.5587 56.6934C11.1852 53.8281 16.9538 56.8252 16.3601 54.3369C15.7051 53.7307 12.6124 54.4542 11.8889 54.0248C11.344 53.7 11.4414 52.4279 12.1614 52.3088V52.307ZM38.5052 51.0439C36.7045 50.6831 33.7633 51.3128 31.829 51.0439C31.3906 51.2226 31.5169 52.307 31.829 52.307H35.7987C36.4428 52.307 36.6521 53.6783 36.0711 54.023C35.3476 54.4524 32.2549 53.7289 31.5999 54.3351C31.3996 54.5661 31.4104 54.9991 31.6414 55.1958C32.4353 55.8688 37.0924 54.4488 36.4013 56.6916C36.349 56.9551 35.6128 57.3593 35.4378 57.3593H31.829C31.47 57.3593 31.4718 58.4419 31.829 58.4419H35.4378C35.9105 58.4419 36.4825 59.0445 36.3995 59.5732C36.1758 61.0258 33.702 60.1055 32.8233 60.5169C32.3559 60.7352 32.4227 61.3812 32.863 61.5689C33.3736 61.7872 37.41 61.7728 38.1281 61.6717C39.4056 61.4913 39.9415 60.452 40.0462 59.2593C40.1761 57.7905 40.214 54.3676 40.0227 52.953C39.9145 52.1536 39.3334 51.2081 38.5052 51.0421V51.0439ZM23.3864 53.2471C21.2356 53.7415 21.6055 57.6173 24.202 57.325C27.0096 57.0092 26.36 52.5632 23.3864 53.2471ZM20.1908 54.6545L18.4063 54.6725L18.206 55.914H20.1908C20.0735 55.4394 19.9075 55.1146 20.1908 54.6527V54.6545ZM29.5537 54.6725L27.7692 54.6545L27.9478 55.9176H29.754L29.5537 54.6725Z M21.1401 31.3311C20.7161 30.8926 20.8099 29.8695 21.5551 29.7504C22.3003 29.6314 23.1754 30.3188 24.0632 30.299C24.8463 30.2809 26.8654 29.0233 27.053 30.3964C27.3273 32.3884 22.2426 32.4769 21.1401 31.3329V31.3311Z M30.7825 18.4352C31.2643 19.0126 30.8944 19.9472 30.1979 20.014C29.8515 20.0483 29.2452 19.6513 28.5848 19.6351C27.6375 19.6116 26.8165 20.3623 26.2211 19.6604C24.7397 17.9173 29.5682 16.9791 30.7825 18.4352Z M22.6646 25.9956C23.1861 25.8422 23.5812 26.1291 24.0504 26.1255C24.7144 26.1219 25.5715 25.4759 25.8457 26.5387C26.2986 28.3015 22.5419 28.2853 22.2045 27.2875C22.0566 26.8526 22.1612 26.1435 22.6664 25.9956H22.6646Z M20.1477 21.4955C20.514 21.8618 20.8551 25.2757 19.2401 24.8517C17.8183 24.4782 18.5833 19.9275 20.1477 21.4955Z M27.8127 24.655C27.4464 24.2887 27.1054 20.8748 28.7203 21.2988C30.1421 21.6724 29.3771 26.223 27.8127 24.655Z" />
+                                    </svg>
+                                </div>
+
+                                <!-- Text Content -->
+                                <div class="flex-1 flex flex-col sm:flex-row items-start gap-3 mb-2">
+                                    <span class="text-4xl sm:text-5xl md:text-6xl font-bold text-black">04</span>
+                                    <div class="sm:ml-2">
+                                        <h3
+                                            class="text-2xl sm:text-3xl md:text-4xl font-medium text-black mb-2 md:mb-4">
+                                            Drive & Enjoy</h3>
+                                        <p
+                                            class="text-[#474747] font-inter text-base sm:text-lg md:text-xl lg:text-2xl">
+                                            Hit the road with zero worries — we've got insurance & maintenance covered.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="text-center mt-9">
+                    <button @click="open = true"
+                        class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-3 rounded-lg inline-flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
+                        Ask an Expert
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 7l-10 10M7 7h10v10" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="container py-10 pb-20 px-4 sm:px-6 lg:px-8">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start mt-12 gap-6 md:gap-10">
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-9 h-9  flex items-center justify-center text-black flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-black font-medium ml-3 text-2xl font-helvetica">Safety Inspected</span>
+                    </div>
+                    <p class="mt-2 text-base font-helvetica pr-4 md:pr-8">Every vehicle is thoroughly checked to
+                        ensure top safety standards.</p>
+                </div>
+
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-9 h-9  flex items-center justify-center text-black flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33H15.8a1.65 1.65 0 0 0-1.51 1v.09a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09a1.65 1.65 0 0 0-1.51-1H4.2a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V9a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09a1.65 1.65 0 0 0 1.51-1V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1H12.2a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V15a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-black font-medium ml-3 text-2xl font-helvetica">Regularly
+                            Maintained</span>
+                    </div>
+                    <p class="mt-2 text-base font-helvetica pr-4 md:pr-8">Every vehicle is routinely serviced for
+                        safety and reliability.</p>
+                </div>
+
+                <div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-9 h-9  flex items-center justify-center text-black flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-headset-icon lucide-headset">
+                                <path
+                                    d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" />
+                                <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
+                            </svg>
+                        </div>
+                        <span class="text-black font-medium ml-3 text-2xl font-helvetica">24/7 Roadside
+                            Assistance</span>
+                    </div>
+                    <p class="mt-2 text-base font-helvetica pr-4 md:pr-8">Get round-the-clock support anytime your
+                        vehicle needs help on the road.</p>
+                </div>
+
+                <div class="ml-0 lg:ml-4">
+                    <div class="flex items-center  space-x-2">
+                        <div class="w-9 h-9   flex items-center justify-center text-black flex-shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <polyline points="9 12 12 15 15 9"></polyline>
+                            </svg>
+                        </div>
+                        <span class="text-black font-medium ml-3 text-2xl font-helvetica">Fully Insured</span>
+                    </div>
+                    <p class="mt-2 text-base font-helvetica pr-4 md:pr-8">All vehicles come with complete insurance
+                        coverage for peace.</p>
+                </div>
+            </div>
+        </section>
+        <!-- smarter ways to drive -->
+        <section class="py-10 container">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-4xl font-inter font-normal mb-4">The Smarter Way to Drive</h2>
+                <p class="text-sm md:text-lg"> Compare costs, flexibility, and benefits — see why <br
+                        class="hidden sm:block">
+                    Fore is the clear winner.
+                </p>
+            </div>
+
+            <div class="font-inter py-10">
+                <div class="flex justify-center items-center p-4">
+
+                    <div
+                        class="hidden md:block bg-white w-full border rounded-xl border-[#B6DAFE] shadow-sky-300 shadow-sm">
+                        <div
+                            class="grid grid-cols-4 items-center rounded-t-xl overflow-hidden text-center text-sm lg:text-base font-semibold">
+                            <div class="bg-primary text-white px-4 py-5 border-r border-white/20">Feature</div>
+                            <div class="bg-primary text-white px-4 py-5 border-r border-white/20">Fore Mobility</div>
+                            <div class="bg-primary text-white px-4 py-5 border-r border-white/20">Car Ownership</div>
+                            <div class="bg-primary text-white px-4 py-5">Traditional Lease</div>
+                        </div>
+
+                        <div class="grid grid-cols-4 items-center bg-[#E6E9FB] text-center text-sm lg:text-base">
+                            <div class="flex items-center p-4 text-[#000D4A] text-left font-medium">
+                                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='30'%20viewBox='0%200%2024%2030'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_345_832)'%3e%3cpath%20d='M11.8133%2010.5797C19.2663%2010.429%2024.0125%2018.473%2020.4278%2024.9894C17.0729%2031.0878%208.50014%2031.6898%204.29975%2026.133C-0.455799%2019.8422%203.9549%2010.739%2011.8133%2010.5806V10.5797ZM11.3867%2012.3704C5.18615%2012.8481%201.94795%2020.0295%205.66384%2025.0243C9.11832%2029.6692%2016.3253%2029.12%2018.9964%2023.9813C21.8727%2018.4475%2017.6%2011.891%2011.3867%2012.3695V12.3704Z'%20fill='%230C5197'/%3e%3cpath%20d='M4.08093%206.55463V12.3447H2.37796V6.55463L1.22845%207.57982L-0.000244141%206.35368L3.18687%203.15039L6.46339%206.42691L5.23044%207.57982L4.08093%206.55463Z'%20fill='%230C5197'/%3e%3cpath%20d='M21.6216%206.55463V12.3447H19.9186V6.55463L18.7691%207.57982L17.5361%206.42691L20.8127%203.15039L23.9998%206.35368L22.7711%207.57982L21.6216%206.55463Z'%20fill='%230C5197'/%3e%3cpath%20d='M12.8513%203.40424V8.85376H11.1483V3.40424L9.99882%204.42943L8.76587%203.27652L12.0424%200L15.2295%203.20329L14.0008%204.42943L12.8513%203.40424Z'%20fill='%230C5197'/%3e%3cpath%20d='M12.8513%2014.1328V15.9635C13.8884%2016.4156%2014.6292%2017.2995%2014.6394%2018.4754H12.8513C12.7644%2017.073%2010.68%2017.5643%2011.213%2018.879C11.4523%2019.4699%2012.2084%2019.3448%2012.6827%2019.4529C13.4763%2019.6351%2014.229%2020.37%2014.4861%2021.1405C14.9834%2022.6281%2014.1966%2023.9343%2012.8513%2024.5635V26.4794H11.1483V24.5635C10.1197%2024.0637%209.40192%2023.2429%209.36019%2022.0516H11.1483C11.1713%2023.1654%2012.8598%2023.1628%2012.8598%2022.0091C12.8598%2021.006%2011.9044%2021.1984%2011.2164%2021.0052C10.5097%2020.8059%209.7919%2020.1256%209.54071%2019.4452C8.98724%2017.9407%209.75103%2016.5774%2011.1483%2015.9644V14.1337H12.8513V14.1328Z'%20fill='%230C5197'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_345_832'%3e%3crect%20width='24'%20height='29.9562'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" class="w-6 mr-3" alt="Upfront Cost">
+                                Upfront Cost
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> Low — From $X Down
+                                </span>
+                            </div>
+                            <div class="p-4 font-medium text-[#000D4A]">High — $20k+ Upfront</div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Medium
+                                </span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="grid grid-cols-4 items-center text-center text-sm lg:text-base border-t border-gray-200">
+                            <div class="flex items-center p-4 text-[#000D4A] text-left font-medium">
+                                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='28'%20viewBox='0%200%2024%2028'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_345_925)'%3e%3cpath%20d='M5.06971%200.856115L8.64996%200.859231C8.57829%20-0.289784%2010.2227%20-0.280436%2010.2111%200.856115L13.7905%200.859231C13.7337%20-0.267193%2015.4342%20-0.298353%2015.3493%200.859231L18.8875%200.863905C19.1002%20-0.291342%2020.3652%20-0.284331%2020.6192%200.863126C21.4496%200.946478%2022.5316%200.736929%2023.3293%200.863905C23.718%200.925445%2024.0164%201.35934%2023.9992%201.75196V26.5302C24.0031%2027.0537%2023.6316%2027.4291%2023.1034%2027.426H0.895861C0.372378%2027.4299%20-0.00309672%2027.0583%201.92505e-05%2026.5302L0.0218311%201.54007C0.0607807%201.27132%200.337323%200.936351%200.603739%200.87559C1.02985%200.778995%203.31619%200.943362%203.42291%200.851441C3.53042%20-0.284331%205.00349%20-0.273425%205.06971%200.856115ZM3.43071%202.49512H1.63902V5.14369H22.3602V2.49512H20.5686C20.4034%203.63634%2019.1072%203.57636%2018.8851%202.49044L15.3501%202.4959C15.3984%203.61219%2013.8092%203.57324%2013.789%202.49901L10.2531%202.49122C10.1355%203.56312%208.6336%203.62933%208.64996%202.4959L5.11489%202.49044C4.89288%203.57636%203.59663%203.63634%203.43148%202.49512H3.43071ZM22.3602%206.77958H1.63902V25.787H22.3602V6.77958Z'%20fill='%230C5197'/%3e%3cpath%20d='M11.2831%208.67247C16.8941%208.19962%2021.0789%2013.415%2019.2802%2018.7729C17.5508%2023.9244%2011.0478%2025.6732%206.9355%2022.0883C1.8993%2017.6971%204.52373%209.24269%2011.2831%208.67325V8.67247ZM16.3348%2020.6183C19.4017%2017.5499%2018.2441%2012.1631%2014.2012%2010.6153C9.00762%208.62651%204.2246%2013.9128%206.53276%2018.9848C8.2146%2022.6788%2013.497%2023.4578%2016.334%2020.6191L16.3348%2020.6183Z'%20fill='%230C5197'/%3e%3cpath%20d='M12.7872%2019.953C13.01%2020.8255%2011.8283%2021.3233%2011.3391%2020.6448C11.1747%2020.4165%2011.2752%2020.0948%2011.1435%2019.9834C11.0329%2019.8892%2010.5375%2019.7645%2010.3373%2019.6212C9.52013%2019.0346%209.97194%2017.9448%2010.8639%2018.0788C11.1264%2018.1185%2011.3266%2018.3927%2011.5876%2018.4473C12.3362%2018.6038%2012.8994%2018.3039%2012.9383%2017.5062C11.9825%2016.8877%2010.5718%2017.0716%209.83094%2016.0752C9.16724%2015.1833%209.51857%2013.7897%2010.3256%2013.0917C10.5188%2012.925%2011.1817%2012.6539%2011.2074%2012.611C11.2962%2012.4622%2011.1069%2012.1156%2011.4598%2011.811C11.8797%2011.4488%2012.5808%2011.6046%2012.7576%2012.1366C12.8036%2012.2745%2012.7272%2012.4763%2012.855%2012.5846C13.0396%2012.7427%2013.5966%2012.8245%2013.87%2013.1275C14.4597%2013.7834%2013.8763%2014.7065%2012.9921%2014.4728C12.8122%2014.4253%2012.6291%2014.1682%2012.4117%2014.1192C11.713%2013.961%2011.0563%2014.2898%2011.0727%2015.0625C11.7878%2015.586%2012.8059%2015.5346%2013.5826%2015.9856C15.2683%2016.9641%2014.4839%2019.5191%2012.7864%2019.953H12.7872Z'%20fill='%230C5197'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_345_925'%3e%3crect%20width='24'%20height='27.426'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" class="w-6 mr-3" alt="Upfront Cost">
+                                Monthly Payment
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="flex items-center text-start bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-3"></i> Flexible — Pay Only for What You Need
+                                </span>
+                            </div>
+                            <div class="p-4 font-medium text-[#000D4A]">High Loan Payments</div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Fixed + Insurance
+                                </span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="grid grid-cols-4 items-center bg-[#E6E9FB] text-center text-sm lg:text-base border-t border-gray-200">
+                            <div class="flex items-center p-4 text-[#000D4A] text-left font-medium">
+                                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_345_876)'%3e%3cpath%20d='M14.4562%200.0724931V3.07283C14.778%202.65074%2014.9547%202.19387%2015.3079%201.77655C16.5626%200.293427%2018.6403%20-0.312778%2020.5101%200.257969C21.0344%200.418214%2021.4961%200.743478%2022.0252%200.89145L18.9615%204.00294L19.9454%205.04897L23.014%201.98316C25.3965%205.60267%2022.9171%2010.1011%2018.5148%209.82292C18.2809%209.80792%2017.9141%209.64085%2017.7109%209.69881L16.0941%2011.2904L17.0133%2012.2096L17.5493%2011.7384L18.5462%2012.7223L16.1623%2015.109L20.1848%2019.1362C20.2359%2019.1819%2020.2673%2019.1635%2020.3198%2019.1362C20.538%2019.0237%2020.9212%2018.4223%2021.1394%2018.3098C21.192%2018.2825%2021.2233%2018.2641%2021.2745%2018.3098L24%2021.3142L21.3774%2023.8741L18.373%2021.2113C18.3096%2021.1322%2018.3655%2021.0994%2018.4071%2021.0394C18.5639%2020.8117%2019.0944%2020.4605%2019.1995%2020.2566C19.2267%2020.2041%2019.2451%2020.1727%2019.1995%2020.1216L15.1722%2016.0991L12.7855%2018.483L11.7982%2017.4956C11.8916%2017.347%2012.3328%2017.0892%2012.2441%2016.9167L11.3195%2016.0616L9.69656%2017.7145C9.61405%2017.9873%209.79475%2018.3684%209.81793%2018.6562C9.98159%2020.6732%208.75963%2022.7851%206.88578%2023.5638C5.18173%2024.2723%203.55745%2023.9566%201.9775%2023.1206L4.97307%2020.0098L3.98909%2018.9637L0.988749%2021.9634C0.928742%2022.0411%200.909649%2022.0486%200.85237%2021.9634C0.688033%2021.7159%200.328674%2020.8376%200.237982%2020.5321C-0.266621%2018.8389%200.16911%2017.1874%201.21446%2015.8038L0%2013.6436L2.85237%2012.0629C2.77941%2011.3476%202.83191%2010.6535%202.86669%209.93748L0.000681896%208.29002L3.14695%202.80962L3.39039%202.85395L6.10297%204.41276C6.7194%203.93202%207.41493%203.58494%208.11456%203.24399V0.0724931H14.4562ZM19.434%201.43697C16.6089%201.23444%2014.7112%204.05613%2015.925%206.62006L11.8023%2010.7537L13.1954%2012.2089L17.3236%208.08204C17.4668%208.01794%2017.9611%208.26547%2018.1787%208.31798C18.9049%208.49322%2019.3788%208.48027%2020.1002%208.27229C21.6877%207.81542%2022.7535%206.12432%2022.5026%204.50413L19.9461%207.02578L16.9847%204.05135L19.434%201.4356V1.43697ZM13.0924%201.50447H9.47835V4.30025C8.23321%204.5846%207.18104%205.29309%206.24003%206.12432L3.72315%204.71552L1.91067%207.74382L4.42482%209.25558C4.22775%2010.4169%204.10979%2011.5679%204.41118%2012.7257L1.94204%2014.1871L2.36209%2014.8601C3.55063%2014.2382%204.84964%2013.9907%206.17047%2014.3241L7.48244%2013.0633C5.60723%209.33673%209.52336%205.46151%2013.2533%207.28968L14.2884%206.27502L14.1739%204.65074L13.0924%204.30025V1.50447ZM12.1377%208.32411C9.84862%207.77587%207.88681%209.72745%208.52506%2012.0057L12.1377%208.32411ZM4.50119%2022.5751C6.82987%2022.7162%208.62871%2020.9542%208.37913%2018.5948C8.34777%2018.2996%208.01227%2017.4752%208.07842%2017.3279L12.2053%2013.1997C11.8186%2012.9412%2011.1913%2012.0118%2010.8421%2011.8318C10.7624%2011.7909%2010.7289%2011.7991%2010.6703%2011.8659L6.61302%2015.9313C6.54143%2015.9668%205.84453%2015.6886%205.66383%2015.6511C3.27992%2015.1581%201.19741%2017.1103%201.43334%2019.5072L3.98977%2016.9856L6.95124%2019.96L4.50187%2022.5757L4.50119%2022.5751ZM15.104%2012.2798L12.418%2014.9856C12.3641%2015.1894%2013.1176%2015.7725%2013.2724%2015.9559L16.0198%2013.2583L15.104%2012.2805V12.2798ZM21.1183%2020.3323C21.0385%2020.3528%2020.3805%2021.0258%2020.3935%2021.1001L21.3679%2021.9573L22.0273%2021.246C21.8814%2021.0674%2021.3099%2020.2825%2021.1183%2020.333V20.3323Z'%20fill='%230C5197'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_345_876'%3e%3crect%20width='24'%20height='23.9086'%20fill='white'%20transform='translate(0%200.0458984)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" class="w-6 mr-3" alt="Upfront Cost">
+                                Maintenance
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> Included
+                                </span>
+                            </div>
+                            <div class="p-4 font-medium text-[#000D4A]">Your Responsibility</div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Your Responsibility
+                                </span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="grid grid-cols-4 items-center text-center text-sm lg:text-base border-t border-gray-200">
+                            <div class="flex items-center p-4 text-[#000D4A] text-left font-medium">
+                                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_345_973)'%3e%3cpath%20d='M24%201.57364V5.73273H22.5682V19.7782H24V24.0055H0V19.7782H1.43182V5.73273H0V1.57364L12.0341%200L24%201.57364ZM22.5682%202.80091L12.1057%201.43386L1.43182%202.80091V4.30091H11.3182V2.93727H12.6818V4.30091H22.5682V2.80091ZM4.22727%205.73273H2.79545V19.7782H4.22727V5.73273ZM18.3409%205.73273H5.65909V19.7782H18.3409V5.73273ZM21.2045%205.73273H19.7727V19.7782H21.2045V5.73273ZM22.5682%2021.21H1.43182V22.5736H22.5682V21.21Z'%20fill='%230C5197'/%3e%3cpath%20d='M7.10053%208.74225L11.9755%207.11816L16.8792%208.72862C16.8662%2010.3241%2017.0919%2012.0375%2016.6855%2013.5886C16.2035%2015.4295%2014.9674%2017.0045%2013.2853%2017.8929C13.0358%2018.0245%2012.2101%2018.4213%2011.9721%2018.4111C11.8078%2018.4036%2011.2658%2018.1575%2011.0803%2018.0736C9.28031%2017.2575%207.83008%2015.572%207.31599%2013.6561C6.89667%2012.0927%207.1619%2010.3507%207.10122%208.74225H7.10053ZM15.536%209.76498L11.9714%208.59975L8.46349%209.76498C8.34962%2011.9645%208.46622%2014.192%2010.1578%2015.7902C10.4449%2016.0616%2011.6749%2016.9363%2012.0287%2016.9138C12.4712%2016.8852%2013.7544%2015.9075%2014.0803%2015.5516C15.5626%2013.9363%2015.6349%2011.852%2015.536%209.76498Z'%20fill='%230C5197'/%3e%3cpath%20d='M12.6818%209.95996H11.3181V12.7554H12.6818V9.95996Z'%20fill='%230C5197'/%3e%3cpath%20d='M12.6818%2014.1873H11.3181V15.5509H12.6818V14.1873Z'%20fill='%230C5197'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_345_973'%3e%3crect%20width='24'%20height='24.0055'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" class="w-6 mr-3" alt="Upfront Cost">
+                                Insurance
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> Included
+                                </span>
+                            </div>
+                            <div class="p-4 font-medium text-[#000D4A]">Additional Cost</div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Additional Cost
+                                </span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="grid grid-cols-4 items-center bg-[#E6E9FB] text-center text-sm lg:text-base border-t border-gray-200">
+                            <div class="flex items-center p-4 text-[#000D4A] text-left font-medium">
+                                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='27'%20viewBox='0%200%2024%2027'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_345_1027)'%3e%3cpath%20d='M6.667%202.22209H8.40763C8.49355%202.22209%209.09796%202.3843%209.24313%202.42355C11.006%202.89834%2012.7318%204.259%2013.4866%205.92112C13.5555%205.97148%2014.4754%205.57373%2014.6665%205.51892C14.9257%205.44411%2015.585%205.25968%2015.8146%205.25968H17.333V3.03759L24%207.59212L17.333%2012V9.85198H16.1109C15.879%209.85198%2015.1043%2010.3245%2014.9228%2010.5156C14.725%2010.7238%2014.2962%2011.4748%2014.2962%2011.7408V16.296C15.2916%2016.0398%2016.2975%2015.8583%2017.333%2015.9257V13.7777L24%2018.1855L17.333%2022.666V20.518H16.259C15.4746%2020.518%2014.2962%2021.6987%2014.2962%2022.4808V26.0732H9.70385V19.3699C9.70385%2018.71%208.54984%2017.4811%207.88914%2017.4811H6.667V19.6292L0%2015.2205L6.667%2010.7401V12.8881C7.70027%2012.8348%208.71872%2012.9436%209.70385%2013.2584V8.70317C9.70385%208.6565%209.53497%208.18468%209.49571%208.09654C9.00685%206.99216%207.78396%206.65959%206.667%206.74032V8.96241L0.00222209%204.4812L6.667%200V2.22209ZM5.11154%203.70348L5.07524%202.88945L2.74279%204.4812L5.07524%206.07296L5.11154%205.25893H7.96321C8.15283%205.25893%208.91649%205.54855%209.12684%205.65076C10.0186%206.08407%2010.7845%206.95957%2011.0378%207.92544C11.1512%207.95284%2011.1563%207.9084%2011.2171%207.84692C11.3452%207.71804%2012.217%206.79217%2012.2104%206.71736C11.5504%205.32708%2010.2342%204.25677%208.74094%203.88865C8.57281%203.84717%208.00765%203.70348%207.88914%203.70348H5.11154ZM12.7407%2015.3324V11.8141C12.7407%2010.2386%2014.5998%208.29578%2016.1849%208.29578H18.8885C18.9092%208.52096%2018.8596%208.78242%2018.8885%209.00093C18.9018%209.10388%2018.8477%209.12907%2018.9988%209.10981L21.2602%207.59138L18.8899%205.92556V6.74032C16.162%206.58108%2013.4607%206.83439%2011.9696%209.41201C11.2682%2010.6245%2011.0675%2012.514%2011.2563%2013.891C11.3023%2014.225%2011.6948%2014.3369%2011.9274%2014.5532C12.2015%2014.808%2012.437%2015.1109%2012.7414%2015.3316L12.7407%2015.3324ZM5.11154%2014.4436L5.07524%2013.5555L2.74057%2015.2205L5.00191%2016.739C5.15227%2016.7582%205.0982%2016.733%205.11228%2016.6301C5.14116%2016.4123%205.09154%2016.1501%205.11228%2015.9249H7.81581C9.38238%2015.9249%2011.26%2017.8863%2011.26%2019.4432V24.517H12.7414V18.9988C12.7414%2018.1996%2011.8852%2016.6975%2011.3363%2016.1079C10.7423%2015.4709%209.12684%2014.4436%208.26023%2014.4436H5.11228H5.11154ZM18.8885%2017.4804H15.8886C15.7079%2017.4804%2014.9776%2017.6922%2014.7761%2017.7752C14.6065%2017.8456%2014.428%2017.8967%2014.2962%2018.0359V19.7025C14.6317%2019.5877%2014.9257%2019.3403%2015.2605%2019.2225C15.4798%2019.1455%2016.2094%2018.9618%2016.4071%2018.9618H18.8885L18.9248%2019.8499L21.2594%2018.1848L18.9981%2016.6664C18.8477%2016.6471%2018.9018%2016.6723%2018.8877%2016.7753C18.8707%2016.9064%2018.9129%2017.4552%2018.8877%2017.4804H18.8885Z'%20fill='%230C5197'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_345_1027'%3e%3crect%20width='24'%20height='26.0725'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" class="w-6 mr-3" alt="Upfront Cost">
+                                Flexibility
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> Switch Anytime
+                                </span>
+                            </div>
+                            <div class="p-4 font-medium text-[#000D4A]">Stuck with Car</div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Early Termination Fees
+                                </span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="grid grid-cols-4 items-center text-center text-sm lg:text-base border-t border-gray-200">
+                            <div class="flex items-center p-4 text-[#000D4A] text-left font-medium">
+                                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_345_1082)'%3e%3cpath%20d='M0.0195755%2012.6845C-0.332514%206.64241%204.04579%201.13633%2010.0177%200.17472C18.5673%20-1.20163%2025.7262%206.51574%2023.6307%2014.9455C22.4369%2019.7481%2018.1757%2023.461%2013.2308%2023.9214C13.2553%2023.6783%2013.0088%2022.6213%2013.1586%2022.5205C13.2219%2022.4783%2014.4117%2022.3148%2014.6616%2022.2529C15.7131%2021.9914%2016.7367%2021.5249%2017.652%2020.9528C18.1035%2020.6702%2018.5053%2020.3256%2018.9514%2020.0382C18.9786%2019.9387%2018.9248%2019.9251%2018.8853%2019.8679C18.5012%2019.3102%2017.6125%2018.7361%2017.1841%2018.1626L18.0729%2017.186L18.205%2017.2112C18.7539%2017.6382%2019.3273%2018.5093%2019.8701%2018.8832C19.9273%2018.9227%2019.9409%2018.9765%2020.0403%2018.9492C20.3271%2018.5025%2020.6744%2018.1027%2020.955%2017.6498C21.8846%2016.1522%2022.4655%2014.4545%2022.5608%2012.6838H20.0751L19.9729%2012.5816V11.3558L20.0751%2011.2536H22.5608C22.4396%209.50272%2021.8818%207.83148%2020.955%206.3557C20.6717%205.90486%2020.3284%205.5017%2020.0403%205.05631C19.9409%205.02907%2019.9273%205.08287%2019.8701%205.12237C19.3123%205.50646%2018.7382%206.3952%2018.1648%206.82357L17.1882%205.93483L17.2134%205.80271C17.6404%205.2538%2018.5114%204.68038%2018.8853%204.1376C18.9248%204.0804%2018.9786%204.06678%2018.9514%203.96735C18.506%203.67927%2018.1035%203.33604%2017.652%203.05273C16.1612%202.11564%2014.4553%201.54699%2012.686%201.44687V9.61917C14.9136%2010.1933%2015.1506%2013.3832%2013.0258%2014.2835C9.78071%2015.6585%207.93513%2010.6496%2011.3239%209.61917V1.44756C9.55461%201.54767%207.84932%202.117%206.35787%203.05341C5.90704%203.33672%205.50387%203.67996%205.05848%203.96803L6.8237%205.89805L5.85051%206.82152C5.70001%206.79496%204.44351%205.33144%204.13978%205.12237C4.08257%205.08287%204.06895%205.02907%203.96952%205.05631C3.68145%205.5017%203.33821%205.90418%203.0549%206.3557C2.12667%207.83353%201.56618%209.50136%201.44905%2011.2536H3.93479L4.03694%2011.3558V12.5816L3.93479%2012.6838H0.0195755V12.6845ZM11.7836%2010.9301C10.4713%2011.1426%2010.6953%2013.3246%2012.2276%2013.0767C13.54%2012.8643%2013.3159%2010.6823%2011.7836%2010.9301Z'%20fill='%230C5197'/%3e%3cpath%20d='M8.58545%2015.7681C9.83036%2015.6264%2011.0126%2016.3504%2011.396%2017.5503C11.6262%2018.2702%2011.5969%2020.6728%2011.5309%2021.5064C11.2775%2024.7297%206.55123%2024.9837%206.28495%2021.2306C6.14534%2019.2624%205.96623%2016.0671%208.58477%2015.7681H8.58545ZM8.58205%2017.1948C8.23064%2017.267%207.79138%2017.7594%207.73145%2018.1149C7.63202%2018.7054%207.63814%2020.9561%207.72123%2021.5657C7.89353%2022.8337%209.83717%2022.9052%2010.0837%2021.6923C10.1756%2021.2388%2010.1709%2018.5882%2010.0946%2018.1026C9.98496%2017.3998%209.23174%2017.0607%208.58205%2017.1948Z'%20fill='%230C5197'/%3e%3cpath%20d='M4.10559%2016.9735C3.32105%2017.3787%202.65978%2018.059%202.1994%2018.8129C4.49037%2018.503%206.11325%2021.0746%204.67902%2022.9617C3.24478%2024.8488%200.19651%2023.9342%200.0208052%2021.5704C-0.154899%2019.2065%201.41078%2016.9333%203.32378%2015.7612L4.10559%2016.9735ZM2.52493%2020.1893C2.08499%2020.224%201.52519%2020.6489%201.45436%2021.0984C1.19421%2022.7445%203.31492%2023.0986%203.74533%2021.7563C3.99799%2020.9697%203.3551%2020.1239%202.52493%2020.1893Z'%20fill='%230C5197'/%3e%3cpath%20d='M14.321%2015.749V18.5072L14.2189%2018.6093H12.8909V15.749H14.321Z'%20fill='%230C5197'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_345_1082'%3e%3crect%20width='24'%20height='23.9707'%20fill='white'%20transform='translate(0%200.0146484)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" class="w-6 mr-3" alt="Upfront Cost">
+                                Mileage Limits
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> Flexible Plans
+                                </span>
+                            </div>
+                            <div class="p-4 font-medium text-[#000D4A]">Unlimited</div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Strict Limits
+                                </span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="grid grid-cols-4 items-center bg-[#E6E9FB] text-center text-sm lg:text-base border-t border-gray-200">
+                            <div class="flex items-center p-4 text-[#000D4A] text-left font-medium">
+                                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='31'%20viewBox='0%200%2024%2031'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_345_1142)'%3e%3cpath%20d='M18.681%200V17.6956C18.9218%2017.8841%2019.2929%2017.867%2019.6048%2017.9715C23.3796%2019.2372%2025.1637%2023.4464%2023.1816%2026.995C21.0642%2030.7869%2015.7795%2031.2453%2012.9816%2027.9367C12.3124%2027.1458%2011.961%2026.2417%2011.6114%2025.2794H0V0H18.681ZM16.8815%201.79955H1.79955V23.4798H11.5685C11.6988%2020.6914%2013.9577%2018.1712%2016.7375%2017.8087L16.8815%2017.6956V1.79955ZM17.292%2019.4771C14.5309%2019.7573%2012.6988%2022.5424%2013.4778%2025.2117C14.5027%2028.7217%2019.256%2029.5298%2021.3718%2026.5571C23.6178%2023.401%2021.1216%2019.0889%2017.2911%2019.4771H17.292Z'%20fill='%230C5197'/%3e%3cpath%20d='M13.882%209.42627H4.71289V11.2258H13.882V9.42627Z'%20fill='%230C5197'/%3e%3cpath%20d='M13.882%2013.6255H4.71289V15.425H13.882V13.6255Z'%20fill='%230C5197'/%3e%3cpath%20d='M13.882%205.22754V7.02709H4.84143L4.71289%206.89855V5.22754H13.882Z'%20fill='%230C5197'/%3e%3cpath%20d='M18.6809%2020.5664V23.3086H19.7949V25.0224H16.8813V20.5664H18.6809Z'%20fill='%230C5197'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_345_1142'%3e%3crect%20width='24'%20height='30.1545'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" class="w-6 mr-3" alt="Upfront Cost">
+                                End of Term
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> Return or Switch
+                                </span>
+                            </div>
+                            <div class="p-4 font-medium text-[#000D4A]">Sell/Trade</div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Return
+                                </span>
+                            </div>
+                        </div>
+
+                        <div
+                            class="grid grid-cols-4 items-center text-center text-sm lg:text-base border-t border-gray-200 rounded-b-xl overflow-hidden">
+                            <div class="flex items-center p-4 text-[#000D4A] text-left font-medium">
+                                <img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_345_1208)'%3e%3cpath%20d='M19.6755%2018.4545H21.5095V23.9566H12.6111V18.4545H13.8338V13.326C13.8338%2012.7941%2014.5035%2011.5789%2014.8547%2011.1544C15.3044%2010.6103%2017.5344%208.34965%2018.052%208.1024C18.5696%207.85514%2019.1559%207.80148%2019.6755%207.99371V5.10681C19.6755%202.66348%2023.6968%202.16693%2023.9536%205.04024C23.8523%207.10862%2024.0914%209.30675%2023.9576%2011.3595C23.7817%2014.0589%2021.2772%2015.4025%2019.6748%2017.2658V18.4545H19.6755ZM18.249%2018.4545V16.7223C19.2965%2015.5425%2020.6659%2014.4821%2021.68%2013.2927C22.0781%2012.826%2022.4741%2012.1848%2022.5312%2011.5626C22.7193%209.51324%2022.3824%207.18334%2022.5312%205.10342C22.5237%204.27606%2021.3132%204.23259%2021.1305%205.00017C20.9362%206.69835%2021.2901%208.67163%2021.1013%2010.3372C21.0639%2010.666%2020.8724%2010.9621%2020.7229%2011.2495L18.0779%2013.9054L17.0983%2012.9279L19.5756%2010.4418C20.0892%209.71838%2019.2741%208.88764%2018.4508%209.52072C17.8191%2010.0064%2015.7262%2012.1624%2015.4511%2012.8383C15.373%2013.0305%2015.1916%2013.5569%2015.1916%2013.7336V18.4545H18.2484H18.249ZM20.0831%2019.881H13.9696V22.5301H20.0831V19.881Z'%20fill='%230C5197'/%3e%3cpath%20d='M4.32414%207.99381C4.90017%207.7778%205.49045%207.88105%206.02368%208.16227C6.6228%208.47881%209.17142%2011.0906%209.54094%2011.7094C9.72231%2012.0131%2010.1659%2013.0102%2010.1659%2013.3261V18.4546H11.3886V23.9567H2.49011V18.4546H4.32414V17.2659C2.72242%2015.4026%200.217272%2014.059%200.0413406%2011.3596C-0.0924758%209.30684%200.146628%207.10872%200.0454162%205.04034C0.303539%202.15819%204.32346%202.67037%204.32346%205.10691V7.99381H4.32414ZM5.75061%2016.7224V18.4546H8.80733V13.7337C8.80733%2013.557%208.62597%2013.0299%208.54785%2012.8384C8.27274%2012.1625%206.18059%2010.0065%205.54819%209.52081C4.72423%208.88773%203.90911%209.71848%204.42332%2010.4419L6.90062%2012.928L5.92111%2013.9055L5.7805%2013.841C5.08017%2012.8581%203.03625%2011.5552%202.89835%2010.3373C2.70952%208.67172%203.06342%206.69844%202.86915%205.00026C2.68642%204.23269%201.47596%204.27616%201.46849%205.10351C1.61793%207.18344%201.28101%209.51334%201.46849%2011.5627C1.52555%2012.1849%201.92156%2012.8261%202.31962%2013.2928C3.33377%2014.4822%204.70318%2015.5419%205.75061%2016.7224ZM10.03%2019.8811H3.91658V22.5302H10.03V19.8811Z'%20fill='%230C5197'/%3e%3cpath%20d='M11.5108%200.0668108C15.3935%20-0.309505%2018.082%203.84356%2016.1108%207.24806C14.325%2010.332%209.78745%2010.3809%207.93779%207.33501C6.11599%204.33535%208.01863%200.405767%2011.5108%200.0668108ZM11.4401%201.49056C7.67899%201.96809%207.72111%207.88046%2011.6955%208.197C16.5903%208.58623%2016.5537%200.841859%2011.4401%201.49056Z'%20fill='%230C5197'/%3e%3cpath%20d='M18.641%2020.5061C19.5886%2020.3695%2019.7006%2021.8313%2018.8203%2021.9183C17.94%2022.0052%2017.7389%2020.6365%2018.641%2020.5061Z'%20fill='%230C5197'/%3e%3cpath%20d='M5.12288%2020.5056C5.87551%2020.3738%206.30141%2021.4185%205.60924%2021.8118C4.61682%2022.3756%204.1325%2020.6788%205.12288%2020.5056Z'%20fill='%230C5197'/%3e%3cpath%20d='M12.6792%201.94824C12.5766%202.58947%2012.7715%202.42713%2013.0881%202.72805C13.442%203.06428%2013.5588%203.44603%2013.6301%203.91813H12.2037C12.1948%203.91813%2012.1982%203.78499%2012.1398%203.74695C11.9211%203.6043%2011.6969%203.8108%2011.8253%204.05942C11.8871%204.14568%2012.2397%204.12327%2012.3952%204.1681C13.4433%204.47377%2013.9093%205.6034%2013.3842%206.55913C13.1017%207.07402%2012.5175%207.03123%2012.6792%207.72204H11.3206C11.4354%207.08217%2011.182%207.19561%2010.8798%206.90624C10.5544%206.59513%2010.4573%206.17602%2010.3696%205.75216H11.7621C11.7988%205.75216%2012.1799%206.26637%2012.1745%205.61223C11.6765%205.42271%2011.29%205.47705%2010.8764%205.07561C10.2161%204.43573%2010.2562%203.35162%2010.9117%202.72805C11.2282%202.42713%2011.4239%202.58947%2011.3206%201.94824H12.6792Z'%20fill='%230C5197'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_345_1208'%3e%3crect%20width='24'%20height='23.9137'%20fill='white'%20transform='translate(0%200.0429688)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" class="w-6 mr-3" alt="Upfront Cost">
+                                Typical Annual Savings
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> Savings $220+
+                                </span>
+                            </div>
+                            <div class="p-4 font-medium text-[#000D4A]">Driver</div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Savings only $40
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block md:hidden w-full space-y-4">
+
+                        <div class="bg-white border-2 border-primary rounded-xl shadow-lg p-4">
+                            <h3 class="text-xl font-semibold text-primary text-center mb-4">Fore Mobility</h3>
+                            <div class="space-y-3 text-sm">
+                                <p><strong>Upfront Cost:</strong> <span class="text-tertiary font-medium">Low</span></p>
+                                <p><strong>Monthly Payment:</strong> <span
+                                        class="text-tertiary font-medium">Flexible</span></p>
+                                <p><strong>Maintenance:</strong> <span class="text-tertiary font-medium">Included</span>
+                                </p>
+                                <p><strong>Insurance:</strong> <span class="text-tertiary font-medium">Included</span>
+                                </p>
+                                <p><strong>Flexibility:</strong> <span class="text-tertiary font-medium">Switch
+                                        Anytime</span></p>
+                                <p><strong>Mileage Limits:</strong> <span class="text-tertiary font-medium">Flexible
+                                        Plans</span></p>
+                                <p><strong>End of Term:</strong> <span class="text-tertiary font-medium">Return or
+                                        Switch</span></p>
+                                <p><strong>Annual Savings:</strong> <span
+                                        class="text-tertiary font-medium">~$220+</span></p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border rounded-xl shadow-sm p-4">
+                            <h3 class="text-xl font-semibold text-[#000D4A] text-center mb-4">Car Ownership</h3>
+                            <div class="space-y-3 text-sm">
+                                <p><strong>Upfront Cost:</strong> High — $20k+ Upfront</p>
+                                <p><strong>Monthly Payment:</strong> High Loan Payments</p>
+                                <p><strong>Maintenance:</strong> Your Responsibility</p>
+                                <p><strong>Insurance:</strong> Additional Cost</p>
+                                <p><strong>Flexibility:</strong> Stuck with Car</p>
+                                <p><strong>Mileage Limits:</strong> Unlimited</p>
+                                <p><strong>End of Term:</strong> Sell/Trade</p>
+                                <p><strong>Annual Savings:</strong> Driver</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white border rounded-xl shadow-sm p-4">
+                            <h3 class="text-xl font-semibold text-[#000D4A] text-center mb-4">Traditional Lease</h3>
+                            <div class="space-y-3 text-sm">
+                                <p><strong>Upfront Cost:</strong> <span class="text-red-600">Medium</span></p>
+                                <p><strong>Monthly Payment:</strong> <span class="text-red-600">Fixed + Insurance</span>
+                                </p>
+                                <p><strong>Maintenance:</strong> <span class="text-red-600">Your Responsibility</span>
+                                </p>
+                                <p><strong>Insurance:</strong> <span class="text-red-600">Additional Cost</span></p>
+                                <p><strong>Flexibility:</strong> <span class="text-red-600">Early Termination
+                                        Fees</span></p>
+                                <p><strong>Mileage Limits:</strong> <span class="text-red-600">Strict Limits</span></p>
+                                <p><strong>End of Term:</strong> <span class="text-red-600">Return</span></p>
+                                <p><strong>Annual Savings:</strong> <span class="text-red-600">Savings only $40</span>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="mt-8 flex justify-center">
+                    <button @click="open = true"
+                        class="bg-primary text-white text-base px-6 py-3 md:px-8 md:py-4 rounded-full font-medium shadow-md hover:bg-blue-600 transition-colors flex items-center gap-2">
+                        Get Consultation
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+        <!-- testimonial -->
+        <section class="py-10 px-4 lg:px-0">
+            <div class="container relative">
+                <div class="flex justify-center mb-6">
+                    <div class="flex justify-center  gap-2 bg-[#D7DBE0] rounded-full p-1 shadow-sm">
+                        <button
+                            class="tab-button lg:px-6 px-3 py-2 rounded-full text-xs sm:text-sm font-normal font-poppins transition-all duration-200 bg-gray-100 text-gray-900 shadow-sm whitespace-nowrap"
+                            data-tab="personal">
+                            Personal
+                        </button>
+                        <button
+                            class="tab-button lg:px-6 px-3 py-2 rounded-full text-xs sm:text-sm font-normal font-poppins transition-all duration-200 text-gray-600 hover:text-gray-900 whitespace-nowrap"
+                            data-tab="gig-drivers">
+                            Gig Drivers
+                        </button>
+                        <button
+                            class="tab-button lg:px-6 px-3 py-2 rounded-full text-xs sm:text-sm font-normal font-poppins transition-all duration-200 text-gray-600 hover:text-gray-900 whitespace-nowrap"
+                            data-tab="business">
+                            Business
+                        </button>
+                        <button
+                            class="tab-button lg:px-6 px-3 py-2 rounded-full text-xs sm:text-sm font-normal font-poppins transition-all duration-200 text-gray-600 hover:text-gray-900 whitespace-nowrap"
+                            data-tab="real-estate">
+                            Real Estate
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="swiper testimonial-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-white shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/assets/testimonial%201-Bi5hqGR5.png" alt="Michael Chen"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">MC</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Michael Chen</h3>
+                                            <p class="text-gray-600 text-base">Real Estate Car Share User</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+
+                                    <p class="text-[#0F1125] font-medium text-lg mb-6">Saved me $300/month</p>
+
+                                    <button @click="open = true"
+                                        class="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors duration-200">
+                                        Explore Plans
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-white shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/assets/testimonial-mUW9m2-1.png" alt="Sarah Johnson"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">SJ</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Sarah Johnson</h3>
+                                            <p class="text-gray-600 text-base">Gig Driver Subscriber</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+                                    <p class="text-[#0F1125] font-medium text-lg mb-6">No maintenance worries</p>
+
+                                    <button @click="open = true"
+                                        class="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors duration-200">
+                                        Start Driving
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-white shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/assets/testimonial-mUW9m2-1.png" alt="Emily Rodriguez"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">ER</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Emily Rodriguez</h3>
+                                            <p class="text-gray-600 text-base">Skyline Resident</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+                                    <p class="text-[#0F1125] font-medium text-lg mb-6">Booked in 2 minutes</p>
+
+                                    <button @click="open = true"
+                                        class="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors duration-200">
+                                        Get Fleet Pricing
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-white shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/assets/testimonial-mUW9m2-1.png" alt="David Kim"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">DK</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">David Kim</h3>
+                                            <p class="text-gray-600 text-base">Business Fleet Manager</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+
+                                    <p class="text-[#0F1125] font-medium text-lg mb-6">Reduced costs by 40%</p>
+
+                                    <button @click="open = true"
+                                        class="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors duration-200">
+                                        View Solutions
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-white shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/assets/testimonial%201-Bi5hqGR5.png" alt="Lisa Thompson"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">LT</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Lisa Thompson</h3>
+                                            <p class="text-gray-600 text-base">Personal User</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+
+                                    <p class="text-[#0F1125] font-medium text-lg mb-6">Perfect for weekends</p>
+
+                                    <button @click="open = true"
+                                        class="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors duration-200">
+                                        Get Started
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center gap-9 mt-8 mb-8 lg:mb-14">
+                        <button id="prevBtn" class="w-10 h-10 " aria-label="Previous slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                                fill="none">
+                                <path d="M10.0002 13.3335L3.3335 20.0002L10.0002 26.6668" stroke="black"
+                                    stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M3.3335 20H36.6668" stroke="black" stroke-width="3.33333"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <button id="nextBtn" class="w-10 h-10 " aria-label="Next slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                                fill="none">
+                                <path d="M30 13.3335L36.6667 20.0002L30 26.6668" stroke="black" stroke-width="3.33333"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M3.3335 20H36.6668" stroke="black" stroke-width="3.33333"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class=" text-center absolute right-0 -bottom-20 w-14 h-14 bg-primary text-white rounded-full hidden sm:flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M29.7001 16.1968C29.2351 11.4268 26.4151 3.92676 17.7001 3.92676C8.98507 3.92676 6.16507 11.4268 5.70007 16.1968C4.06884 16.8159 2.99285 18.382 3.00004 20.1268V22.2268C3.00004 24.5464 4.88048 26.4268 7.20007 26.4268C9.51967 26.4268 11.4001 24.5464 11.4001 22.2268V20.1268C11.3925 18.4197 10.3561 16.8857 8.77507 16.2418C9.07507 13.4818 10.5451 6.92676 17.7001 6.92676C24.8551 6.92676 26.3101 13.4818 26.6101 16.2418C25.0323 16.8871 24.001 18.4221 24.0001 20.1268V22.2268C24.0066 23.8392 24.9325 25.3067 26.3851 26.0068C25.7551 27.1918 24.1501 28.7968 20.2051 29.2768C19.4165 28.0793 17.8908 27.6072 16.5637 28.1501C15.2367 28.6929 14.4792 30.099 14.756 31.5058C15.0327 32.9126 16.2663 33.9268 17.7001 33.9268C18.8331 33.9205 19.8659 33.2764 20.3701 32.2618C26.8051 31.5268 28.8601 28.2118 29.5051 26.2618C31.25 25.6965 32.4236 24.0608 32.4001 22.2268V20.1268C32.4073 18.382 31.3313 16.8159 29.7001 16.1968ZM8.40007 22.2268C8.40007 22.8895 7.86281 23.4268 7.20007 23.4268C6.53733 23.4268 6.00007 22.8895 6.00007 22.2268V20.1268C6.00007 19.698 6.22879 19.3019 6.60007 19.0875C6.97135 18.8732 7.42879 18.8732 7.80007 19.0875C8.17135 19.3019 8.40007 19.698 8.40007 20.1268V22.2268ZM27.0001 20.1268C27.0001 19.464 27.5373 18.9268 28.2001 18.9268C28.8628 18.9268 29.4001 19.464 29.4001 20.1268V22.2268C29.4001 22.8895 28.8628 23.4268 28.2001 23.4268C27.5373 23.4268 27.0001 22.8895 27.0001 22.2268V20.1268Z"
+                            fill="white" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- faq section -->
+        <section class=" py-10 lg:mt-16 sm:py-14 lg:py-10 px-4 lg:px-0">
+            <!-- Header -->
+            <div class="px-6 pb-8 text-center">
+                <h2 class="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-medium font-inter text-gray-900">Frequently
+                    Asking Questions</h2>
+            </div>
+            <div class="container mx-auto rounded-lg shadow-sm ">
+
+                <!-- FAQ Items -->
+                <div class="bg-gray-50">
+                    <!-- FAQ Item 1 -->
+                    <div x-data="{ open: false }" class=" mb-4 bg-white shadow-md ">
+                        <button @click="open = !open"
+                            class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200">
+                            <span class="text-gray-700 font-medium text-2xl font-helvetica">What if I cancel?</span>
+                            <svg :class="open ? 'rotate-180' : ''"
+                                class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+                                xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z" fill="#898B8E" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform -translate-y-2"
+                            x-transition:enter-end="opacity-100 transform translate-y-0"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 transform translate-y-0"
+                            x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                You can cancel your subscription at any time. Your access will continue until the end of
+                                your current billing period.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div x-data="{ open: false }" class=" mb-4 bg-white shadow-md ">
+                        <button @click="open = !open"
+                            class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200">
+                            <span class="text-gray-700 font-medium text-2xl font-helvetica">What's included?</span>
+                            <svg :class="open ? 'rotate-180' : ''"
+                                class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+                                xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z" fill="#898B8E" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform -translate-y-2"
+                            x-transition:enter-end="opacity-100 transform translate-y-0"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 transform translate-y-0"
+                            x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                All features and premium content are included in your subscription with no additional
+                                fees or hidden costs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div x-data="{ open: false }" class=" mb-4 bg-white shadow-md ">
+                        <button @click="open = !open"
+                            class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors duration-200">
+                            <span class="text-gray-700 font-medium text-2xl font-helvetica">Is insurance extra?</span>
+                            <svg :class="open ? 'rotate-180' : ''"
+                                class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+                                xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z" fill="#898B8E" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform -translate-y-2"
+                            x-transition:enter-end="opacity-100 transform translate-y-0"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 transform translate-y-0"
+                            x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Insurance coverage depends on your specific plan. Please check with your provider for
+                                details about coverage.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 - Expanded by default to match the image -->
+                    <div x-data="{ open: true }" class="bg-gray-100">
+                        <button @click="open = !open"
+                            class="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-200 focus:outline-none focus:bg-gray-200 transition-colors duration-200">
+                            <span class="text-gray-700 font-medium text-2xl font-helvetica">What's included?</span>
+                            <svg :class="open ? 'rotate-180' : ''"
+                                class="w-5 h-5 text-gray-500 transform transition-transform duration-200"
+                                xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24"
+                                fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z" fill="#898B8E" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 transform -translate-y-2"
+                            x-transition:enter-end="opacity-100 transform translate-y-0"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 transform translate-y-0"
+                            x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4 bg-gray-100">
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Our Garns Are Made From Premium-Quality Cotton And Cotton-Blend Fabrics That Are Soft,
+                                Breathable, And Durable. The Material Is Skin-Friendly And Suitable For All Seasons,
+                                Especially For Everyday Comfort.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- mobility app section -->
+        <section class="bg-white relative lg:mt-32 z-10 container mx-auto px-4 py-16 sm:py-20 lg:pb-20  ">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-7 w-full">
+                <div class="left_side w-full lg:w-1/2">
+                    <h2 class="font-poppins font-medium text-3xl md:text-5xl">Get the Fore Mobility App</h2>
+                    <p class="font-inter font-normal text-sm md:text-base mt-5">
+                        Experience the easiest way to rent a car with Fore
+                        Mobility. Search, compare, <br class="hidden md:block"> and book vehicles right from your phone.
+                        Download the app today and enjoy <br class="hidden md:block"> faster booking, flexible rentals,
+                        and
+                        24/7 support — wherever you are.
+                    </p>
+
+                    <div class="mt-6">
+                        <h3 class="font-inter font-normal text-sm md:text-base">Download App From</h3>
+                        <div class="flex items-center gap-4 mt-2">
+                            <a href="#">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAAoCAYAAAA16j4lAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAfYSURBVHgB7Zw7UxRLFMd78ZZWmYiZmRhCAmRGApmZr8gyEEMjMDIUP4GQmYllqZGlfgJAE43ExEfEmkkEJBSQ7O1fX/9bh7Z357Gz3Nqt+Vc1M9N9+nVOn9OnzwzbcH/w7Nmz0dOnTy80Go1Z/zjragwcWq3Wpr+s3LlzZ1V5Df544Y6dOXNm7fv372Nv3rxxzWbT7e/vuxqDhYmJCXflyhVS8/DwcO7evXvNIOBXr15tecEG4dYYfNy6dYuEkKdPvXz5cv7jx4/zL168cDWGA94Su/Hx8dELFy4cjvg9d+HDhw+uxnABa+xlOzPi76e+ffvmagwXfv36xWV2xNUYSshJrgU85KhcwLOzs25tbc19+fLFlcHY2JhbWloKaXFxMTxXiXfv3rmpqSlXBoyFufUK+h8dHQ33zJHUL1QqYAYKAxDy3t6eKwOYeO3atXAWhwm0J2ZwhTkSOs8qswtB91wpZzzCuXPnOraXlRf3Y8ttHxoXtDE9+U+ePHHXr1/PpI3HUQr+DNzyl56TH0zLYn5+vlQ7nlGt9fX19vPq6mrLL5yWn2hra2srPHP1DAp9+CBNoNvZ2QnPqg89eaL3FiHQ+QUTaOL2yKOc++Xl5b/yvOaHutzb8dKnt1ahnCt59JVqm8S4GRf08Axa6kFLfrdxFE3ItjINZlUKaJ8fsKsC0mRW89evX51nqHvw4EG4Ym7RHMo2NzfDlUS+AN3c3Jy7e/fusXah8wshlD9+/LhdfuPGjVCfMtom4ZGicfQbY2FhwfmIUVsjpelq+/nz58e0m7YZqxdeuAKu0K6srLT7ZN7Qwsd47EVQmYA1iY2NjcDQqoCJkpD9Cg95u7u74ZkrCeYiJJjLOGCu6DqB+tpGaP/SpUuhL28Rju2RFqn2zp8/387XuMCfY0oupGj9GTaMhzIWSVmUEnBqv4DBCFaC5lp2/7h48WJY0Y8ePXIzMzNBYAhBqxutkZayoHhGC0iTk5NtzegG2mOvt+1JOFogQG1Cx5hiUI/6LDLq024WWFjd+EOf8IC2uJZ1CsEpH7NcyhODZvAPHz4MJkMeLhOmc1bZp0+fAsMow/xQJhrw+fNnlxesXmnY/fv33e/fv8NkMdEwkit9AMp4pn/uf/782Rawj8WGfHtP21oMYjSL5OnTp6E+dFevXg150Pz48SO0efny5fDMvdoE3KPFlLPIoQeMV8K296oD38jT3Cwtbbx//z7wbnt7O/D84ODAFQUx6VxOFg4JjkAvoL4XWiUOXZ0qdrJwoHoxE0JqX6vRX/yTRYBJlIdYFpgd9uduTk+N/iBTwCnHoig4RpQVLv3jjLD/2ePPSQCLQ/84evLa2RurOgKeCLL24F733jgwUCSxZwsEAcq2UyYpEKK+vRU6NifrTxCkAGUDEv1KufbgXvfeIufBGNoadA62AYN+g9MAlgOroTMyV86k3PczflwpsjS4Vyh8VyYRGgSEAwGhO1uOxkBDOeFM+kK7yEMDRUe5pYOGRJjT0rmE5SKc6CLNJhSqsdAuGq652r7Rcn+Wb1sCyuMQLmOgDv3EoVCNm/ap653dQieRINssAVvTVAYMrszxCCYBxaVpJzbTEjxMUXzXmlUxmnivpaNN0cXmNl5cMLXbOGlLAvZ+QnhWe+qDPDs2hB7zlzLuNV9oNA+2APIB46pUwJpoL1Cgv0iS8LTiU/ucaIDVRLQLSMusgC2d5pYan21b2s6LgpTGq53U2PQyRItWi0GLQAK2Y5DvEY/37du3f/WTJeDMPZiITq8g5Fh0z1KAXWFDea6pIxuerY0UydvG+7VQyFMguA9Sfgb94f1Dz56LN+0Z7DzTQ1wg60yv8ds4Mm3pOZ6HPSFoPBqrQsPMM1W3GzIFbOOyvQCmEMjPAyajNyqKAWvSqTcregkhiDGxEGKHTyHNTsJCyDhWJIQt4RR5SR/HpnVcjOPQ9hipMubOglIS/3innReZ52AErFdnJwX1pbc7FvKmq1h4eV+G6PWnEh8h8IIBT7ufwHqm+sjzQkPIFaokiF4F8rYD8wDRL2kQSfVjLY4FpedYY2OTLbo4CEM+GpP6PCf1pir19Yr6jhVDlqjbGy+V+e22rWAk8hFuoaBR3i86enW2rLPhcnjPqQCJnA955tYRkmdqAxRy0ORkAY5Jnehssh6vHCKueNXxfOQAWo8bRyh2lGxe7GTFzpv613ihl5OV92uZXF60S3iARRF7g90SEwLxmdclPFYJmDNiPDZ7/paAU4u00zmdc6ltUwxPzccuNCssefPAtoU3rrqdBGz71xERsJjy8FECztyDBUwDn7MU/aoQc0K9vPsG9JjiTvFeytibrGOE6aIPHB/yeU7Vpx7OkqXTe+UYlE1PTwePFTMLvd4R07Y1k3qW+VUZ/ch/USyb/iwveFZZqn/F4gGeduF4fNGP7lhZHOgBh299EKcyVrMtjyNBVabUWTOVpMFlzuODnAppsKCP2zqVddKeGv8PBvo/GxQ4yArGsOigy/Ot1tABNT579uxAmZ465TfRaPA6X+7VGC6Mj49z2RzxvsdG+PquxlCBn3Lwsl0ZOTo6Wp6YmGjevHnT1RgOIEsftWvyYyzhNzpev35N+GjNOytj/Lc/PwFQY7Dg/ajwkTzWGIVtNBpzt2/f/u9HWAR+r8NfFn3hpKsxiNgg/IBV9gGdEDn5F8+AUB+ZffCZAAAAAElFTkSuQmCC" alt="Download on the App Store"
+                                    class="h-10 md:h-12 w-auto">
+                            </a>
+                            <a href="#">
+                                <img src="data:image/png;base64,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" alt="Get it on Google Play"
+                                    class="h-10 md:h-12 w-auto">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="right_side w-full max-w-xl mx-auto lg:max-w-none lg:w-1/2 lg:absolute lg:z-0! lg:-bottom-28 lg:right-0 mt-8 lg:mt-0">
+                    <img src="/assets/Group_3-QChAoARe.png" alt="App Preview" class="w-full h-auto">
+                </div>
+            </div>
+        </section>
+        <!-- Footer banner -->
+        <section class="relative lg:z-30! ">
+            <div class="bg-primary py-16 px-4 md:px-8 lg:px-16 mb-20 lg:p-24! text-white text-center bg-cover bg-center"
+                style="background-image: url('/assets/footer-BssEIvSZ.jpg');">
+
+                <div class="absolute inset-0 bg-[#0C5197] opacity-75"></div>
+
+                <div class="relative z-10 max-w-5xl mx-auto">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">
+                        Your Car, Your Terms — Start Today
+                    </h2>
+                    <p class="text-base sm:text-lg mb-5">
+                        Join thousands of drivers saving time & money with
+                        Fore
+                        Mobility’s all- <br class="hidden sm:block"> inclusive car subscriptions —
+                        insurance,
+                        maintenance, and roadside <br class="hidden sm:block"> included.
+                    </p>
+                    <p class="text-lg font-semibold mb-8">
+                        Limited cars available in your area — book before
+                        they're
+                        gone!
+                    </p>
+                    <button @click="open = true"
+                        class="inline-block bg-white text-[#106CCA] py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        Contact Us
+                    </button>
+                    <p class="text-sm sm:text-base mt-4">
+                        No hidden fees. Cancel anytime
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="container  px-4 sm:px-0 bg-[#E8F3FF] rounded-3xl shadow-xl border border-blue-200 mb-20! p-8 sm:p-12 md:p-16">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 lg:gap-24 pb-8 md:pb-12 ">
+
+                <div class="flex flex-col justify-between items-center md:items-start text-center md:text-left">
+                    <div>
+                        <a href="#" class="inline-block mb-4 cursor-pointer">
+                            <img src="/assets/logo-BdrInYLs.png" alt="Logo" class="h-16 w-auto">
+                        </a>
+                        <p class="text-sm text-[#0021BF] mb-10 max-w-xs font-inter">
+                            Fore Mobility Services — Your Trusted Partner for
+                            All
+                            Your Needs. Contact us today for a consultation.
+                        </p>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors duration-200">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.874v-6.985h-2.54V12h2.54V9.79c0-2.508 1.493-3.89 3.778-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.8-.9a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.37c-.83.5-1.75.85-2.73 1.05a4.28 4.28 0 00-7.3 3.9A12.14 12.14 0 013 4.79a4.28 4.28 0 001.33 5.7 4.24 4.24 0 01-1.94-.54v.05c0 2.08 1.48 3.82 3.45 4.21a4.3 4.3 0 01-1.93.07 4.28 4.28 0 004 2.97A8.6 8.6 0 012 19.54 12.1 12.1 0 008.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.35-.01-.53A8.35 8.35 0 0022.46 6z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors duration-200">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.766 1.75-1.766 1.75.79 1.75 1.766-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.784 7 2.476v6.759z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:hidden col-span-1 w-full space-y-2">
+                    <div x-data="{ open: false }" class="w-full border-b border-[#B6DAFE]">
+                        <button @click="open = !open" class="w-full flex justify-between items-center py-3 text-left">
+                            <h3 class="font-semibold text-lg text-[#093D71] font-inter">Quick Links</h3>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform text-[#093D71]"
+                                :class="{ 'rotate-180': open }" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition class="pb-4">
+                            <ul class="space-y-4 text-sm mt-2">
+                                <li><a href="#"
+                                        class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Personal</a>
+                                </li>
+                                <li><a href="#"
+                                        class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Gig
+                                        Drivers</a></li>
+                                <li><a href="#"
+                                        class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Business
+                                        Fleet</a></li>
+                                <li><a href="#"
+                                        class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Real
+                                        Estate</a></li>
+                                <li><a href="#"
+                                        class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }" class="w-full border-b border-[#B6DAFE]">
+                        <button @click="open = !open" class="w-full flex justify-between items-center py-3 text-left">
+                            <h3 class="font-semibold text-lg text-[#093D71] font-inter">Contact</h3>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform text-[#093D71]"
+                                :class="{ 'rotate-180': open }" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition class="pb-4">
+                            <ul class="space-y-6 text-sm mt-2">
+                                <li class="flex items-center space-x-2">
+                                    <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.74 21 3 13.26 3 3c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.57.12.35.03.75-.24 1.02l-2.2 2.2z" />
+                                    </svg>
+                                    <span class="text-[#001EAA] font-inter">+68133543213</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" />
+                                    </svg>
+                                    <span class="text-[#001EAA] font-inter">info@demumail@gmail.com</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M12 2c-4.42 0-8 3.58-8 8 0 4.86 5.56 11.23 8 13.31 2.44-2.08 8-8.45 8-13.31 0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" />
+                                    </svg>
+                                    <span class="text-[#001EAA] font-inter">180/A, CAD Avenue, Los Angeles</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden md:grid md:col-span-2 md:grid-cols-2 md:gap-16 lg:gap-24">
+                    <div>
+                        <h3 class="font-semibold text-lg text-[#093D71] mb-4 font-inter text-center md:text-left">Quick
+                            Links</h3>
+                        <ul class="space-y-4 text-sm text-center md:text-left">
+                            <li><a href="#"
+                                    class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Personal</a>
+                            </li>
+                            <li><a href="#"
+                                    class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Gig
+                                    Drivers</a></li>
+                            <li><a href="#"
+                                    class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Business
+                                    Fleet</a></li>
+                            <li><a href="#"
+                                    class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Real
+                                    Estate</a></li>
+                            <li><a href="#"
+                                    class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-[#093D71] mb-4 font-inter text-center md:text-left">
+                            Contact</h3>
+                        <ul class="space-y-6 text-sm">
+                            <li class="flex items-center justify-center md:justify-start space-x-2">
+                                <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.74 21 3 13.26 3 3c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.57.12.35.03.75-.24 1.02l-2.2 2.2z" />
+                                </svg>
+                                <span class="text-[#001EAA] font-inter">+68133543213</span>
+                            </li>
+                            <li class="flex items-center justify-center md:justify-start space-x-2">
+                                <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" />
+                                </svg>
+                                <span class="text-[#001EAA] font-inter">info@demumail@gmail.com</span>
+                            </li>
+                            <li class="flex items-center justify-center md:justify-start space-x-2">
+                                <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2c-4.42 0-8 3.58-8 8 0 4.86 5.56 11.23 8 13.31 2.44-2.08 8-8.45 8-13.31 0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" />
+                                </svg>
+                                <span class="text-[#001EAA] font-inter">180/A, CAD Avenue, Los Angeles</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="w-full h-[0.5px]! z-50 hidden md:block text-[#B6DAFE]">
+            </hr>
+
+            <div
+                class="flex flex-col md:flex-row items-center justify-between pt-6 text-center md:text-left space-y-4 md:space-y-0 text-sm">
+                <span class="text-[#001EAA] font-inter">Copyright © 2025. Fore Mobility. All right reserved</span>
+                <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                    <a href="#"
+                        class="hover:text-blue-600 transition-colors duration-200 text-[#001EAA] font-inter">Privacy
+                        Policy</a>
+                    <a href="#"
+                        class="hover:text-blue-600 transition-colors duration-200 text-[#001EAA] font-inter">Terms &
+                        Condition</a>
+                    <a href="#"
+                        class="hover:text-blue-600 transition-colors duration-200 text-[#001EAA] font-inter">Cookie
+                        Policy</a>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- alpine js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.testimonial-swiper', {
+            spaceBetween: 24,
+            slidesPerView: 1,
+            loop: true,
+            navigation: false, // Disable default navigation
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+
+        // Custom navigation buttons
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            swiper.slidePrev();
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            swiper.slideNext();
+        });
+
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        let activeTab = 'personal';
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+
+                // Update active tab
+                activeTab = tabId;
+
+                // Update button styles
+                tabButtons.forEach(btn => {
+                    if (btn.getAttribute('data-tab') === tabId) {
+                        btn.className = 'tab-button sm:px-6 px-3 py-2 rounded-full text-sm font-normal font-poppins transition-all duration-200 bg-gray-100 text-gray-900 shadow-sm whitespace-nowrap';
+                    } else {
+                        btn.className = 'tab-button sm:px-6 px-3 py-2 rounded-full text-sm font-normal font-poppins transition-all duration-200 text-gray-600 hover:text-gray-900 whitespace-nowrap';
+                    }
+                });
+
+                console.log('Active tab:', tabId);
+            });
+        });
+
+        // Button click handlers
+        document.querySelectorAll('button[class*="bg-blue-500"]').forEach(button => {
+            button.addEventListener('click', () => {
+                console.log(button.textContent + ' clicked');
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainMenu = document.getElementById('main-menu');
+            const findOutMore = document.querySelector('.mt-4.md\\:mt-0');
+            const menuIcon = document.getElementById('menu-icon');
+
+            menuToggle.addEventListener('click', function () {
+                const isMenuOpen = mainMenu.classList.toggle('hidden');
+                findOutMore.classList.toggle('hidden', isMenuOpen);
+
+                // Toggle the hamburger and close icon paths
+                if (isMenuOpen) {
+                    menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7'); // Hamburger icon
+                } else {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // Close icon
+                }
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

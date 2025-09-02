@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Slider</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .testimonial-swiper .swiper-button-next,
+        .testimonial-swiper .swiper-button-prev {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <section class="min-h-screen bg-gray-50 py-12 px-4">
+            <div class="container">
+                <div class="flex justify-center mb-6">
+                    <div
+                        class="flex justify-center  gap-2 bg-[#D7DBE0] rounded-full p-1 shadow-sm">
+                        <button
+                            class="tab-button lg:px-6 px-3 py-2 rounded-full text-xs sm:text-sm font-normal font-poppins transition-all duration-200 bg-gray-100 text-gray-900 shadow-sm whitespace-nowrap"
+                            data-tab="personal">
+                            Personal
+                        </button>
+                        <button
+                            class="tab-button lg:px-6 px-3 py-2 rounded-full text-xs sm:text-sm font-normal font-poppins transition-all duration-200 text-gray-600 hover:text-gray-900 whitespace-nowrap"
+                            data-tab="gig-drivers">
+                            Gig Drivers
+                        </button>
+                        <button
+                            class="tab-button lg:px-6 px-3 py-2 rounded-full text-xs sm:text-sm font-normal font-poppins transition-all duration-200 text-gray-600 hover:text-gray-900 whitespace-nowrap"
+                            data-tab="business">
+                            Business
+                        </button>
+                        <button
+                            class="tab-button lg:px-6 px-3 py-2 rounded-full text-xs sm:text-sm font-normal font-poppins transition-all duration-200 text-gray-600 hover:text-gray-900 whitespace-nowrap"
+                            data-tab="real-estate">
+                            Real Estate
+                        </button>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="swiper testimonial-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-white shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/professional-asian-man.png" alt="Michael Chen"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">MC</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Michael Chen</h3>
+                                            <p class="text-gray-600 text-base">Real Estate Car Share User</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+
+                                    <p class="text-[#0F1125] font-medium text-lg mb-6">Saved me $300/month</p>
+
+                                    <button
+                                        class="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors duration-200">
+                                        Explore Plans
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-white shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/professional-blonde-woman.png" alt="Sarah Johnson"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">SJ</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Sarah Johnson</h3>
+                                            <p class="text-gray-600 text-base">Gig Driver Subscriber</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+                                    <p class="text-[#0F1125] font-medium text-lg mb-6">No maintenance worries</p>
+
+                                    <button
+                                        class="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors duration-200">
+                                        Start Driving
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-white shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/professional-woman-brunette.png" alt="Emily Rodriguez"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">ER</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Emily Rodriguez</h3>
+                                            <p class="text-gray-600 text-base">Skyline Resident</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+                                    <p class="text-[#0F1125] font-medium text-lg mb-6">Booked in 2 minutes</p>
+
+                                    <button
+                                        class="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors duration-200">
+                                        Get Fleet Pricing
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-white shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/professional-korean-man.png" alt="David Kim"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">DK</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">David Kim</h3>
+                                            <p class="text-gray-600 text-base">Business Fleet Manager</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+
+                                    <p class="text-[#0F1125] font-medium text-lg mb-6">Reduced costs by 40%</p>
+
+                                    <button
+                                        class="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors duration-200">
+                                        View Solutions
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-white shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/professional-woman-redhead.png" alt="Lisa Thompson"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">LT</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Lisa Thompson</h3>
+                                            <p class="text-gray-600 text-base">Personal User</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+
+                                    <p class="text-[#0F1125] font-medium text-lg mb-6">Perfect for weekends</p>
+
+                                    <button
+                                        class="w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2.5 rounded-lg transition-colors duration-200">
+                                        Get Started
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center gap-9 mt-8">
+                        <button id="prevBtn" class="w-10 h-10 " aria-label="Previous slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                                fill="none">
+                                <path d="M10.0002 13.3335L3.3335 20.0002L10.0002 26.6668" stroke="black"
+                                    stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M3.3335 20H36.6668" stroke="black" stroke-width="3.33333"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <button id="nextBtn" class="w-10 h-10 " aria-label="Next slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                                fill="none">
+                                <path d="M30 13.3335L36.6667 20.0002L30 26.6668" stroke="black" stroke-width="3.33333"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M3.3335 20H36.6668" stroke="black" stroke-width="3.33333"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.testimonial-swiper', {
+            spaceBetween: 24,
+            slidesPerView: 1,
+            loop: true,
+            navigation: false, // Disable default navigation
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+
+        // Custom navigation buttons
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            swiper.slidePrev();
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            swiper.slideNext();
+        });
+
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        let activeTab = 'personal';
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+
+                // Update active tab
+                activeTab = tabId;
+
+                // Update button styles
+                tabButtons.forEach(btn => {
+                    if (btn.getAttribute('data-tab') === tabId) {
+                        btn.className = 'tab-button sm:px-6 px-3 py-2 rounded-full text-sm font-normal font-poppins transition-all duration-200 bg-gray-100 text-gray-900 shadow-sm whitespace-nowrap';
+                    } else {
+                        btn.className = 'tab-button sm:px-6 px-3 py-2 rounded-full text-sm font-normal font-poppins transition-all duration-200 text-gray-600 hover:text-gray-900 whitespace-nowrap';
+                    }
+                });
+
+                console.log('Active tab:', tabId);
+            });
+        });
+
+        // Button click handlers
+        document.querySelectorAll('button[class*="bg-blue-500"]').forEach(button => {
+            button.addEventListener('click', () => {
+                console.log(button.textContent + ' clicked');
+            });
+        });
+    </script>
+</body>
+
+</html>

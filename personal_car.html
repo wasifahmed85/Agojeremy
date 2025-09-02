@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Car Page</title>
+
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        .testimonial-swiper .swiper-button-next,
+        .testimonial-swiper .swiper-button-prev {
+            display: none !important;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+
+        .active_button {
+            background-color: #1487FC !important;
+            color: #fff !important;
+            border-radius: 8px !important;
+        }
+
+        .modal-content {
+            animation: slide-in 0.5s ease-out;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body x-data="{ open: false }" :class="{ 'overflow-hidden': open }">
+    <!-- modal form -->
+    <section>
+        <!-- Overlay -->
+        <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+
+            <!-- Modal Box -->
+            <div @click.away="open = false"
+                class="modal-content max-w-5xl mx-auto bg-white rounded-xl shadow-lg border border-gray-200 p-6 md:p-8 relative">
+
+                <!-- Close Button -->
+                <button @click="open = false"
+                    class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <!-- Heading -->
+                <h1 class="max-w-[600px] text-lg sm:text-4xl font-semibold text-gray-800 mb-6 font-inter">
+                    Leave your info and we'll contact you.
+                </h1>
+
+                <!-- Form -->
+                <form>
+                    <div class="mb-5">
+                        <label for="name" class="block text-sm font-medium text-gray-500 mb-2 font-inter">Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name"
+                            class="w-full px-4 py-3 bg-blue-50 text-gray-800 border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-200">
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="email" class="block text-sm font-medium text-gray-500 mb-2 font-inter">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email"
+                            class="w-full px-4 py-3 bg-blue-50 text-gray-800 border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-200">
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="phone" class="block text-sm font-medium text-gray-500 mb-2 font-inter">Phone
+                            Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number"
+                            class="w-full px-4 py-3 bg-blue-50 text-gray-800 border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-200">
+                    </div>
+
+                    <div class="mb-6">
+                        <textarea rows="6" placeholder="Looking to get started? We'll contact you."
+                            class="w-full px-4 py-3 bg-gray-100 text-gray-700 border-none rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-gray-300 transition duration-200"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit"
+                        class="w-full md:w-[60%] flex items-center justify-center space-x-2 px-6 py-3 bg-[#1487FC] hover:bg-[#0d6cd6] text-white font-medium rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#1487FC] focus:ring-offset-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
+                            <path fill="currentColor"
+                                d="M476 3L36 228c-49 24-32 60-4 70l93 29 36 115c5 16 9 22 18 24 9 1 14-3 26-13l52-49 108 79c20 11 35 6 40-18l74-402c6-33-12-49-39-37z" />
+                        </svg>
+                        <span class="font-inter">Get My Fleet Quote</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <header
+        class="relative py-5 z-10 bg-[url('../images/personal_car.png')] bg-cover  bg-center min-h-[60vh] md:min-h-[70vh] lg:min-h-[85vh]">
+        <nav
+            class="container mx-auto px-4 lg:px-0 py-6 sm:py-0 flex flex-col md:flex-row justify-between items-center ">
+            <div class="flex justify-between items-center w-full md:w-auto">
+                <div class="text-center mb-4 md:mb-0">
+                    <a href="/"> <img src="/assets/images/logo.png" alt="FORE MOBILITY Logo"
+                            class="sm:w-40 sm:h-14 w-28 h-10 mx-auto"></a>
+                    <span class="sm:text-font-22px text-font-16px font-bebas text-white">FORE MOBILITY</span>
+                </div>
+                <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+                    <svg class="h-10 w-10 mb-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div id="main-menu"
+                class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 sm:space-x-4 space-x-2 items-center w-full md:w-auto">
+                <div class="relative group w-full text-center" x-data="{ open: false }" @click.away="open = false">
+                    <button @click="open = !open"
+                        class="flex items-center space-x-1 text-base sm:text-lg font-medium text-white focus:outline-none w-full justify-center">
+                        <span>Public</span>
+                        <svg class="h-4 w-4 transform transition-transform" :class="{'rotate-180': open}" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform scale-95"
+                        x-transition:enter-end="opacity-100 transform scale-100"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform scale-100"
+                        x-transition:leave-end="opacity-0 transform scale-95"
+                        class="absolute left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 mt-2 w-48 rounded-lg shadow-lg bg-white   z-20">
+                        <div class="" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                            <a href="/" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
+                                role="menuitem">Home </a>
+                            <a href="/gig_drivers.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                role="menuitem">Gig
+                                Drivers</a>
+                            <a href="/business_fleet.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Business
+                                Fleet</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group w-full text-center" x-data="{ open: false }" @click.away="open = false">
+                    <button @click="open = !open"
+                        class="flex items-center space-x-1 text-base sm:text-lg font-medium text-white focus:outline-none w-full justify-center">
+                        <span>Private</span>
+                        <svg class="h-4 w-4 transform transition-transform" :class="{'rotate-180': open}" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-cloak x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform scale-95"
+                        x-transition:enter-end="opacity-100 transform scale-100"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform scale-100"
+                        x-transition:leave-end="opacity-0 transform scale-95"
+                        class="absolute left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 mt-2 w-48 rounded-lg shadow-lg bg-white   z-20">
+                        <div class="" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                            <a href="/personal_car.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 active_button"
+                                role="menuitem">Personal
+                                car</a>
+                            <a href="/real_estate.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                role="menuitem">Real
+                                estate</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 md:mt-0 hidden md:block">
+                <button @click="open = true"
+                    class="inline-flex items-center sm:px-6 px-3 sm:py-3 py-1 bg-primary sm:text-base text-xs text-white rounded-md font-medium font-inter hover:bg-blue-700 transition duration-300">
+                    <span>Download now</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 7l-10 10M7 7h10v10" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- inner banner -->
+        <section class="container  px-4 md:px-0 items-center md:pt-24 lg:pt-28 xl:pt-32 ">
+            <div class="max-w-full justify-center px-10 sm:px-12 md:px-18 lg:px-24 items-center">
+                <div class="text-center">
+                    <h1
+                        class="mb-4 text-xl leading-6 sm:leading-7 md:leading-9 lg:leading-16 text-white sm:text-4xl lg:text-5xl font-inter">
+                        Your Car, Only When You Need It — No <br class="hidden md:block"> Loans, No Long-Term
+                        Commitments
+                    </h1>
+                    <p class="text-base font-light leading-relaxed text-white sm:text-lg  font-inter">
+                        Join thousands of drivers who’ve switched to Fore Mobility
+                    </p>
+                    <p class="text-base font-light leading-relaxed text-white sm:text-lg md:text-xl font-inter">
+                        Forget car loans, repair bills, and long commitments — get an insured, maintained car on your
+                        terms, starting today.
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 lg:gap-8 xl:gap-10 mt-8">
+                    <button @click="open = true"
+                        class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-3 rounded-lg inline-flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
+                        See Cars Near You
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 7l-10 10M7 7h10v10" />
+                        </svg>
+                    </button>
+                    <button @click="open = true"
+                        class=" text-white font-medium border-2 border-gray-50 text-base sm:text-lg lg:text-xl px-6 py-2 rounded-lg inline-flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
+                        Learn How It Works
+
+                    </button>
+                </div>
+                <div
+                    class="flex flex-col items-center gap-6 mt-12 justify-center md:flex-row md:gap-12 md:px-4 lg:px-0">
+                    <div class="flex items-center space-x-2">
+                        <div class="flex items-center justify-center flex-shrink-0 w-6 h-6 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <polyline points="9 12 12 15 15 9"></polyline>
+                            </svg>
+                        </div>
+                        <span class="text-base font-medium text-white font-helvetica">Safety Inspected</span>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <div class="flex items-center justify-center flex-shrink-0 w-6 h-6 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33H15.8a1.65 1.65 0 0 0-1.51 1v.09a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09a1.65 1.65 0 0 0-1.51-1H4.2a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V9a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09a1.65 1.65 0 0 0 1.51-1V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1H12.2a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V15a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-base font-medium text-white font-helvetica">Regularly Maintained</span>
+                    </div>
+
+                    <div class="flex items-center space-x-2">
+                        <div class="flex items-center justify-center flex-shrink-0 w-6 h-6 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-headset-icon lucide-headset">
+                                <path
+                                    d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" />
+                                <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
+                            </svg>
+                        </div>
+                        <span class="text-base font-medium text-white font-helvetica">24/7 Roadside Assistance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <!-- get the app -->
+        <section class="bg-white pt-16 sm:pt-18 lg:py-20  pb-8 relative z-10 container  px-4 lg:px-0">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-7 w-full">
+                <div class="left_side w-full lg:w-1/2 ">
+                    <h2 class="font-poppins font-medium text-3xl md:text-5xl">Get the Fore Mobility App</h2>
+                    <p class="font-inter font-normal text-sm md:text-base mt-5">
+                        Experience the easiest way to rent a car with Fore
+                        Mobility. Search, compare, <br class="hidden md:block"> and book vehicles right from your phone.
+                        Download the app today and enjoy <br class="hidden md:block"> faster booking, flexible rentals,
+                        and
+                        24/7 support — wherever you are.
+                    </p>
+
+                    <div class="mt-6 ">
+                        <h3 class="font-inter font-normal text-sm md:text-base">Download App From</h3>
+                        <div class="flex items-center gap-4 mt-2">
+                            <a href="#">
+                                <img src="/assets/images/app_store.png" alt="Download on the App Store"
+                                    class="h-8 md:h-10 w-auto">
+                            </a>
+                            <a href="#">
+                                <img src="/assets/images/google_play.png" alt="Get it on Google Play"
+                                    class="h-8 md:h-10 w-auto">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right_side w-full lg:w-1/2 relative  z-20 mt-8 lg:mt-0">
+                    <img src="/assets/images/Group_3.png" alt="App Preview" class="w-full">
+                </div>
+            </div>
+        </section>
+        <!-- Why Personal Drivers Love Fore -->
+        <section class="container py-10">
+            <div class="text-center">
+                <h2 class="font-poppins font-medium  text-2xl md:text-3xl lg:text-4xl xl:text-5xl">Why Personal Drivers
+                    Love Fore</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-10 px-4 md:px-0">
+                <div class="p-6 shadow-md rounded-xl border border-gray-200">
+                    <div class="w-12 h-12 flex items-center justify-center">
+                        <img src="/assets/images/personal_love_pore (2).svg" alt="">
+                    </div>
+                    <h3 class="text-base md:text-lg font-medium font-inter mt-3">One Flat Fee</h3>
+                    <p class="text-sm md:text-base mt-2 font-poppins text-gray-700">Insurance, Maintenance & Roadside
+                        Included. No hidden costs, ever.</p>
+                </div>
+
+                <div class="p-6 shadow-md rounded-xl border border-gray-200">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <img src="/assets/images/personal_love_pore (4).svg" alt="">
+                    </div>
+                    <h3 class="text-base md:text-lg font-medium font-inter mt-4">No Long-Term Contract</h3>
+                    <p class="text-sm md:text-base mt-2 font-poppins text-gray-700">Keep It As Long As You Want; Return
+                        Anytime With Just 30 Days' Notice.</p>
+                </div>
+
+                <div class="p-6 shadow-md rounded-xl border border-gray-200">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <img src="/assets/images/personal_love_pore (1).svg" alt="">
+                    </div>
+                    <h3 class="text-base md:text-lg font-medium font-inter mt-4">Drive Safe, Save More</h3>
+                    <p class="text-sm md:text-base mt-2 font-poppins text-gray-700">Safe Drivers Automatically Earn
+                        Subscription Discounts.</p>
+                </div>
+
+                <div class="p-6 shadow-md rounded-xl border border-gray-200">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <img src="/assets/images/personal_love_pore (3).svg" alt="">
+                    </div>
+                    <h3 class="text-base md:text-lg font-medium font-inter mt-4">Upgrade or Swap Anytime</h3>
+                    <p class="text-sm md:text-base mt-2 font-poppins text-gray-700">Need A Bigger Car For A Trip? Swap
+                        It. Want To Try An EV? Go For It.</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-6 mt-5 justify-center md:flex-row md:gap-12 md:px-4 lg:px-0">
+                <div class="flex items-center space-x-2">
+                    <div class="flex items-center justify-center flex-shrink-0 w-6 h-6 text-[#0025D4]">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            <polyline points="9 12 12 15 15 9"></polyline>
+                        </svg>
+                    </div>
+                    <span class="text-base font-semibold text-[#0025D4] font-helvetica">All plans include
+                        insurance</span>
+                </div>
+
+                <div class="flex items-center space-x-2">
+                    <div class="flex items-center justify-center flex-shrink-0 w-6 h-6 text-[#0025D4]">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33H15.8a1.65 1.65 0 0 0-1.51 1v.09a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09a1.65 1.65 0 0 0-1.51-1H4.2a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82V9a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09a1.65 1.65 0 0 0 1.51-1V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1H12.2a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V15a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                            </path>
+                        </svg>
+                    </div>
+                    <span class="text-base font-semibold text-[#0025D4] font-helvetica">Regularly Maintained</span>
+                </div>
+
+                <div class="flex items-center space-x-2">
+                    <div class="flex items-center justify-center flex-shrink-0 w-6 h-6 text-[#0025D4]">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-headset-icon lucide-headset">
+                            <path
+                                d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z" />
+                            <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
+                        </svg>
+                    </div>
+                    <span class="text-base font-semibold text-[#0025D4] font-helvetica">24/7 Roadside Assistance</span>
+                </div>
+            </div>
+        </section>
+        <!-- Why Smart Drivers Choose Fore-->
+        <section class="py-10 container">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-4xl font-inter font-normal mb-4">Why Smart Drivers Choose Fore</h2>
+
+            </div>
+
+            <div class="font-inter py-10">
+                <div class="flex justify-center items-center p-4">
+
+                    <!-- Desktop Comparison Table -->
+                    <div
+                        class="hidden md:block w-full bg-white border rounded-xl border-[#B6DAFE] shadow-sky-300 shadow-sm">
+
+                        <!-- Header -->
+                        <div
+                            class="grid grid-cols-[1fr_1.5fr_1.5fr] rounded-t-xl text-sm lg:text-base font-semibold overflow-hidden">
+                            <div class="bg-primary text-white px-4 py-5 border-r border-white/20">Feature</div>
+                            <div class="bg-primary text-white px-4 py-5 border-r border-white/20">Fore Mobility</div>
+                            <div class="bg-primary text-white px-4 py-5">Traditional Lease</div>
+                        </div>
+
+                        <!-- Monthly Cost -->
+                        <div class="grid grid-cols-[1fr_1.5fr_1.5fr] items-center bg-[#E6E9FB] text-sm lg:text-base">
+                            <div class="flex items-center p-4 text-[#000D4A] font-medium">
+                                <img src="/assets/images/feature (6).svg" class="w-6 mr-3" alt="Monthly Cost"> Monthly
+                                Cost
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> $450/month – all-in
+                                </span>
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    $600+ every month (loan, insurance & repairs extra)
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Down Payment -->
+                        <div
+                            class="grid grid-cols-[1fr_1.5fr_1.5fr] items-center text-sm lg:text-base border-t border-gray-200">
+                            <div class="flex items-center p-4 text-[#000D4A] font-medium">
+                                <img src="/assets/images/feature (8).svg" class="w-6 mr-3" alt="Down Payment"> Down
+                                Payment
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="flex items-center bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-2"></i> $0 down — start today
+                                </span>
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    $2,000+ down – plus dealer fees
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Maintenance -->
+                        <div
+                            class="grid grid-cols-[1fr_1.5fr_1.5fr] items-center bg-[#E6E9FB] text-sm lg:text-base border-t border-gray-200">
+                            <div class="flex items-center p-4 text-[#000D4A] font-medium">
+                                <img src="/assets/images/feature (7).svg" class="w-6 mr-3" alt="Maintenance">
+                                Maintenance
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> Included – save $500+ per year
+                                </span>
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    You pay for every repair
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Insurance -->
+                        <div
+                            class="grid grid-cols-[1fr_1.5fr_1.5fr] items-center text-sm lg:text-base border-t border-gray-200">
+                            <div class="flex items-center p-4 text-[#000D4A] font-medium">
+                                <img src="/assets/images/feature (5).svg" class="w-6 mr-3" alt="Insurance"> Insurance
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> Included – no separate bill
+                                </span>
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Extra bill every month
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Contract Term -->
+                        <div
+                            class="grid grid-cols-[1fr_1.5fr_1.5fr] items-center bg-[#E6E9FB] text-sm lg:text-base border-t border-gray-200">
+                            <div class="flex items-center p-4 text-[#000D4A] font-medium">
+                                <img src="/assets/images/feature (4).svg" class="w-6 mr-3" alt="Contract Term"> Contract
+                                Term
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> Flexible – swap or pause anytime
+                                </span>
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Locked in for 5 years
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Usage -->
+                        <div
+                            class="grid grid-cols-[1fr_1.5fr_1.5fr] items-center text-sm lg:text-base border-t border-gray-200">
+                            <div class="flex items-center p-4 text-[#000D4A] font-medium">
+                                <img src="/assets/images/feature (2).svg" class="w-6 mr-3" alt="Usage"> Usage
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> Pay only when you drive – no wasted money
+                                </span>
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Pay even when it’s parked
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Depreciation -->
+                        <div
+                            class="grid grid-cols-[1fr_1.5fr_1.5fr] items-center bg-[#E6E9FB] text-sm lg:text-base border-t border-gray-200 rounded-b-xl overflow-hidden">
+                            <div class="flex items-center p-4 text-[#000D4A] font-medium">
+                                <img src="/assets/images/feature (1).svg" class="w-6 mr-3" alt="Depreciation">
+                                Depreciation
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#E3F4E9] text-tertiary border rounded-full px-3 py-1 font-medium">
+                                    <i class="fa-solid fa-check mr-1"></i> No resale hassle or value loss
+                                </span>
+                            </div>
+                            <div class="p-4">
+                                <span
+                                    class="inline-block bg-[#FFE4E7] text-[#DC3545] rounded-full px-3 py-1 font-medium">
+                                    Car loses value from day one
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Mobile Stacked Cards -->
+                    <div class="block md:hidden w-full space-y-4">
+                        <div class="bg-white border-2 border-primary rounded-xl shadow-lg p-4">
+                            <h3 class="text-xl font-semibold text-primary text-center mb-4">Fore Mobility</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><strong>Monthly Cost:</strong> <span class="text-tertiary font-medium">$450/month –
+                                        all-in</span></li>
+                                <li><strong>Down Payment:</strong> <span class="text-tertiary font-medium">$0 down —
+                                        start today</span></li>
+                                <li><strong>Maintenance:</strong> <span class="text-tertiary font-medium">Included –
+                                        save $500+ per year</span></li>
+                                <li><strong>Insurance:</strong> <span class="text-tertiary font-medium">Included – no
+                                        separate bill</span></li>
+                                <li><strong>Contract Term:</strong> <span class="text-tertiary font-medium">Flexible –
+                                        swap or pause anytime</span></li>
+                                <li><strong>Usage:</strong> <span class="text-tertiary font-medium">Pay only when you
+                                        drive – no wasted money</span></li>
+                                <li><strong>Depreciation:</strong> <span class="text-tertiary font-medium">No resale
+                                        hassle or value loss</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white border rounded-xl shadow-sm p-4">
+                            <h3 class="text-xl font-semibold text-[#000D4A] text-center mb-4">Traditional Lease</h3>
+                            <ul class="space-y-3 text-sm">
+                                <li><strong>Monthly Cost:</strong> <span class="text-red-600">$600+ every month (loan,
+                                        insurance & repairs extra)</span></li>
+                                <li><strong>Down Payment:</strong> <span class="text-red-600">$2,000+ down – plus dealer
+                                        fees</span></li>
+                                <li><strong>Maintenance:</strong> <span class="text-red-600">You pay for every
+                                        repair</span></li>
+                                <li><strong>Insurance:</strong> <span class="text-red-600">Extra bill every month</span>
+                                </li>
+                                <li><strong>Contract Term:</strong> <span class="text-red-600">Locked in for 5
+                                        years</span></li>
+                                <li><strong>Usage:</strong> <span class="text-red-600">Pay even when it’s parked</span>
+                                </li>
+                                <li><strong>Depreciation:</strong> <span class="text-red-600">Car loses value from day
+                                        one</span></li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <!-- CTA Button -->
+                <div class="mt-8 flex justify-center">
+                    <button @click="open = true"
+                        class="bg-primary text-white text-base px-6 py-3 md:px-8 md:py-4 rounded-full font-medium shadow-md hover:bg-blue-600 transition-colors flex items-center gap-2">
+                        Check Eligibility
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 7l-10 10M7 7h10v10" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+        <!-- Find the Plan That Fits Your Life -->
+
+        <section class=" font-inter">
+
+            <div class="py-16 px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Find the Plan That Fits Your Life</h2>
+                    <p class="text-base md:text-lg text-gray-600">Simple, flexible plans — pick what fits your driving
+                        needs and budget</p>
+                </div>
+
+                <div class="container mx-auto grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8 max-w-6xl">
+
+                    <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Light Use Plan</h3>
+                            <p class="text-gray-600 mb-6">Best for short trips & errands</p>
+                            <p class="text-4xl font-bold text-gray-900 mb-2">250 <span
+                                    class="text-lg font-normal text-gray-500">miles/month</span></p>
+                            <p class="text-lg font-semibold text-gray-800 mb-6">Starting at <span
+                                    class="text-blue-600">$199/week< 900</span>/month</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-blue-500 mr-2"></i> Weekend getaways with friends
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-blue-500 mr-2"></i> Daily commuting
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-blue-500 mr-2"></i> Grocery runs
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <button @click="open = true"
+                                class="w-full bg-blue-600 text-white py-3 px-6 rounded-xl text-lg font-medium hover:bg-blue-700 transition-colors mb-3">
+                                Get started
+                            </button>
+                            <p class="text-gray-500 text-sm">Insurance</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-50 rounded-2xl shadow-lg p-8 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Standard Use</h3>
+                            <p class="text-gray-600 mb-6">Best for frequent commuters</p>
+                            <p class="text-4xl font-bold text-gray-900 mb-2">500 <span
+                                    class="text-lg font-normal text-gray-500">miles/month</span></p>
+                            <p class="text-lg font-semibold text-gray-800 mb-6">Approximately <span
+                                    class="text-blue-600">$350</span>/month</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-blue-500 mr-2"></i> Regular road trips
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-blue-500 mr-2"></i> Business travel
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-blue-500 mr-2"></i> Family visits
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <button @click="open = true"
+                                class="w-full bg-blue-600 text-white py-3 px-6 rounded-xl text-lg font-medium hover:bg-blue-700 transition-colors mb-3">
+                                Get started
+                            </button>
+                            <p class="text-gray-500 text-sm">Maintenance</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl  shadow-lg p-8 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Unlimited Use</h3>
+                            <p class="text-gray-600 mb-6">Best for road warriors</p>
+                            <p class="text-4xl font-bold text-gray-900 mb-2">1000+ <span
+                                    class="text-lg font-normal text-gray-500">miles/month</span></p>
+                            <p class="text-lg font-semibold text-gray-800 mb-6">Capped at <span
+                                    class="text-blue-600">$500</span>/month</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-blue-500 mr-2"></i> Cross-country trips
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-blue-500 mr-2"></i> No mileage anxiety
+                                </li>
+                                <li class="flex items-center text-gray-700">
+                                    <i class="fas fa-check-circle text-blue-500 mr-2"></i> Maximum flexibility
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <button @click="open = true"
+                                class="w-full bg-blue-600 text-white py-3 px-6 rounded-xl text-lg font-medium hover:bg-blue-700 transition-colors mb-3">
+                                Get started
+                            </button>
+                            <p class="text-gray-500 text-sm">Roadside included</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-12 text-center">
+                    <button @click="open = true"
+                        class="bg-blue-600 text-white py-3 px-8 rounded-full text-lg font-medium shadow-md hover:bg-blue-700 transition-colors flex items-center justify-center mx-auto">
+                        Download app
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 7l-10 10M7 7h10v10" />
+                        </svg>
+                    </button>
+                </div>
+        </section>
+        <!-- Getting Your Car is Easy -->
+        <section class="pb-10 md:pb-10 pt-6 md:pt-10 px-4 lg:px-0">
+            <div class="max-w-5xl mx-auto ">
+                <!-- Header Section -->
+                <div class="text-center mb-8 md:mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-normal text-black mb-3">Getting Your Car is Easy</h2>
+                </div>
+
+                <!-- Timeline Section -->
+                <div class="relative">
+                    <!-- Vertical Timeline Line - Hidden on mobile, shown on medium screens and up -->
+                    <div class="hidden md:block absolute left-5 md:left-14 z-50 top-0 mb-3 bottom-0 w-0.5 bg-[#106CCA]">
+                        <!-- Arrowhead -->
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 
+                w-0 h-0 border-l-6 border-r-6 border-t-8 border-transparent 
+                border-t-[#106CCA]"></div>
+                    </div>
+
+
+                    <!-- Step 01 -->
+                    <div
+                        class="relative flex items-center mb-6 bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
+                        <!-- Timeline Dot - Hidden on mobile, shown on medium screens and up -->
+                        <div
+                            class="hidden md:block absolute left-4 md:left-11 w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded-full border-4 border-[#B0BBF2] shadow-sm shadow-primary">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="md:ml-12 lg:ml-16 w-full">
+                            <div class="flex flex-col sm:flex-row items-start gap-4">
+                                <!-- Icon -->
+                                <div class="bg-[#106CCA] p-3 md:p-4 flex-shrink-0 self-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" viewBox="0 0 49 44"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_280_5220)">
+                                            <path
+                                                d="M3.39458 22.0028C3.40934 14.6454 7.3131 7.70721 13.5916 3.93628C22.664 -1.51571 34.5288 0.609592 40.977 8.94107L38.8133 12.2604C38.5919 12.3135 38.5772 12.2294 38.4547 12.1054C38.0104 11.6567 37.4688 10.7195 36.9729 10.1926C34.728 7.80905 31.4087 5.91547 28.1971 5.24245C17.4363 2.99318 7.44446 11.0619 7.37952 22.0028H10.9217L5.38705 29.8222L0 22.0028H3.39458Z"
+                                                fill="white" />
+                                            <path
+                                                d="M38.2256 22.0027L43.6126 14.1804L48.9997 22.0027H45.6051C45.5697 30.653 40.1059 38.6553 32.0194 41.6986C23.4193 44.9368 13.5647 42.3303 7.99463 35.0394L10.1804 31.813C10.3708 31.6212 10.4195 31.782 10.545 31.8986C11.1073 32.4196 11.7346 33.4808 12.3397 34.0889C23.1492 44.9663 41.6851 37.147 41.6216 22.0012H38.227L38.2256 22.0027Z"
+                                                fill="white" />
+                                            <path
+                                                d="M34.9793 32.4817H31.4372V30.7092L29.6646 30.7106V28.7905L27.7459 28.792V27.0194L25.9749 27.0209V25.2483C24.7971 24.9708 24.0458 25.6867 23.0319 25.9213C16.2531 27.4917 11.2483 19.7122 15.5004 14.2573C18.9938 9.77642 26.3468 10.9394 28.1577 16.353C28.7067 17.9928 28.506 19.5912 28.2581 21.2589L34.9779 27.9802V32.4817H34.9793ZM20.7605 15.5575C18.8315 13.7141 16.0774 17.0452 18.4551 18.5271C20.4417 19.7639 22.2851 17.0142 20.7605 15.5575Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_280_5220">
+                                                <rect width="49" height="42.143" fill="white"
+                                                    transform="translate(0 0.927002)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+
+                                <!-- Text Content -->
+                                <div class="flex-1 flex flex-col sm:flex-row items-start gap-3 mb-2">
+                                    <span class="text-4xl sm:text-5xl md:text-6xl font-bold text-black">01</span>
+                                    <div class="sm:ml-2">
+                                        <h3
+                                            class="text-2xl sm:text-3xl md:text-4xl font-medium text-black mb-2 md:mb-4">
+                                            Download and sign up</h3>
+                                        <p
+                                            class="text-[#474747] font-inter text-base sm:text-lg md:text-xl lg:text-2xl">
+                                            Get the Fore Mobility app from the App Store or Google Play, create your
+                                            account in minutes, and you're ready to start booking.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 02 -->
+                    <div
+                        class="relative flex items-center mb-6 bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
+                        <!-- Timeline Dot - Hidden on mobile, shown on medium screens and up -->
+                        <div
+                            class="hidden md:block absolute left-4 md:left-11 w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded-full border-4 border-[#B0BBF2] shadow-sm shadow-primary">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="md:ml-12 lg:ml-16 w-full">
+                            <div class="flex flex-col sm:flex-row items-start gap-4">
+                                <!-- Icon -->
+                                <div class="bg-[#106CCA] p-3 md:p-4 flex-shrink-0 self-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" viewBox="0 0 55 26"
+                                        fill="none">
+                                        <g clip-path="url(#clip0_280_5404)">
+                                            <path
+                                                d="M19.0349 22.1391C19.4554 19.4261 18.767 16.7894 16.6162 14.9796C11.2711 10.4818 2.94826 14.9968 4.39354 21.9834C-1.24744 21.3199 -0.283398 14.6464 0.928278 10.65C1.53879 8.63315 2.18045 7.29843 4.49322 7.0508C5.20652 6.97449 6.08335 7.15515 6.73902 6.96047C7.35732 6.7767 9.91928 4.56671 10.7946 4.0076C15.9823 0.690288 19.6999 0.358557 25.8159 0.640451C32.3586 0.942591 34.7711 2.61371 39.5913 6.48857C40.9712 7.59746 42.8712 7.59123 44.5439 8.07715C48.2521 9.15488 54.3541 11.234 54.8369 15.6945C55.2138 19.18 54.8836 22.5363 50.4948 22.1376C52.1924 10.3043 34.2634 10.3027 35.855 22.1376H19.0349V22.1391ZM37.2069 8.32633C33.005 3.18372 25.8938 2.67133 19.7295 3.13233C17.0289 3.33479 11.7633 6.30013 9.91772 8.27182C9.09696 9.14865 9.54861 10.1454 10.6996 10.3058H36.2491C37.3439 10.2311 37.9404 9.22029 37.2085 8.32633H37.2069Z"
+                                                fill="white" />
+                                            <path
+                                                d="M11.213 15.4861C17.8211 14.8444 18.9082 24.4537 12.5539 25.2371C5.33217 26.1264 4.37435 16.1511 11.213 15.4861Z"
+                                                fill="white" />
+                                            <path
+                                                d="M42.6734 15.4862C49.4466 14.8336 50.3421 24.499 44.0143 25.2372C36.7567 26.0844 35.9967 16.1278 42.6734 15.4862Z"
+                                                fill="white" />
+                                            <path
+                                                d="M37.2072 8.32655C37.9392 9.22206 37.3427 10.2313 36.2479 10.3076H10.6999C9.54896 10.1472 9.09887 9.14886 9.91807 8.27204C11.7636 6.30034 17.0293 3.335 19.7298 3.13254C25.8941 2.67154 33.0053 3.18393 37.2072 8.32655ZM21.6828 5.31916C19.4947 5.37834 17.632 5.80975 15.7615 6.95134L14.2072 7.96678H21.6828V5.31916ZM33.2078 7.96678C30.6396 5.72409 27.3005 5.41728 24.019 5.31916V7.96678H33.2078Z"
+                                                fill="#2F2F2F" />
+                                            <path
+                                                d="M33.2074 7.96671H24.0186V5.31909C27.3 5.41721 30.6392 5.72402 33.2074 7.96671Z"
+                                                fill="white" />
+                                            <path
+                                                d="M21.6827 5.31909V7.96671H14.207L15.7613 6.95127C17.6334 5.80968 19.4945 5.37827 21.6827 5.31909Z"
+                                                fill="white" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_280_5404">
+                                                <rect width="54.9521" height="24.7319" fill="white"
+                                                    transform="translate(0 0.561035)" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                </div>
+
+                                <!-- Text Content -->
+                                <div class="flex-1 flex flex-col sm:flex-row items-start gap-3 mb-2">
+                                    <span class="text-4xl sm:text-5xl md:text-6xl font-bold text-black">02</span>
+                                    <div class="sm:ml-2">
+                                        <h3
+                                            class="text-2xl sm:text-3xl md:text-4xl font-medium text-black mb-2 md:mb-4">
+                                            Browse & Select</h3>
+                                        <p
+                                            class="text-[#474747] font-inter text-base sm:text-lg md:text-xl lg:text-2xl">
+                                            Pick from a wide range of cars that fit your budget and lifestyle.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 03 -->
+                    <div
+                        class="relative flex items-center mb-6 bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
+                        <!-- Timeline Dot - Hidden on mobile, shown on medium screens and up -->
+                        <div
+                            class="hidden md:block absolute left-4 md:left-11 w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded-full border-4 border-[#B0BBF2] shadow-sm shadow-primary">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="md:ml-12 lg:ml-16 w-full">
+                            <div class="flex flex-col sm:flex-row items-start gap-4">
+                                <!-- Icon -->
+                                <div class="bg-[#106CCA] p-3 md:p-4 flex-shrink-0 self-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" viewBox="0 0 48 34"
+                                        fill="white">
+                                        <path
+                                            d="M32.3182 0V23.5227C31.14 24.6464 30.3873 25.9132 30.0341 27.5114C29.9577 27.8591 30.1309 28.5 29.7764 28.6173L18.3409 28.6364C17.8895 28.5518 17.9155 27.3245 17.7968 26.8623C17.3332 25.0609 15.7718 23.2909 14.0945 22.5191C9.42 20.3686 4.35818 23.5909 4.09091 28.6364H0V19.3636H8.25C9.02454 19.3636 9.74318 18.1323 9.69 17.3877C9.64227 16.7223 8.75591 15.6818 8.11364 15.6818H5.59091V12.9545H17.6591C18.7323 12.9545 19.5423 11.6277 19.3323 10.5995C19.2245 10.0718 18.4595 9.27273 17.9318 9.27273H0V6.40909H11.6591C11.7327 6.40909 12.4295 5.90318 12.5264 5.77636C13.0091 5.14091 13.0541 4.35682 12.6068 3.68864C12.5073 3.54 11.7218 2.86364 11.6591 2.86364H8.93182L8.72727 2.65909V0H32.3182Z M48.0001 15.6819V28.6364H43.9092C43.7551 24.2373 39.4814 20.8801 35.1819 22.091V15.6819H48.0001Z M47.3182 12.9545H35.1819V3.27271H40.841L47.3182 12.9545Z M10.331 24.7174C16.1906 23.8596 16.931 32.3756 11.6442 32.9837C6.05875 33.626 5.32784 25.4483 10.331 24.7174ZM9.68193 30.2728H12.341L12.5456 30.0683V27.6137L12.341 27.4092H9.68193V30.2728Z M36.24 24.7173C41.9837 23.9387 42.7827 32.396 37.4182 32.9851C31.935 33.5864 31.0623 25.4196 36.24 24.7173ZM38.3182 27.4092H35.6591L35.4546 27.6137V30.0683L35.6591 30.2728H38.3182V27.4092Z M5.99998 0H3.27271V2.86364H5.99998V0Z M2.86364 12.9546H0V15.6819H2.86364V12.9546Z M36.9109 31.0911C38.1535 31.0911 39.1609 30.0837 39.1609 28.8411C39.1609 27.5984 38.1535 26.5911 36.9109 26.5911C35.6682 26.5911 34.6609 27.5984 34.6609 28.8411C34.6609 30.0837 35.6682 31.0911 36.9109 31.0911Z M36.5208 29.1056C36.5457 29.1056 36.5658 29.0855 36.5658 29.0606C36.5658 29.0358 36.5457 29.0156 36.5208 29.0156C36.496 29.0156 36.4758 29.0358 36.4758 29.0606C36.4758 29.0855 36.496 29.1056 36.5208 29.1056Z M11.2104 31.3951C12.4862 31.3951 13.5204 30.3609 13.5204 29.0851C13.5204 27.8094 12.4862 26.7751 11.2104 26.7751C9.93461 26.7751 8.90039 27.8094 8.90039 29.0851C8.90039 30.3609 9.93461 31.3951 11.2104 31.3951Z" />
+                                    </svg>
+                                </div>
+
+                                <!-- Text Content -->
+                                <div class="flex-1 flex flex-col sm:flex-row items-start gap-3 mb-2">
+                                    <span class="text-4xl sm:text-5xl md:text-6xl font-bold text-black">03</span>
+                                    <div class="sm:ml-2">
+                                        <h3
+                                            class="text-2xl sm:text-3xl md:text-4xl font-medium text-black mb-2 md:mb-4">
+                                            Get Your Car</h3>
+                                        <p
+                                            class="text-[#474747] font-inter text-base sm:text-lg md:text-xl lg:text-2xl">
+                                            We'll bring it right to your door, fully insured and ready to go.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 04 -->
+                    <div
+                        class="relative flex items-center mb-6 bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
+                        <!-- Timeline Dot - Hidden on mobile, shown on medium screens and up -->
+                        <div
+                            class="hidden md:block absolute left-4 md:left-11 w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded-full border-4 border-[#B0BBF2] shadow-sm shadow-primary">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="md:ml-12 lg:ml-16 w-full">
+                            <div class="flex flex-col sm:flex-row items-start gap-4">
+                                <!-- Icon -->
+                                <div class="bg-[#106CCA] p-3 md:p-4 flex-shrink-0 self-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" viewBox="0 0 48 64"
+                                        fill="white">
+                                        <path
+                                            d="M6.38735 6.83674C2.96806 7.40512 5.10444 12.4628 3.87566 13.3451C1.68695 14.9149 2.32029 9.07958 2.68297 8.00237C4.0994 3.79817 8.53456 5.34272 11.9448 4.99448C18.4009 -1.66006 29.5664 -1.67089 36.017 4.99448C40.0498 5.15687 45.1291 3.91726 45.6307 9.45489C45.9248 12.71 45.9212 19.0073 45.6397 22.2696C45.4611 24.3428 44.1493 26.4359 41.9354 26.6849C41.0675 26.7823 39.642 26.499 38.904 26.721C38.6081 26.8094 36.9499 28.2493 36.2588 28.5867C35.4685 28.9746 34.6204 29.2254 33.7706 29.4365L32.6428 31.7371H40.131C40.4449 31.7371 41.7008 32.4517 41.9642 32.7025C44.0429 34.6909 42.6986 39.6349 43.119 42.2837C43.2129 42.8737 43.774 43.9347 43.9581 44.6925C45.3853 50.5495 46.5925 56.4643 47.9836 62.3303C48.1857 63.6818 46.6141 63.9272 46.163 62.6966C44.7357 57.1139 43.8029 51.3705 42.2998 45.8095C41.7026 43.6027 41.2353 42.0744 39.0267 40.9629C38.4944 40.6959 37.161 40.4992 36.9986 39.9091C37.0473 37.457 40.0101 39.4147 41.1234 40.0373V34.7143C41.1234 34.2542 40.0317 33.6227 39.5788 33.5523C37.1321 33.1752 33.8373 33.8049 31.295 33.5451C31.1524 33.5722 29.2722 35.1275 29.2037 35.243C28.8717 35.7934 28.9529 37.2008 29.5375 37.5057C30.3855 37.9496 33.9889 37.7836 34.3606 38.4097C35.2465 40.9322 31.3581 39.3606 31.0279 39.6818L30.6742 41.4627C33.2509 42.5868 35.4739 44.5951 37.0509 46.9083C37.3252 47.3107 38.175 49.1223 38.2815 49.1963C38.4601 49.3226 39.3713 49.3713 39.8928 49.66C41.109 50.3312 41.7387 51.578 41.856 52.9295C42.0057 54.6707 42.0057 57.8789 41.856 59.6183C41.7279 61.1015 41.0566 62.545 39.6276 63.1639C38.6406 63.5916 33.7128 63.6764 32.5977 63.449C31.7136 63.2686 30.7031 62.1409 30.649 61.2315C30.6255 60.8507 30.8421 60.3906 30.8024 60.1723C30.7428 59.8601 29.2813 58.6241 29.5627 57.7346C28.8915 57.8013 27.2423 57.5036 26.766 57.8807C25.862 58.5935 27.5437 63.8713 25.3838 63.4635C24.9959 63.3895 24.5267 62.8554 24.5267 62.4981V59.16H23.2637V63.0394C20.1529 65.073 22.154 58.6277 21.2067 57.8789C20.7195 57.4946 19.0793 57.8158 18.3991 57.7237C18.7545 58.6295 17.2353 59.824 17.1703 60.1723C17.1306 60.387 17.3363 60.7551 17.3273 61.0546C17.3002 61.8991 16.5839 63.0088 15.79 63.3227C14.996 63.6367 10.6619 63.5916 9.64425 63.4869C7.62696 63.283 6.32781 61.7854 6.12571 59.788C5.97054 58.2524 5.94528 52.87 6.39637 51.5816C6.63094 50.9104 7.37073 50.0966 7.98061 49.7376C8.49486 49.4344 9.51433 49.3172 9.69116 49.1945C9.83371 49.0934 10.9542 46.708 11.4558 46.1775C12.4681 45.1094 13.5688 45.7788 13.0184 47.1988C12.8795 47.5579 11.6146 48.9599 11.8979 49.2324H13.9693C14.4529 49.1349 15.3389 47.6571 15.8657 47.1555C21.0678 42.1917 29.8118 43.1263 33.7291 49.1439L36.0747 49.2324C36.5511 48.7686 33.3519 45.4287 32.8305 44.9903C28.6894 41.5078 22.8721 40.8456 17.9949 43.1498C17.1541 43.5468 15.0808 45.3764 14.637 43.8698C14.258 42.5814 16.5694 42.0167 17.3219 41.3689L16.8654 39.8478L16.4955 39.6601C12.284 40.501 7.65402 39.5194 5.994 44.5031C4.13008 50.1021 3.522 56.8234 1.85115 62.5541C1.7483 63.3895 0.510498 63.8568 0.0774473 63.1297C-0.243732 62.5919 0.616956 59.4469 0.797393 58.6151C1.80063 53.9743 2.87603 49.2991 4.00918 44.6853C4.19503 43.9311 4.75439 42.8647 4.84822 42.2765C5.23074 39.8749 4.18782 35.3585 5.50321 33.3683C5.85867 32.8306 7.19391 31.7317 7.83626 31.7317H15.3244C15.1259 31.2337 14.5052 29.8407 14.1588 29.5592C13.7528 29.2309 11.9899 28.7563 11.2339 28.3341C10.5933 27.9768 9.53598 26.9303 9.18774 26.7715C8.52373 26.4683 6.74822 26.7823 5.86769 26.6632C4.3033 26.4503 2.96084 24.9491 2.56749 23.4677C2.2445 22.2497 2.13985 18.2855 2.34374 17.0369C2.49531 16.113 3.41554 15.5844 4.04527 16.3981C5.38773 18.1321 2.22105 25.5138 7.38517 24.8751C6.97377 23.6914 6.31157 22.7333 5.9958 21.4847C4.62628 16.0571 7.728 12.0532 9.92393 7.4773C10.0286 7.25716 10.1531 7.11281 10.0917 6.83313C8.96219 6.96485 7.46997 6.6545 6.39276 6.83313L6.38735 6.83674ZM41.5727 6.83674C40.4955 6.65811 39.0032 6.96846 37.8737 6.83674C37.9278 7.88869 40.1869 9.79231 38.8751 10.6386C37.6969 11.3982 37.069 9.27265 36.4988 8.48053C31.1506 1.04289 21.0443 -0.546762 13.9711 5.57909C11.4378 7.77141 9.03076 12.5043 8.01851 15.6854C6.51366 20.4111 8.63199 25.4904 13.3324 27.2244C13.0978 25.1945 11.8113 19.5179 13.9874 18.4064C14.922 17.93 17.7531 18.2927 19.0144 18.2007C21.923 17.9878 23.971 16.8727 25.4199 14.3213C24.1352 13.9749 22.7585 13.5093 21.8057 12.5259C21.1453 11.8439 19.3897 8.89734 21.3673 8.98936C22.2767 9.03086 22.3777 10.1875 22.8162 10.7937C25.6635 14.7273 34.458 9.60826 35.1455 15.606C35.3764 17.6305 35.2916 21.2591 35.1726 23.3522C35.1004 24.6351 34.763 25.9469 34.716 27.2262C39.3082 25.254 41.3471 20.6366 39.9866 15.8171C39.7448 14.9637 38.4186 12.8724 40.2916 12.9752C41.1414 13.0203 41.7405 15.0809 41.9336 15.855C42.4261 17.8254 42.4334 19.6604 41.9336 21.6308C41.6376 22.7982 40.9429 23.7492 40.5803 24.8769C41.9155 25.0537 43.0847 24.5647 43.5629 23.2602L43.6369 8.9208C43.4979 8.02222 42.4568 6.98109 41.5727 6.83494V6.83674ZM14.7777 20.0087V25.1512C14.7777 28.7455 19.6603 34.9255 23.2077 35.6653C25.4993 36.1434 28.8013 33.408 30.2069 31.7389C33.6352 27.6683 33.6605 20.8748 33.1895 15.7594C33.1444 15.2596 33.1138 14.7832 32.5959 14.5486C32.2098 14.3718 27.9334 14.3032 27.5256 14.444C26.351 16.4108 25.1709 18.1394 23.0183 19.139C22.5094 19.3753 20.7376 20.0087 20.2792 20.0087H14.7759H14.7777ZM6.83844 34.7143C6.53892 36.1218 7.06038 38.5144 6.83844 40.0373C10.1729 37.8251 14.5251 38.4169 18.3161 37.5436C20.106 35.8529 18.0166 34.5303 16.6687 33.5451C14.1263 33.8049 10.8315 33.1752 8.38479 33.5523C7.86513 33.6317 6.95212 34.1857 6.84025 34.7143H6.83844ZM27.2261 36.6089C24.866 37.8973 23.0941 37.8973 20.7321 36.6089C20.743 37.7854 19.9057 39.016 18.7672 39.3372L19.193 40.7337C22.2857 39.6403 25.7627 39.6511 28.8482 40.759L29.2001 39.3317C28.02 39.0015 27.2026 37.8359 27.2261 36.6089ZM18.206 52.6679H21.0028C21.1832 52.6679 22.3092 51.3074 24.2579 51.3976C25.7357 51.4662 26.8039 52.6679 26.9572 52.6679H29.754C29.3282 51.4012 29.8893 49.5734 31.378 49.4182C31.5728 49.1981 30.3404 48.0956 30.1005 47.9007C26.5928 45.0859 21.3637 45.1166 17.8614 47.9007C17.6485 48.0703 16.6398 49.0104 16.5839 49.1512C16.4413 49.5192 17.5113 49.5571 17.6503 49.8855C18.3143 50.7264 18.5218 51.6358 18.206 52.6679ZM12.1614 52.307C13.1682 52.141 15.0087 52.307 16.131 52.307C16.5712 52.307 16.5712 51.0439 16.131 51.0439H9.45479C9.34653 51.0439 8.49847 51.5979 8.37397 51.7675C8.15203 52.0706 7.98603 52.7581 7.94092 53.1388C7.76589 54.6202 7.78033 57.7526 7.91385 59.2611C8.01851 60.452 8.55441 61.4931 9.8319 61.6735C10.5518 61.7746 14.5864 61.789 15.0971 61.5707C15.5373 61.383 15.6041 60.7352 15.1368 60.5187C14.2562 60.1073 11.7842 61.0276 11.5605 59.575C11.4793 59.0464 12.0513 58.4437 12.5222 58.4437H16.131C16.1779 58.4437 16.6236 58.0215 16.5676 57.8374C16.5514 57.7418 16.1635 57.3611 16.131 57.3611H12.5222C12.3472 57.3611 11.611 56.9587 11.5587 56.6934C11.1852 53.8281 16.9538 56.8252 16.3601 54.3369C15.7051 53.7307 12.6124 54.4542 11.8889 54.0248C11.344 53.7 11.4414 52.4279 12.1614 52.3088V52.307ZM38.5052 51.0439C36.7045 50.6831 33.7633 51.3128 31.829 51.0439C31.3906 51.2226 31.5169 52.307 31.829 52.307H35.7987C36.4428 52.307 36.6521 53.6783 36.0711 54.023C35.3476 54.4524 32.2549 53.7289 31.5999 54.3351C31.3996 54.5661 31.4104 54.9991 31.6414 55.1958C32.4353 55.8688 37.0924 54.4488 36.4013 56.6916C36.349 56.9551 35.6128 57.3593 35.4378 57.3593H31.829C31.47 57.3593 31.4718 58.4419 31.829 58.4419H35.4378C35.9105 58.4419 36.4825 59.0445 36.3995 59.5732C36.1758 61.0258 33.702 60.1055 32.8233 60.5169C32.3559 60.7352 32.4227 61.3812 32.863 61.5689C33.3736 61.7872 37.41 61.7728 38.1281 61.6717C39.4056 61.4913 39.9415 60.452 40.0462 59.2593C40.1761 57.7905 40.214 54.3676 40.0227 52.953C39.9145 52.1536 39.3334 51.2081 38.5052 51.0421V51.0439ZM23.3864 53.2471C21.2356 53.7415 21.6055 57.6173 24.202 57.325C27.0096 57.0092 26.36 52.5632 23.3864 53.2471ZM20.1908 54.6545L18.4063 54.6725L18.206 55.914H20.1908C20.0735 55.4394 19.9075 55.1146 20.1908 54.6527V54.6545ZM29.5537 54.6725L27.7692 54.6545L27.9478 55.9176H29.754L29.5537 54.6725Z M21.1401 31.3311C20.7161 30.8926 20.8099 29.8695 21.5551 29.7504C22.3003 29.6314 23.1754 30.3188 24.0632 30.299C24.8463 30.2809 26.8654 29.0233 27.053 30.3964C27.3273 32.3884 22.2426 32.4769 21.1401 31.3329V31.3311Z M30.7825 18.4352C31.2643 19.0126 30.8944 19.9472 30.1979 20.014C29.8515 20.0483 29.2452 19.6513 28.5848 19.6351C27.6375 19.6116 26.8165 20.3623 26.2211 19.6604C24.7397 17.9173 29.5682 16.9791 30.7825 18.4352Z M22.6646 25.9956C23.1861 25.8422 23.5812 26.1291 24.0504 26.1255C24.7144 26.1219 25.5715 25.4759 25.8457 26.5387C26.2986 28.3015 22.5419 28.2853 22.2045 27.2875C22.0566 26.8526 22.1612 26.1435 22.6664 25.9956H22.6646Z M20.1477 21.4955C20.514 21.8618 20.8551 25.2757 19.2401 24.8517C17.8183 24.4782 18.5833 19.9275 20.1477 21.4955Z M27.8127 24.655C27.4464 24.2887 27.1054 20.8748 28.7203 21.2988C30.1421 21.6724 29.3771 26.223 27.8127 24.655Z" />
+                                    </svg>
+                                </div>
+
+                                <!-- Text Content -->
+                                <div class="flex-1 flex flex-col sm:flex-row items-start gap-3 mb-2">
+                                    <span class="text-4xl sm:text-5xl md:text-6xl font-bold text-black">04</span>
+                                    <div class="sm:ml-2">
+                                        <h3
+                                            class="text-2xl sm:text-3xl md:text-4xl font-medium text-black mb-2 md:mb-4">
+                                            Drive & Enjoy</h3>
+                                        <p
+                                            class="text-[#474747] font-inter text-base sm:text-lg md:text-xl lg:text-2xl">
+                                            Hit the road with zero worries — we've got insurance & maintenance covered.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 05 -->
+                    <div
+                        class="relative flex items-center mb-6 bg-white rounded-lg p-4 md:p-6 shadow-sm border border-gray-100">
+                        <!-- Timeline Dot - Hidden on mobile, shown on medium screens and up -->
+                        <div
+                            class="hidden md:block absolute left-4 md:left-11 w-5 h-5 md:w-6 md:h-6 bg-blue-500 rounded-full border-4 border-[#B0BBF2] shadow-sm shadow-primary">
+                        </div>
+
+                        <!-- Content -->
+                        <div class="md:ml-12 lg:ml-16 w-full">
+                            <div class="flex flex-col sm:flex-row items-start gap-4">
+                                <!-- Icon -->
+                                <div class="bg-[#106CCA] p-3 md:p-4 flex-shrink-0 self-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" viewBox="0 0 48 49"
+                                        fill="none">
+                                        <path
+                                            d="M4.00008 24.9271C4.00008 25.6171 4.56008 26.1771 5.25008 26.1771H37.6961L24.8741 38.7861C24.7517 38.8998 24.6533 39.037 24.5848 39.1894C24.5163 39.3418 24.479 39.5065 24.4753 39.6735C24.4715 39.8406 24.5012 40.0068 24.5628 40.1621C24.6243 40.3175 24.7164 40.459 24.8336 40.5781C24.9507 40.6973 25.0906 40.7918 25.2449 40.8559C25.3992 40.9201 25.5648 40.9527 25.732 40.9518C25.8991 40.9508 26.0643 40.9164 26.2179 40.8505C26.3715 40.7846 26.5103 40.6885 26.6261 40.5681L41.6141 25.8301L41.6411 25.8031C41.7705 25.6715 41.8693 25.5128 41.9301 25.3385C41.991 25.1642 42.0125 24.9786 41.9931 24.7951C41.9613 24.4945 41.8217 24.2156 41.6001 24.0101L26.6261 9.28606C26.5103 9.16558 26.3715 9.06955 26.2179 9.00365C26.0643 8.93774 25.8991 8.9033 25.732 8.90236C25.5648 8.90142 25.3992 8.93401 25.2449 8.99818C25.0906 9.06236 24.9507 9.15683 24.8336 9.276C24.7164 9.39517 24.6243 9.53662 24.5628 9.69199C24.5012 9.84737 24.4715 10.0135 24.4753 10.1806C24.479 10.3477 24.5163 10.5123 24.5848 10.6647C24.6533 10.8172 24.7517 10.9543 24.8741 11.0681L37.6961 23.6771H5.25008C4.56008 23.6771 4.00008 24.2371 4.00008 24.9271Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+
+                                <!-- Text Content -->
+                                <div class="flex-1 flex flex-col sm:flex-row items-start gap-3 mb-2">
+                                    <span class="text-4xl sm:text-5xl md:text-6xl font-bold text-black">05</span>
+                                    <div class="sm:ml-2">
+                                        <h3
+                                            class="text-2xl sm:text-3xl md:text-4xl font-medium text-black mb-2 md:mb-4">
+                                            Return or Swap Anytime</h3>
+                                        <p
+                                            class="text-[#474747] font-inter text-base sm:text-lg md:text-xl lg:text-2xl">
+                                            Need a bigger car? Want to try an EV? Swap it. Pause or return with no
+                                            penalties after 1 month.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="text-center mt-9">
+                    <button @click="open = true"
+                        class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-3 rounded-lg inline-flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
+                        Join Now
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 7l-10 10M7 7h10v10" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- testimonial -->
+        <section class="py-10 px-4 lg:px-0">
+            <div class="container relative">
+                <div class="relative">
+                    <div class="swiper testimonial-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-secondary shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/assets/images/testimonial 1.png" alt="Michael Chen"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">MC</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Michael Chen</h3>
+                                            <p class="text-gray-600 text-sm mt-2">city driver</p>
+                                            <p class="text-gray-600 text-base">Fore Subscriber</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+
+                                    <p class="text-[#0F1125] font-medium text-lg font-poppins">Perfect for weekend trips
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-secondary shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/assets/images/testimonial.png" alt="Sarah Johnson"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">SJ</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Sarah Johnson</h3>
+                                            <p class="text-gray-600 text-sm">commuter</p>
+                                            <p class="text-gray-600 text-base">Personal Plan</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+                                    <p class="text-[#0F1125] font-medium text-lg ">Saved me $300/month</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-secondary shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/assets/images/testimonial.png" alt="Emily Rodriguez"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">ER</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Emily Rodriguez</h3>
+                                            <p class="text-gray-600 text-sm">Road tripper</p>
+                                            <p class="text-gray-600 text-base">Personal Plan</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+                                    <p class="text-[#0F1125] font-medium text-lg">Booked in 2 minutes</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-secondary shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/assets/images/testimonial.png" alt="David Kim"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">DK</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">David Kim</h3>
+                                            <p class="text-gray-600 text-sm">Road tripper</p>
+                                            <p class="text-gray-600 text-base">Personal Plan</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+
+                                    <p class="text-[#0F1125] font-medium text-lg">Never worry about repairs</p>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div class="p-6 h-full bg-secondary shadow-sm border border-gray-200 rounded-3xl">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div
+                                            class="h-14 w-14 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                            <img src="/assets/images/testimonial 1.png" alt="Lisa Thompson"
+                                                class="h-full w-full object-cover"
+                                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                            <span class="text-blue-600 font-semibold text-sm hidden">LT</span>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-gray-900 text-xl">Lisa Thompson</h3>
+                                            <p class="text-gray-600 text-sm">Full-time Mom</p>
+                                            <p class="text-gray-600 text-base">Personal User</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-1 mb-4 text-[#FFC107]">
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                        <i class="fa-solid fa-star w-6 h-6 text-sm"></i>
+                                    </div>
+
+
+                                    <p class="text-[#0F1125] font-medium text-lg">Perfect for weekends</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center gap-9 mt-8 mb-8 lg:mb-10">
+                        <button id="prevBtn" class="w-10 h-10 " aria-label="Previous slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                                fill="none">
+                                <path d="M10.0002 13.3335L3.3335 20.0002L10.0002 26.6668" stroke="black"
+                                    stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M3.3335 20H36.6668" stroke="black" stroke-width="3.33333"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <button id="nextBtn" class="w-10 h-10 " aria-label="Next slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"
+                                fill="none">
+                                <path d="M30 13.3335L36.6667 20.0002L30 26.6668" stroke="black" stroke-width="3.33333"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M3.3335 20H36.6668" stroke="black" stroke-width="3.33333"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="text-center ">
+                    <button @click="open = true"
+                        class="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-3 rounded-lg inline-flex items-center justify-center gap-2 transition-colors w-full sm:w-auto">
+                        Get Free Audit
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 7l-10 10M7 7h10v10" />
+                        </svg>
+                    </button>
+                </div>
+
+                <button @click="open = true"
+                    class="text-center absolute right-0 w-14 h-14 bg-primary text-white rounded-full hidden sm:flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M29.7001 16.1968C29.2351 11.4268 26.4151 3.92676 17.7001 3.92676C8.98507 3.92676 6.16507 11.4268 5.70007 16.1968C4.06884 16.8159 2.99285 18.382 3.00004 20.1268V22.2268C3.00004 24.5464 4.88048 26.4268 7.20007 26.4268C9.51967 26.4268 11.4001 24.5464 11.4001 22.2268V20.1268C11.3925 18.4197 10.3561 16.8857 8.77507 16.2418C9.07507 13.4818 10.5451 6.92676 17.7001 6.92676C24.8551 6.92676 26.3101 13.4818 26.6101 16.2418C25.0323 16.8871 24.001 18.4221 24.0001 20.1268V22.2268C24.0066 23.8392 24.9325 25.3067 26.3851 26.0068C25.7551 27.1918 24.1501 28.7968 20.2051 29.2768C19.4165 28.0793 17.8908 27.6072 16.5637 28.1501C15.2367 28.6929 14.4792 30.099 14.756 31.5058C15.0327 32.9126 16.2663 33.9268 17.7001 33.9268C18.8331 33.9205 19.8659 33.2764 20.3701 32.2618C26.8051 31.5268 28.8601 28.2118 29.5051 26.2618C31.25 25.6965 32.4236 24.0608 32.4001 22.2268V20.1268C32.4073 18.382 31.3313 16.8159 29.7001 16.1968ZM8.40007 22.2268C8.40007 22.8895 7.86281 23.4268 7.20007 23.4268C6.53733 23.4268 6.00007 22.8895 6.00007 22.2268V20.1268C6.00007 19.698 6.22879 19.3019 6.60007 19.0875C6.97135 18.8732 7.42879 18.8732 7.80007 19.0875C8.17135 19.3019 8.40007 19.698 8.40007 20.1268V22.2268ZM27.0001 20.1268C27.0001 19.464 27.5373 18.9268 28.2001 18.9268C28.8628 18.9268 29.4001 19.464 29.4001 20.1268V22.2268C29.4001 22.8895 28.8628 23.4268 28.2001 23.4268C27.5373 23.4268 27.0001 22.8895 27.0001 22.2268V20.1268Z"
+                            fill="white" />
+                    </svg>
+                </button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <!-- faq section -->
+        <section class="py-10  px-4 sm:py-14 lg:my-20!">
+            <div class="pb-8 text-center px-6">
+                <h2 class="text-xl font-medium text-gray-900 font-inter sm:text-2xl lg:text-3xl xl:text-4xl">
+                    Frequently Asking Questions
+                </h2>
+            </div>
+
+            <div class="container mx-auto bg-gray-50 rounded-lg shadow-sm">
+                <div x-data="{ open: false }" class="bg-white mb-4 shadow-md">
+                    <button @click="open = !open"
+                        class="flex w-full items-center justify-between px-6 py-6 text-left transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                        <span class="text-2xl font-medium text-gray-700 font-helvetica">What if I need to cancel?</span>
+                        <svg :class="open ? 'rotate-180' : ''"
+                            class="h-5 w-5 transform text-gray-500 transition-transform duration-200"
+                            xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z"
+                                fill="#898B8E" />
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform translate-y-0"
+                        x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            You can cancel your subscription at any time. Your access will continue
+                            until the end of your current billing period.
+                        </p>
+                    </div>
+                </div>
+
+                <div x-data="{ open: true }" class="bg-[#F4F4F4] mb-4 shadow-md">
+                    <button @click="open = !open"
+                        class="flex w-full items-center justify-between px-6 py-6 text-left transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                        <span class="text-2xl font-bold text-gray-700 font-helvetica">“Do I need my own
+                            insurance?”</span>
+                        <svg :class="open ? 'rotate-180' : ''"
+                            class="h-5 w-5 transform text-gray-500 transition-transform duration-200"
+                            xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z"
+                                fill="#898B8E" />
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform translate-y-0"
+                        x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 pb-4">
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            No &mdash; Your Subscription Includes Full Coverage Insurance.
+                        </p>
+                    </div>
+                </div>
+
+                <div x-data="{ open: false }" class="bg-white mb-4 shadow-md">
+                    <button @click="open = !open"
+                        class="flex w-full items-center justify-between px-6 py-6 text-left transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                        <span class="text-2xl font-medium text-gray-700 font-helvetica">Can I take the car on a long
+                            trip?</span>
+                        <svg :class="open ? 'rotate-180' : ''"
+                            class="h-5 w-5 transform text-gray-500 transition-transform duration-200"
+                            xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z"
+                                fill="#898B8E" />
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform translate-y-0"
+                        x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            Yes, you can take the car on a long trip. Our subscriptions don't
+                            restrict your travel distance or location within the country.
+                        </p>
+                    </div>
+                </div>
+
+                <div x-data="{ open: false }" class="bg-white mb-4 shadow-md">
+                    <button @click="open = !open"
+                        class="flex w-full items-center justify-between px-6 py-6 text-left transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                        <span class="text-2xl font-medium text-gray-700 font-helvetica">What if the car has a
+                            problem?</span>
+                        <svg :class="open ? 'rotate-180' : ''"
+                            class="h-5 w-5 transform text-gray-500 transition-transform duration-200"
+                            xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z"
+                                fill="#898B8E" />
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform translate-y-0"
+                        x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            In the event of a mechanical problem, contact our 24/7 roadside
+                            assistance. We will arrange for a tow and a replacement vehicle as
+                            needed, all covered by your subscription.
+                        </p>
+                    </div>
+                </div>
+
+                <div x-data="{ open: false }" class="bg-white mb-4 shadow-md">
+                    <button @click="open = !open"
+                        class="flex w-full items-center justify-between px-6 py-6 text-left transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                        <span class="text-2xl font-medium text-gray-700 font-helvetica">What cars are available?</span>
+                        <svg :class="open ? 'rotate-180' : ''"
+                            class="h-5 w-5 transform text-gray-500 transition-transform duration-200"
+                            xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z"
+                                fill="#898B8E" />
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform translate-y-0"
+                        x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            We offer a wide range of vehicles from compact sedans to luxury SUVs.
+                            You can browse our full list of available models on our website.
+                        </p>
+                    </div>
+                </div>
+
+                <div x-data="{ open: false }" class="bg-white mb-4 shadow-md">
+                    <button @click="open = !open"
+                        class="flex w-full items-center justify-between px-6 py-6 text-left transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                        <span class="text-2xl font-medium text-gray-700 font-helvetica">How soon can I get a car?</span>
+                        <svg :class="open ? 'rotate-180' : ''"
+                            class="h-5 w-5 transform text-gray-500 transition-transform duration-200"
+                            xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z"
+                                fill="#898B8E" />
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform translate-y-0"
+                        x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            Typically, you can pick up your new car within 2-3 business days after
+                            your subscription is approved and the first payment is processed.
+                        </p>
+                    </div>
+                </div>
+
+                <div x-data="{ open: false }" class="bg-white mb-4 shadow-md">
+                    <button @click="open = !open"
+                        class="flex w-full items-center justify-between px-6 py-6 text-left transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                        <span class="text-2xl font-medium text-gray-700 font-helvetica">Is maintenance included?</span>
+                        <svg :class="open ? 'rotate-180' : ''"
+                            class="h-5 w-5 transform text-gray-500 transition-transform duration-200"
+                            xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z"
+                                fill="#898B8E" />
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform translate-y-0"
+                        x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            Yes, all routine maintenance, including oil changes and tire rotations,
+                            is included in your subscription.
+                        </p>
+                    </div>
+                </div>
+
+                <div x-data="{ open: false }" class="bg-white mb-4 shadow-md">
+                    <button @click="open = !open"
+                        class="flex w-full items-center justify-between px-6 py-6 text-left transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                        <span class="text-2xl font-medium text-gray-700 font-helvetica">What do I need to do to
+                            qualify?</span>
+                        <svg :class="open ? 'rotate-180' : ''"
+                            class="h-5 w-5 transform text-gray-500 transition-transform duration-200"
+                            xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z"
+                                fill="#898B8E" />
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform translate-y-0"
+                        x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            To qualify, you need to be at least 21 years old, have a valid driver's
+                            license, and pass a credit and background check.
+                        </p>
+                    </div>
+                </div>
+
+                <div x-data="{ open: false }" class="bg-white mb-4 shadow-md">
+                    <button @click="open = !open"
+                        class="flex w-full items-center justify-between px-6 py-6 text-left transition-colors duration-200 hover:bg-gray-50 focus:bg-gray-50 focus:outline-none">
+                        <span class="text-2xl font-medium text-gray-700 font-helvetica">How does this save me money
+                            compared to buying?</span>
+                        <svg :class="open ? 'rotate-180' : ''"
+                            class="h-5 w-5 transform text-gray-500 transition-transform duration-200"
+                            xmlns="http://www.w3.org/2000/svg" width="29" height="24" viewBox="0 0 29 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29736 8L14.6521 17L25.0068 8H4.29736Z"
+                                fill="#898B8E" />
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                        x-transition:enter-start="opacity-0 transform -translate-y-2"
+                        x-transition:enter-end="opacity-100 transform translate-y-0"
+                        x-transition:leave="transition ease-in duration-150"
+                        x-transition:leave-start="opacity-100 transform translate-y-0"
+                        x-transition:leave-end="opacity-0 transform -translate-y-2" class="px-6 py-4">
+                        <p class="text-sm leading-relaxed text-gray-600">
+                            Our subscription model eliminates the need for a down payment, interest
+                            on a loan, and unexpected maintenance costs. It also includes
+                            insurance, so your total monthly cost is predictable and often lower
+                            than the sum of traditional car ownership expenses.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- mobility app section -->
+        <section class="bg-white relative lg:mt-32 z-10 container mx-auto px-4 py-16 sm:py-10 lg:pb-20!  ">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-7 w-full">
+                <div class="left_side w-full lg:w-1/2">
+                    <h2 class="font-poppins font-medium text-3xl md:text-5xl">Get the Fore Mobility App</h2>
+                    <p class="font-inter font-normal text-sm md:text-base mt-5">
+                        Experience the easiest way to rent a car with Fore
+                        Mobility. Search, compare, <br class="hidden md:block"> and book vehicles right from your phone.
+                        Download the app today and enjoy <br class="hidden md:block"> faster booking, flexible rentals,
+                        and
+                        24/7 support — wherever you are.
+                    </p>
+
+                    <div class="mt-6">
+                        <h3 class="font-inter font-normal text-sm md:text-base">Download App From</h3>
+                        <div class="flex items-center gap-4 mt-2">
+                            <a href="#">
+                                <img src="/assets/images/app_store.png" alt="Download on the App Store"
+                                    class="h-10 md:h-12 w-auto">
+                            </a>
+                            <a href="#">
+                                <img src="/assets/images/google_play.png" alt="Get it on Google Play"
+                                    class="h-10 md:h-12 w-auto">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="right_side w-full max-w-xl mx-auto lg:max-w-none lg:w-1/2 lg:absolute lg:z-0! lg:-bottom-28 lg:right-0 mt-8 lg:mt-0">
+                    <img src="/assets/images/Group_3.png" alt="App Preview" class="w-full h-auto">
+                </div>
+            </div>
+        </section>
+        <!-- Footer banner -->
+        <section class="relative lg:z-30! ">
+            <div class="bg-primary py-16 px-4 md:px-8 lg:px-16 mb-20 lg:p-24! text-white text-center bg-cover bg-center"
+                style="background-image: url('/assets/images/footer.jpg');">
+
+                <div class="absolute inset-0 bg-[#0C5197] opacity-75"></div>
+
+                <div class="relative z-10 max-w-5xl mx-auto">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">
+                        Your Car, Your Terms — Start Today
+                    </h2>
+                    <p class="text-base sm:text-lg mb-5">
+                        Join thousands of drivers saving time & money with
+                        Fore
+                        Mobility’s all- <br class="hidden sm:block"> inclusive car subscriptions —
+                        insurance,
+                        maintenance, and roadside <br class="hidden sm:block"> included.
+                    </p>
+                    <p class="text-lg font-semibold mb-8">
+                        Limited cars available in your area — book before
+                        they're
+                        gone!
+                    </p>
+                    <button @click="open = true"
+                        class="inline-block bg-white text-[#106CCA] py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                        Contact Us
+                    </button>
+                    <p class="text-sm sm:text-base mt-4">
+                        No hidden fees. Cancel anytime
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="container  px-4 sm:px-0 bg-[#E8F3FF] rounded-3xl shadow-xl border border-blue-200 mb-20! p-8 sm:p-12 md:p-16">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 lg:gap-24 pb-8 md:pb-12 ">
+
+                <div class="flex flex-col justify-between items-center md:items-start text-center md:text-left">
+                    <div>
+                        <a href="#" class="inline-block mb-4 cursor-pointer">
+                            <img src="/assets/images/logo.png" alt="Logo" class="h-16 w-auto">
+                        </a>
+                        <p class="text-sm text-[#0021BF] mb-10 max-w-xs font-inter">
+                            Fore Mobility Services — Your Trusted Partner for
+                            All
+                            Your Needs. Contact us today for a consultation.
+                        </p>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors duration-200">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.874v-6.985h-2.54V12h2.54V9.79c0-2.508 1.493-3.89 3.778-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.8-.9a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.37c-.83.5-1.75.85-2.73 1.05a4.28 4.28 0 00-7.3 3.9A12.14 12.14 0 013 4.79a4.28 4.28 0 001.33 5.7 4.24 4.24 0 01-1.94-.54v.05c0 2.08 1.48 3.82 3.45 4.21a4.3 4.3 0 01-1.93.07 4.28 4.28 0 004 2.97A8.6 8.6 0 012 19.54 12.1 12.1 0 008.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.35-.01-.53A8.35 8.35 0 0022.46 6z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors duration-200">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.766s.784-1.766 1.75-1.766 1.75.79 1.75 1.766-.783 1.766-1.75 1.766zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.784 7 2.476v6.759z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:hidden col-span-1 w-full space-y-2">
+                    <div x-data="{ open: false }" class="w-full border-b border-[#B6DAFE]">
+                        <button @click="open = !open" class="w-full flex justify-between items-center py-3 text-left">
+                            <h3 class="font-semibold text-lg text-[#093D71] font-inter">Quick Links</h3>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform text-[#093D71]"
+                                :class="{ 'rotate-180': open }" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition class="pb-4">
+                            <ul class="space-y-4 text-sm mt-2">
+                                <li><a href="#"
+                                        class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Personal</a>
+                                </li>
+                                <li><a href="#"
+                                        class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Gig
+                                        Drivers</a></li>
+                                <li><a href="#"
+                                        class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Business
+                                        Fleet</a></li>
+                                <li><a href="#"
+                                        class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Real
+                                        Estate</a></li>
+                                <li><a href="#"
+                                        class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div x-data="{ open: false }" class="w-full border-b border-[#B6DAFE]">
+                        <button @click="open = !open" class="w-full flex justify-between items-center py-3 text-left">
+                            <h3 class="font-semibold text-lg text-[#093D71] font-inter">Contact</h3>
+                            <svg class="w-5 h-5 transition-transform duration-300 transform text-[#093D71]"
+                                :class="{ 'rotate-180': open }" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition class="pb-4">
+                            <ul class="space-y-6 text-sm mt-2">
+                                <li class="flex items-center space-x-2">
+                                    <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.74 21 3 13.26 3 3c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.57.12.35.03.75-.24 1.02l-2.2 2.2z" />
+                                    </svg>
+                                    <span class="text-[#001EAA] font-inter">+68133543213</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" />
+                                    </svg>
+                                    <span class="text-[#001EAA] font-inter">info@demumail@gmail.com</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M12 2c-4.42 0-8 3.58-8 8 0 4.86 5.56 11.23 8 13.31 2.44-2.08 8-8.45 8-13.31 0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" />
+                                    </svg>
+                                    <span class="text-[#001EAA] font-inter">180/A, CAD Avenue, Los Angeles</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden md:grid md:col-span-2 md:grid-cols-2 md:gap-16 lg:gap-24">
+                    <div>
+                        <h3 class="font-semibold text-lg text-[#093D71] mb-4 font-inter text-center md:text-left">Quick
+                            Links</h3>
+                        <ul class="space-y-4 text-sm text-center md:text-left">
+                            <li><a href="#"
+                                    class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Personal</a>
+                            </li>
+                            <li><a href="#"
+                                    class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Gig
+                                    Drivers</a></li>
+                            <li><a href="#"
+                                    class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Business
+                                    Fleet</a></li>
+                            <li><a href="#"
+                                    class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">Real
+                                    Estate</a></li>
+                            <li><a href="#"
+                                    class="hover:text-blue-600 text-[#001EAA] transition-colors duration-200 font-inter">About</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-[#093D71] mb-4 font-inter text-center md:text-left">
+                            Contact</h3>
+                        <ul class="space-y-6 text-sm">
+                            <li class="flex items-center justify-center md:justify-start space-x-2">
+                                <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.74 21 3 13.26 3 3c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.57.12.35.03.75-.24 1.02l-2.2 2.2z" />
+                                </svg>
+                                <span class="text-[#001EAA] font-inter">+68133543213</span>
+                            </li>
+                            <li class="flex items-center justify-center md:justify-start space-x-2">
+                                <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" />
+                                </svg>
+                                <span class="text-[#001EAA] font-inter">info@demumail@gmail.com</span>
+                            </li>
+                            <li class="flex items-center justify-center md:justify-start space-x-2">
+                                <svg class="h-5 w-5 text-[#106CCA] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2c-4.42 0-8 3.58-8 8 0 4.86 5.56 11.23 8 13.31 2.44-2.08 8-8.45 8-13.31 0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" />
+                                </svg>
+                                <span class="text-[#001EAA] font-inter">180/A, CAD Avenue, Los Angeles</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="w-full h-[0.5px]! z-50 hidden md:block text-[#B6DAFE]">
+            </hr>
+
+            <div
+                class="flex flex-col md:flex-row items-center justify-between pt-6 text-center md:text-left space-y-4 md:space-y-0 text-sm">
+                <span class="text-[#001EAA] font-inter">Copyright © 2025. Fore Mobility. All right reserved</span>
+                <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                    <a href="#"
+                        class="hover:text-blue-600 transition-colors duration-200 text-[#001EAA] font-inter">Privacy
+                        Policy</a>
+                    <a href="#"
+                        class="hover:text-blue-600 transition-colors duration-200 text-[#001EAA] font-inter">Terms &
+                        Condition</a>
+                    <a href="#"
+                        class="hover:text-blue-600 transition-colors duration-200 text-[#001EAA] font-inter">Cookie
+                        Policy</a>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- alpine js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <script>
+        // Initialize Swiper
+        const swiper = new Swiper('.testimonial-swiper', {
+            spaceBetween: 24,
+            slidesPerView: 1,
+            loop: true,
+            navigation: false, // Disable default navigation
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+
+        // Custom navigation buttons
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            swiper.slidePrev();
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            swiper.slideNext();
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mainMenu = document.getElementById('main-menu');
+            const findOutMore = document.querySelector('.mt-4.md\\:mt-0');
+            const menuIcon = document.getElementById('menu-icon');
+
+            menuToggle.addEventListener('click', function () {
+                const isMenuOpen = mainMenu.classList.toggle('hidden');
+                findOutMore.classList.toggle('hidden', isMenuOpen);
+
+                // Toggle the hamburger and close icon paths
+                if (isMenuOpen) {
+                    menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7'); // Hamburger icon
+                } else {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // Close icon
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

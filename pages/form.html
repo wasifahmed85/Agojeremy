@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Form</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .modal-content {
+            animation: slide-in 0.5s ease-out;
+        }
+
+        @keyframes slide-in {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-200 flex items-center justify-center min-h-screen">
+
+    <button id="openModalBtn" class="px-6 py-3 bg-[#1487FC] text-white font-medium rounded-lg shadow-md transition duration-200 hover:bg-blue-700">
+        Open Form
+    </button>
+
+    <div id="contactModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="modal-content container max-w-[700px] mx-auto bg-white rounded-xl shadow-lg border border-gray-200 p-6 md:p-8 relative">
+
+            <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <h1 class="max-w-[600px] text-lg sm:text-4xl font-semibold text-gray-800 mb-6 font-inter">
+                Leave your info and we'll contact you.
+            </h1>
+
+            <form>
+                <div class="mb-5">
+                    <label for="name" class="block text-sm font-medium text-gray-500 mb-2 font-inter">
+                        Name
+                    </label>
+                    <input type="text" id="name" placeholder="Enter your full name"
+                        class="w-full px-4 py-3 bg-blue-50 text-gray-800 border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-200">
+                </div>
+
+                <div class="mb-5">
+                    <label for="email" class="block text-sm font-medium text-gray-500 mb-2 font-inter">
+                        Email
+                    </label>
+                    <input type="email" id="email" placeholder="Enter your email"
+                        class="w-full px-4 py-3 bg-blue-50 text-gray-800 border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-200">
+                </div>
+
+                <div class="mb-5">
+                    <label for="phone" class="block text-sm font-medium text-gray-500 mb-2 font-inter">
+                        Phone Number
+                    </label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number"
+                        class="w-full px-4 py-3 bg-blue-50 text-gray-800 border-none rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-200">
+                </div>
+
+                <div class="mb-6">
+                    <textarea rows="6" placeholder="Looking to get started? We'll contact you."
+                        class="w-full px-4 py-3 bg-gray-100 text-gray-700 border-none rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-gray-300 transition duration-200"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full md:w-[60%] flex items-center justify-center space-x-2 px-6 py-3 bg-[#1487FC] hover:bg-[#1487FC] text-white font-medium rounded-lg shadow-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-[#1487FC] focus:ring-offset-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5">
+                        <path fill="currentColor"
+                            d="M476 3L36 228c-49 24-32 60-4 70l93 29 36 115c5 16 9 22 18 24 9 1 14-3 26-13l52-49 108 79c20 11 35 6 40-18l74-402c6-33-12-49-39-37z" />
+                    </svg>
+
+                    <span class="font-inter">Get My Fleet Quote</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const openModalBtn = document.getElementById('openModalBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const contactModal = document.getElementById('contactModal');
+
+        openModalBtn.addEventListener('click', () => {
+            contactModal.classList.remove('hidden');
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            contactModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside of the modal content
+        contactModal.addEventListener('click', (e) => {
+            if (e.target.id === 'contactModal') {
+                contactModal.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
