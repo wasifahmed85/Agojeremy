@@ -1,19 +1,19 @@
 {
   "rewrites": [
     {
-      "source": "/business-fleet",
+      
       "destination": "/business_fleet.html"
     },
     {
-      "source": "/gig-drivers",
+      
       "destination": "/gig_drivers.html"
     },
     {
-      "source": "/personal-car",
+      
       "destination": "/personal_car.html"
     },
     {
-      "source": "/real-estate",
+      
       "destination": "/real_estate.html"
     }
   ]
